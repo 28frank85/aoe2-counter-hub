@@ -1,0 +1,462 @@
+/* ============================================================
+   AoE2 Counter Hub — shared stylesheet (cluster pages)
+   Design tokens: light default, dark via [data-theme="dark"]
+   ============================================================ */
+
+:root {
+  color-scheme: light;
+  --bg:        #ffffff;
+  --bg2:       #f7f8fa;
+  --bg3:       #eef0f4;
+  --bg-hover:  #e4e7ee;
+  --surface:   #ffffff;
+
+  --text:      #18181b;
+  --text2:     #5c6577;
+  --border:    #dfe3ea;
+  --border2:   #c8cedb;
+
+  --accent:    #4457d4;
+  --accent-sub:#eaedfb;
+
+  --hard:      #d33a3a;
+  --hard-bg:   #fdeaea;
+  --hard-tx:   #a92222;
+
+  --soft:      #d18b00;
+  --soft-bg:   #fdf1dd;
+  --soft-tx:   #8a5a00;
+
+  --good:      #1f8a52;
+  --good-bg:   #e6f6ed;
+  --good-tx:   #14663c;
+
+  --shadow:    0 1px 2px rgba(16,24,40,0.05), 0 4px 14px rgba(16,24,40,0.06);
+  --radius:    12px;
+  --radius-sm: 8px;
+
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg:        #0d1117;
+  --bg2:       #151b23;
+  --bg3:       #1c2330;
+  --bg-hover:  #253040;
+  --surface:   #151b23;
+
+  --text:      #e8edf5;
+  --text2:     #97a3b6;
+  --border:    #262f3d;
+  --border2:   #364154;
+
+  --accent:    #8b9cff;
+  --accent-sub:#1c2440;
+
+  --hard:      #f2685f;
+  --hard-bg:   #3a1c1c;
+  --hard-tx:   #ff9a92;
+
+  --soft:      #e0a53a;
+  --soft-bg:   #3a2c12;
+  --soft-tx:   #f5c46a;
+
+  --good:      #4cc38a;
+  --good-bg:   #14311f;
+  --good-tx:   #7ee0ab;
+
+  --shadow:    0 1px 2px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.35);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── HEADER ─────────────────────────────────────────── */
+header {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 1.6rem 1.5rem 1.2rem;
+}
+
+header h1 {
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+  line-height: 1.25;
+}
+
+header p.subtitle {
+  color: var(--text2);
+  font-size: 0.92rem;
+}
+
+/* Theme toggle (injected by assets/theme.js) */
+.theme-toggle {
+  position: fixed;
+  top: 0.9rem;
+  right: 0.9rem;
+  z-index: 200;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  line-height: 1;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.theme-toggle:hover { background: var(--bg3); border-color: var(--border2); }
+
+/* ── BREADCRUMB ─────────────────────────────────────── */
+.breadcrumb {
+  font-size: 0.82rem;
+  color: var(--text2);
+  margin-bottom: 0.7rem;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb span { margin: 0 0.4rem; }
+
+/* ── SITE NAV ───────────────────────────────────────── */
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.8rem 1rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg2);
+}
+
+.site-nav a {
+  color: var(--text2);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.site-nav a:hover {
+  color: var(--text);
+  background: var(--bg3);
+}
+
+.site-nav a.active {
+  color: var(--accent);
+  background: var(--accent-sub);
+  border-color: transparent;
+  font-weight: 600;
+}
+
+/* ── CONTAINER ──────────────────────────────────────── */
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 2.2rem 1.5rem 4rem;
+}
+
+/* ── TYPOGRAPHY ─────────────────────────────────────── */
+h2 {
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--text);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  margin: 2.4rem 0 1.2rem;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 1.5rem 0 0.7rem;
+}
+
+p {
+  color: var(--text);
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+ul, ol { padding-left: 1.4rem; margin-bottom: 1rem; }
+
+li {
+  color: var(--text);
+  margin-bottom: 0.45rem;
+  line-height: 1.7;
+}
+
+strong { color: var(--text); font-weight: 700; }
+
+a { color: var(--accent); }
+
+.intro {
+  color: var(--text2);
+  font-size: 1.02rem;
+  line-height: 1.8;
+  border-left: 3px solid var(--accent);
+  padding-left: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.tip {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 0.95rem 1.15rem;
+  margin: 1.2rem 0;
+  font-size: 0.93rem;
+  color: var(--text2);
+}
+
+.tip strong { color: var(--text); }
+
+/* ── COUNTER LIST ────────────────────────────────────── */
+.counter-list { list-style: none; padding: 0; margin-bottom: 1.5rem; }
+
+.counter-item {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.5rem;
+  background: var(--bg2);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.counter-item:hover { background: var(--bg-hover); border-color: var(--border2); }
+
+.counter-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 150px;
+}
+
+.counter-name {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  width: fit-content;
+}
+
+.badge-hard {
+  background: var(--hard-bg);
+  color: var(--hard-tx);
+  border: 1px solid transparent;
+}
+
+.badge-soft {
+  background: var(--soft-bg);
+  color: var(--soft-tx);
+  border: 1px solid transparent;
+}
+
+.counter-reason {
+  color: var(--text2);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  flex: 1;
+  padding-top: 0.1rem;
+}
+
+/* ── SUMMARY TABLE ───────────────────────────────────── */
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 2rem;
+  font-size: 0.92rem;
+}
+
+.summary-table th {
+  color: var(--text2);
+  text-align: left;
+  padding: 0.65rem 0.9rem;
+  border-bottom: 1px solid var(--border2);
+  background: var(--bg2);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.summary-table td {
+  padding: 0.65rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  color: var(--text2);
+}
+
+.summary-table td:first-child { color: var(--text); font-weight: 600; }
+.summary-table tr:hover td { background: var(--bg2); }
+
+/* ── CTA BOX ─────────────────────────────────────────── */
+.cta-box {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.8rem 1.5rem;
+  text-align: center;
+  margin: 2.5rem 0;
+  box-shadow: var(--shadow);
+}
+
+.cta-box p { color: var(--text2); margin-bottom: 1.1rem; font-size: 0.98rem; }
+
+.cta-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.8rem 1.9rem;
+  border-radius: 999px;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: filter 0.2s;
+}
+
+.cta-btn:hover { filter: brightness(1.1); }
+
+[data-theme="dark"] .cta-btn { color: #0d1117; }
+
+/* ── FAQ ─────────────────────────────────────────────── */
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem 1.2rem;
+  margin-bottom: 0.8rem;
+  background: var(--bg2);
+}
+
+.faq-item h3 {
+  color: var(--text);
+  margin: 0 0 0.5rem;
+  font-size: 0.98rem;
+}
+
+.faq-item p {
+  color: var(--text2);
+  font-size: 0.93rem;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* ── PAGE NAV ────────────────────────────────────────── */
+.page-nav {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.page-nav p {
+  color: var(--text2);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-bottom: 0.7rem;
+}
+
+.page-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.page-nav-links a {
+  color: var(--text2);
+  text-decoration: none;
+  font-size: 0.86rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.page-nav-links a:hover {
+  color: var(--accent);
+  border-color: var(--border2);
+  background: var(--bg2);
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 1.8rem 1rem;
+  border-top: 1px solid var(--border);
+  background: var(--bg2);
+  color: var(--text2);
+  font-size: 0.82rem;
+  line-height: 2;
+}
+
+footer a { color: var(--accent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* ── SCROLLBAR ──────────────────────────────────────── */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text2); }
+
+/* ── RESPONSIVE ─────────────────────────────────────── */
+@media (max-width: 600px) {
+  header { padding: 1.3rem 1rem 1rem; padding-right: 3.6rem; }
+  .container { padding: 1.5rem 1rem 3rem; }
+  .counter-meta { min-width: 120px; }
+  .counter-item { flex-direction: column; gap: 0.3rem; }
+  .site-nav { gap: 0.3rem; }
+  .summary-table { display: block; overflow-x: auto; }
+}

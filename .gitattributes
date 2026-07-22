@@ -1,0 +1,8 @@
+# Normalisiere Textdateien auf LF im Repo (verhindert CRLF-Rauschen unter Windows)
+* text=auto eol=lf
+
+# Binärdateien nicht anfassen
+*.png binary
+*.jpg binary
+*.ico binary
+*.zip binary

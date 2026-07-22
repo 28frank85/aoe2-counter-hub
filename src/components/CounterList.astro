@@ -1,0 +1,33 @@
+---
+export interface Counter {
+  name: string;
+  /** "hard" oder "soft" — steuert das Badge */
+  type: 'hard' | 'soft';
+  reason: string;
+}
+
+export interface Props {
+  items: Counter[];
+}
+
+const { items } = Astro.props;
+
+const LABEL = {
+  hard: 'Hard Counter',
+  soft: 'Soft Counter',
+} as const;
+---
+
+<ul class="counter-list">
+  {
+    items.map((item) => (
+      <li class="counter-item">
+        <div class="counter-meta">
+          <span class="counter-name">{item.name}</span>
+          <span class={`badge badge-${item.type}`}>{LABEL[item.type]}</span>
+        </div>
+        <span class="counter-reason">{item.reason}</span>
+      </li>
+    ))
+  }
+</ul>

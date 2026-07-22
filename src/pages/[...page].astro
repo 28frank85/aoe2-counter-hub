@@ -1,0 +1,115 @@
+---
+import { getCollection, render } from 'astro:content';
+import GuideLayout from '../layouts/GuideLayout.astro';
+import CounterList from '../components/CounterList.astro';
+
+// Diese eine Datei rendert JEDE .md-Datei aus src/content/guides/.
+// Du fasst sie nie wieder an — neue Seite = neue .md-Datei, fertig.
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  return guides.map((entry) => ({
+    // slug "siege-counters.html" → Route-Param "siege-counters"
+    // build.format 'file' macht daraus wieder siege-counters.html
+    params: { page: entry.data.slug.replace(/\.html$/, '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const d = entry.data;
+const { Content } = await render(entry); // der Markdown-Körper (Intro-Prosa)
+---
+
+<GuideLayout
+  slug={d.slug}
+  title={d.title}
+  description={d.description}
+  ogTitle={d.ogTitle ?? d.title}
+  ogDescription={d.ogDescription ?? d.description}
+  breadcrumb={d.breadcrumb}
+  h1={d.h1}
+  subtitle={d.subtitle}
+  faq={d.faq}
+>
+  {d.article ? (
+    // Reiner Artikel: der Markdown-Körper ist der ganze Inhalt.
+    <div class="article">
+      <Content />
+    </div>
+  ) : (
+    <div class="intro">
+      <Content />
+    </div>
+  )}
+
+  {
+    d.tip && (
+      <div class="tip">
+        <strong>{d.tip.strong}</strong> {d.tip.text}
+      </div>
+    )
+  }
+
+  {
+    d.sections?.map((section) => (
+      <>
+        <h2>{section.heading}</h2>
+        {section.prose && <p>{section.prose}</p>}
+        {section.counters && <CounterList items={section.counters} />}
+        {section.bullets && (
+          <ul>
+            {section.bullets.map((b) => (
+              <li>
+                <strong>{b.strong}</strong> {b.text}
+              </li>
+            ))}
+          </ul>
+        )}
+        {section.outro && <p>{section.outro}</p>}
+        {section.tip && (
+          <div class="tip">
+            <strong>{section.tip.strong}</strong> {section.tip.text}
+          </div>
+        )}
+      </>
+    ))
+  }
+
+  {
+    d.tables?.map((table) => (
+      <>
+        <h2>{table.heading}</h2>
+        <table class="summary-table">
+          <thead>
+            <tr>{table.columns.map((c) => <th>{c}</th>)}</tr>
+          </thead>
+          <tbody>
+            {table.rows.map((row) => (
+              <tr>{row.map((cell) => <td>{cell}</td>)}</tr>
+            ))}
+          </tbody>
+        </table>
+      </>
+    ))
+  }
+
+  {
+    d.summary && (
+      <>
+        <h2>Summary — Counter Cheat Sheet</h2>
+        <table class="summary-table">
+          <thead>
+            <tr><th>Unit</th><th>Hard Counter</th><th>Soft Counter</th></tr>
+          </thead>
+          <tbody>
+            {d.summary.map(([unit, hard, soft]) => (
+              <tr><td>{unit}</td><td>{hard}</td><td>{soft}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </>
+    )
+  }
+
+  {d.ctaText && <p slot="cta">{d.ctaText}</p>}
+</GuideLayout>

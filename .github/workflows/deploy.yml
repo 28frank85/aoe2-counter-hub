@@ -1,0 +1,39 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Bei jedem Push auf main automatisch bauen + deployen
+  push:
+    branches: [main]
+  # Erlaubt manuelles Auslösen im Actions-Tab
+  workflow_dispatch:
+
+# Rechte, die der Pages-Deploy braucht
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Nur ein Deploy gleichzeitig; laufende nicht abbrechen
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build Astro site
+        uses: withastro/action@v3
+        # Kein path/node-version nötig: Repo-Root IST das Astro-Projekt.
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
