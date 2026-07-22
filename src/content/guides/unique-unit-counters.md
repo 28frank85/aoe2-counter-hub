@@ -1,11 +1,11 @@
 ---
 slug: unique-unit-counters.html
-title: "AoE2 Unique Unit Counters — Beat Cataphract, Mangudai, Huskarl & More (2025)"
-description: "Counter guide for AoE2 unique units — Cataphract, Mameluke, Huskarl, War Wagon, Conquistador, Jaguar Warrior and more. Civ-by-civ breakdown with hard and soft counters."
-ogTitle: "AoE2 Unique Unit Counters — Beat Cataphract, Huskarl, Mangudai & More"
-ogDescription: "How to counter the most dangerous unique units in AoE2 DE. Cataphract, Huskarl, Mameluke, Conquistador — each breaks standard counter rules. Learn what actually works."
+title: "Age of Empires 2 Unique Unit Counters — Beat Cataphract, Mangudai, Huskarl & More (2025)"
+description: "Counter guide for Age of Empires 2 unique units — Cataphract, Mameluke, Huskarl, War Wagon, Conquistador, Jaguar Warrior and more. Civ-by-civ breakdown with hard and soft counters."
+ogTitle: "Age of Empires 2 Unique Unit Counters — Beat Cataphract, Huskarl, Mangudai & More"
+ogDescription: "How to counter the most dangerous unique units in Age of Empires 2 DE. Cataphract, Huskarl, Mameluke, Conquistador — each breaks standard counter rules. Learn what actually works."
 breadcrumb: "Unique Unit Counters"
-h1: "AoE2 Unique Unit Counters"
+h1: "Age of Empires 2 Unique Unit Counters"
 subtitle: "Cataphract · Huskarl · Mameluke · War Wagon · Conquistador · and more"
 
 sections:

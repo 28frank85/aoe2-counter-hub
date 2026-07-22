@@ -1,21 +1,21 @@
 ---
 slug: beginners-counter-guide.html
-title: "AoE2 Counter Guide for Beginners — How the System Works (2025)"
+title: "Age of Empires 2 Counter Guide for Beginners — How the System Works (2025)"
 description: "New to Age of Empires 2? Learn the counter system from scratch — rock-paper-scissors explained, 5 rules of countering, how to scout, and the 5 units every beginner needs to know."
-ogTitle: "AoE2 Counter Guide for Beginners — Rock Paper Scissors Explained"
-ogDescription: "Learn why units lose to other units in AoE2, how to scout threats, and the 5 rules of countering. Perfect starting point for new players."
+ogTitle: "Age of Empires 2 Counter Guide for Beginners — Rock Paper Scissors Explained"
+ogDescription: "Learn why units lose to other units in Age of Empires 2, how to scout threats, and the 5 rules of countering. Perfect starting point for new players."
 breadcrumb: "Beginner's Guide"
-h1: "AoE2 Counter Guide for Beginners"
+h1: "Age of Empires 2 Counter Guide for Beginners"
 subtitle: "How the counter system works — from zero to confident"
 article: true
 ctaText: "Ready to practice? Open the app and look up the unit you lose to most — start there."
 
 faq:
-  - q: "How does the counter system work in AoE2?"
-    a: "AoE2 uses a rock-paper-scissors counter system. Cavalry counters archers in melee but loses to Spearmen and Camels. Archers counter infantry at range but lose to Skirmishers. Skirmishers beat archers but lose to melee infantry. No single unit is the best — every strong unit has a designated counter."
-  - q: "What is the difference between hard counter and soft counter in AoE2?"
+  - q: "How does the counter system work in Age of Empires 2?"
+    a: "Age of Empires 2 uses a rock-paper-scissors counter system. Cavalry counters archers in melee but loses to Spearmen and Camels. Archers counter infantry at range but lose to Skirmishers. Skirmishers beat archers but lose to melee infantry. No single unit is the best — every strong unit has a designated counter."
+  - q: "What is the difference between hard counter and soft counter in Age of Empires 2?"
     a: "A hard counter has a direct attack bonus vs. the target class or a specific armor advantage — it wins the fight efficiently even in equal numbers. A soft counter wins through positioning, speed, or raw stats but requires a cost or number advantage to be reliable."
-  - q: "What units should a beginner always make in AoE2?"
+  - q: "What units should a beginner always make in Age of Empires 2?"
     a: "Elite Skirmisher counters all archers. Halberdier counters all cavalry. Mangonel deals area damage vs. grouped infantry and archers. Monk converts expensive units for a massive resource swing. Hussar counters all siege and raids the economy."
 ---
 
@@ -25,7 +25,7 @@ so you can walk into any game knowing what to build and why.
 
 ## Why Units Lose — The Rock-Paper-Scissors Principle
 
-AoE2 does not have a single "best unit." Every powerful unit has a designated weakness, and every
+Age of Empires 2 does not have a single "best unit." Every powerful unit has a designated weakness, and every
 cheap unit counters something expensive. The game is designed as layered rock-paper-scissors:
 
 | Unit Type | Beats | Loses To |

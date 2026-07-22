@@ -1,11 +1,11 @@
 ---
 slug: archer-counters.html
-title: "AoE2 Archer Counters — How to Beat Archers, Arbalests & Hand Cannoneers (2025)"
-description: "Complete guide to countering archers in AoE2 DE — Archer, Crossbowman, Arbalest, Hand Cannoneer, and Skirmisher. Hard counters, compositions, and civ-specific options."
-ogTitle: "AoE2 Archer Counters — How to Beat Archers, Arbalests & Hand Cannoneers"
+title: "Age of Empires 2 Archer Counters — How to Beat Archers, Arbalests & Hand Cannoneers (2025)"
+description: "Complete guide to countering archers in Age of Empires 2 DE — Archer, Crossbowman, Arbalest, Hand Cannoneer, and Skirmisher. Hard counters, compositions, and civ-specific options."
+ogTitle: "Age of Empires 2 Archer Counters — How to Beat Archers, Arbalests & Hand Cannoneers"
 ogDescription: "Beat every archer unit in Age of Empires 2 DE. Hard and soft counters for Arbalest, Crossbowman, Hand Cannoneer, and more."
 breadcrumb: "Archer Counters"
-h1: "AoE2 Archer Counters"
+h1: "Age of Empires 2 Archer Counters"
 subtitle: "Archer · Crossbowman · Arbalest · Hand Cannoneer · Skirmisher"
 
 sections:
@@ -120,6 +120,6 @@ faq:
     a: "All standard civs have Elite Skirmisher. Unique exceptions like Mayans have Skirmisher but also Plumed Archers. If you're playing a civ without access (rare), use Hussars to raid and buy time to tech to Siege Onager."
 ---
 
-Archers are the backbone of many AoE2 strategies — cheap, ranged, and deadly in numbers. From
+Archers are the backbone of many Age of Empires 2 strategies — cheap, ranged, and deadly in numbers. From
 the Feudal Archer rush to Imperial Arbalests, they control the ranged fight and punish unprotected
 cavalry or infantry. Here is the complete counter breakdown at every Age.

@@ -1,4 +1,4 @@
-/* Shared light/dark theme handling for the AoE2 Counter Hub pages.
+/* Shared light/dark theme handling for the Age of Empires 2 Counter Hub pages.
    Load in <head> (before the body renders) to avoid a flash of the wrong theme. */
 (function () {
   var KEY = "aoe2-theme";

@@ -1,11 +1,11 @@
 ---
 slug: infantry-counters.html
-title: "AoE2 Infantry Counters — How to Beat Champions, Eagle Warriors & Spearmen (2025)"
+title: "Age of Empires 2 Infantry Counters — How to Beat Champions, Eagle Warriors & Spearmen (2025)"
 description: "Full guide to countering infantry in Age of Empires 2 DE — Champions, Eagle Warriors, Halberdiers, and the full Militia line. Hard and soft counters with reasons."
-ogTitle: "AoE2 Infantry Counters — Beat Champions, Eagle Warriors & More"
-ogDescription: "Counter every infantry unit in AoE2 DE — Champions, Halberdiers, Eagle Warriors, and the full Spearman line."
+ogTitle: "Age of Empires 2 Infantry Counters — Beat Champions, Eagle Warriors & More"
+ogDescription: "Counter every infantry unit in Age of Empires 2 DE — Champions, Halberdiers, Eagle Warriors, and the full Spearman line."
 breadcrumb: "Infantry Counters"
-h1: "AoE2 Infantry Counters"
+h1: "Age of Empires 2 Infantry Counters"
 subtitle: "Militia Line · Spearman Line · Eagle Warriors · Champions"
 
 sections:

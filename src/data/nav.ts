@@ -12,6 +12,6 @@ export const NAV = [
   { href: 'beginners-counter-guide.html', label: "Beginner's Guide" },
 ];
 
-export const SITE_NAME = 'AoE2 Counter Guide';
+export const SITE_NAME = 'Age of Empires 2 Counter Guide';
 export const SITE_TAGLINE =
   'Age of Empires 2 Definitive Edition — fan-made reference guide';

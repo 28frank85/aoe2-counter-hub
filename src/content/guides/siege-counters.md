@@ -1,11 +1,11 @@
 ---
 slug: siege-counters.html
-title: "AoE2 Siege Counters — How to Beat Trebuchets, Mangonels, Rams & More (2025)"
-description: "Full guide to countering siege weapons in AoE2 DE — Trebuchet, Mangonel, Battering Ram, Bombard Cannon, Scorpion, and Siege Onager. Fast counters and civ-specific options."
-ogTitle: "AoE2 Siege Counters — Beat Trebuchets, Mangonels, Rams & More"
-ogDescription: "Counter every siege weapon in AoE2 DE. Trebuchet, Mangonel, Battering Ram, Bombard Cannon — fast counters and why Hussars are the universal answer."
+title: "Age of Empires 2 Siege Counters — How to Beat Trebuchets, Mangonels, Rams & More (2025)"
+description: "Full guide to countering siege weapons in Age of Empires 2 DE — Trebuchet, Mangonel, Battering Ram, Bombard Cannon, Scorpion, and Siege Onager. Fast counters and civ-specific options."
+ogTitle: "Age of Empires 2 Siege Counters — Beat Trebuchets, Mangonels, Rams & More"
+ogDescription: "Counter every siege weapon in Age of Empires 2 DE. Trebuchet, Mangonel, Battering Ram, Bombard Cannon — fast counters and why Hussars are the universal answer."
 breadcrumb: "Siege Counters"
-h1: "AoE2 Siege Weapon Counters"
+h1: "Age of Empires 2 Siege Weapon Counters"
 subtitle: "Trebuchet · Mangonel · Battering Ram · Bombard Cannon · Scorpion"
 
 tip:

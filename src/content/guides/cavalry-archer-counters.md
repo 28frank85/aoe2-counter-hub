@@ -1,11 +1,11 @@
 ---
 slug: cavalry-archer-counters.html
-title: "AoE2 Cavalry Archer Counters — How to Stop Mangudai, War Wagons & Cav Archers (2025)"
-description: "Learn how to counter cavalry archers in AoE2 DE — Mangudai, War Wagons, Heavy Cavalry Archers, and Camel Archers. Hard and soft counters, compositions, and why single units fail."
-ogTitle: "AoE2 Cavalry Archer Counters — Stop Mangudai, War Wagons & More"
-ogDescription: "The hardest unit type to counter in AoE2. Learn why single counters fail and what compositions actually work vs. Mangudai, War Wagons, and Heavy Cavalry Archers."
+title: "Age of Empires 2 Cavalry Archer Counters — How to Stop Mangudai, War Wagons & Cav Archers (2025)"
+description: "Learn how to counter cavalry archers in Age of Empires 2 DE — Mangudai, War Wagons, Heavy Cavalry Archers, and Camel Archers. Hard and soft counters, compositions, and why single units fail."
+ogTitle: "Age of Empires 2 Cavalry Archer Counters — Stop Mangudai, War Wagons & More"
+ogDescription: "The hardest unit type to counter in Age of Empires 2. Learn why single counters fail and what compositions actually work vs. Mangudai, War Wagons, and Heavy Cavalry Archers."
 breadcrumb: "Cavalry Archer Counters"
-h1: "AoE2 Cavalry Archer Counters"
+h1: "Age of Empires 2 Cavalry Archer Counters"
 subtitle: "Cavalry Archer · Heavy CA · Mangudai · War Wagon · Camel Archer"
 
 sections:
@@ -104,7 +104,7 @@ summary:
 ctaText: "Search any cavalry archer unit in the interactive app for the full counter list with bonus damage data."
 
 faq:
-  - q: "What counters Mangudai in AoE2?"
+  - q: "What counters Mangudai in Age of Empires 2?"
     a: "Elite Genitour (Berbers / Magyars) is the most reliable counter — fast enough to chase, has attack bonus vs. archers. Imperial Camel Rider deals bonus cavalry damage and tanks hits. Hussar masses force Mongols to split attention and micromanage."
   - q: "Why don't Skirmishers counter cavalry archers?"
     a: "Skirmishers have the attack bonus vs. archers but they are too slow to chase cavalry archers. Cavalry archers simply run away and kite Skirmishers indefinitely. The counter must be a composition — fast units that force engagement, not just Skirmishers alone."

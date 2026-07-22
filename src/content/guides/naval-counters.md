@@ -1,16 +1,16 @@
 ---
 slug: naval-counters.html
-title: "AoE2 Naval Counters — Ship Counter Guide for Age of Empires 2 DE (2025)"
-description: "How to counter ships in Age of Empires 2 DE — Fire Ships, Demolition Ships, War Galleys, Galleons, Cannon Galleons, and Dromon. Complete AoE2 naval unit counter guide."
-ogTitle: "AoE2 Naval Counters — Complete Ship Counter Guide"
-ogDescription: "Counter every ship type in AoE2 DE. Fire Ship, Demo Ship, Galley, Galleon, Cannon Galleon — the naval rock-paper-scissors explained."
+title: "Age of Empires 2 Naval Counters — Ship Counter Guide for Age of Empires 2 DE (2025)"
+description: "How to counter ships in Age of Empires 2 DE — Fire Ships, Demolition Ships, War Galleys, Galleons, Cannon Galleons, and Dromon. Complete Age of Empires 2 naval unit counter guide."
+ogTitle: "Age of Empires 2 Naval Counters — Complete Ship Counter Guide"
+ogDescription: "Counter every ship type in Age of Empires 2 DE. Fire Ship, Demo Ship, Galley, Galleon, Cannon Galleon — the naval rock-paper-scissors explained."
 breadcrumb: "Naval Counters"
-h1: "AoE2 Naval Counters"
+h1: "Age of Empires 2 Naval Counters"
 subtitle: "Galley · Fire Ship · Demo Ship · Galleon · Cannon Galleon · Dromon"
 
 sections:
   - heading: "The Naval Counter Triangle"
-    prose: "AoE2 naval has three main unit classes in a counter cycle:"
+    prose: "Age of Empires 2 naval has three main unit classes in a counter cycle:"
     bullets:
       - strong: "Galley line"
         text: "beats Demolition Ships — pierce damage kills Demo Ships before they close and detonate"
@@ -108,6 +108,6 @@ summary:
 ctaText: "Look up any naval unit in the interactive app — full counter list with reasons included."
 ---
 
-Naval combat in AoE2 follows the same rock-paper-scissors logic as land units — but fewer players
+Naval combat in Age of Empires 2 follows the same rock-paper-scissors logic as land units — but fewer players
 know the counter triangle. Control the water on maps like Islands, Archipelago, or Baltic and you
 control the game. Here is the full naval breakdown.

@@ -1,15 +1,15 @@
 ---
 slug: cavalry-counters.html
-title: "How to Counter Knights in AoE2 — Full Cavalry Counter Guide (2025)"
+title: "How to Counter Knights in Age of Empires 2 — Full Cavalry Counter Guide (2025)"
 description: "Beat Knights, Cavaliers, Paladins, and Hussars in Age of Empires 2 with this complete cavalry counter guide. Hard and soft counters, Monk strategies, and civ-specific options explained."
-ogTitle: "How to Counter Knights in AoE2 — Full Cavalry Counter Guide"
-ogDescription: "Beat Knights, Cavaliers, Paladins, and Hussars in AoE2 DE. Hard and soft counters, Monk strategies, and civ-specific options."
+ogTitle: "How to Counter Knights in Age of Empires 2 — Full Cavalry Counter Guide"
+ogDescription: "Beat Knights, Cavaliers, Paladins, and Hussars in Age of Empires 2 DE. Hard and soft counters, Monk strategies, and civ-specific options."
 breadcrumb: "Cavalry Counters"
-h1: "How to Counter Cavalry in AoE2"
+h1: "How to Counter Cavalry in Age of Empires 2"
 subtitle: "Knights · Cavaliers · Paladins · Hussars · Scout Cavalry"
 
 sections:
-  - heading: "How to Counter Knights in AoE2"
+  - heading: "How to Counter Knights in Age of Empires 2"
     prose: "The Knight is the standard benchmark for cavalry — high HP, strong melee armor, and enough speed to raid and fight effectively. Most players who lose games are losing to Knights they didn't prepare for."
     counters:
       - name: "Halberdier"
@@ -31,7 +31,7 @@ sections:
         type: soft
         reason: "Berbers unique unit — mobile ranged anti-cavalry. Kites Knights while dealing bonus damage. Works well against unsupported Knights."
 
-  - heading: "How to Counter Cavaliers in AoE2"
+  - heading: "How to Counter Cavaliers in Age of Empires 2"
     prose: "Cavaliers are the Castle Age upgrade of the Knight line — more HP and attack. The same counters apply but need to be more committed since Cavaliers take more hits to bring down."
     counters:
       - name: "Halberdier"
@@ -47,7 +47,7 @@ sections:
         type: soft
         reason: "Berbers — ranged anti-cavalry with good kiting ability against Cavaliers."
 
-  - heading: "How to Counter Paladins in AoE2"
+  - heading: "How to Counter Paladins in Age of Empires 2"
     prose: "Paladins are the endgame upgrade of the Knight line — 185 HP, high armor, and a melee attack that devastates almost anything. They require your best counters. Do not fight them with infantry or archers."
     counters:
       - name: "Halberdier"
@@ -67,9 +67,9 @@ sections:
         reason: "Polish unique unit — reduces enemy armor on hit. Combined with other units, Obuchs lower Paladin melee armor so allied units deal more damage. Synergizes extremely well with Halberdiers."
     tip:
       strong: "Classic combo:"
-      text: "Halbs + Monks is the universal Paladin response. Halbs absorb melee damage while Monks convert the wounded. The converted Paladin then fights for you — one of the biggest swings in AoE2."
+      text: "Halbs + Monks is the universal Paladin response. Halbs absorb melee damage while Monks convert the wounded. The converted Paladin then fights for you — one of the biggest swings in Age of Empires 2."
 
-  - heading: "How to Counter Hussars in AoE2"
+  - heading: "How to Counter Hussars in Age of Empires 2"
     prose: "Hussars are the fast, cheap raider — low gold cost, high speed, hard to pin down. They raid your economy, kill your Siege, and run when threatened. Don't fight them with foot soldiers. Match mobility with mobility or wall them out."
     counters:
       - name: "Halberdier"
