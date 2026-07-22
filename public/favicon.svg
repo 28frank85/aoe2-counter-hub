@@ -1,13 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <rect width="100" height="100" rx="21" fill="#18181b"/>
   <defs>
-    <g id="sword" fill="#ffffff">
-      <polygon points="50,12 53.5,58 46.5,58"/>            <!-- blade -->
-      <rect x="35" y="57" width="30" height="5.5" rx="2.5"/> <!-- crossguard -->
-      <rect x="46.5" y="62" width="7" height="15" rx="2"/>   <!-- grip -->
-      <circle cx="50" cy="80.5" r="5"/>                      <!-- pommel -->
+    <g id="sword" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="50" y1="8"  x2="50" y2="58"/>   <!-- blade (long, thin) -->
+      <line x1="42" y1="58" x2="58" y2="58"/>   <!-- crossguard -->
+      <line x1="50" y1="58" x2="50" y2="74"/>   <!-- grip -->
+      <circle cx="50" cy="78" r="3.2" fill="#ffffff" stroke="none"/> <!-- pommel -->
     </g>
   </defs>
-  <use href="#sword" transform="rotate(30 50 80.5)"/>
-  <use href="#sword" transform="rotate(-30 50 80.5)"/>
+  <g transform="translate(0,6.5)">
+    <g transform="translate(50,50) scale(1.13) translate(-50,-50)">
+      <use href="#sword" transform="rotate(47 50 42)"/>
+      <use href="#sword" transform="rotate(-47 50 42)"/>
+    </g>
+  </g>
 </svg>
