@@ -13,6 +13,7 @@ const SITE = 'https://www.aoe2counterhub.com';
 const STILL_STATIC = [
   '', // Startseite als Wurzel-URL (/) statt /index.html — vermeidet Duplicate Content
   'app.html', // interaktive App (kein Migrationskandidat)
+  'about.html', // About/Author-Seite (E-E-A-T, indexierbar; nur aus dem Footer verlinkt)
 ].map((p) => new URL(p, SITE).href);
 
 export default defineConfig({
