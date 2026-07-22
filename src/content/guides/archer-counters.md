@@ -17,10 +17,7 @@ sections:
         reason: "Attack bonus vs. archers + high pierce armor. The textbook Feudal Age response. Cheaper than Archers to produce. Two Skirmishers beat two Archers cleanly in a head-on fight."
       - name: "Mangonel"
         type: hard
-        reason: "Area damage shreds grouped archers. One well-placed Mangonel volley can delete an entire Archer formation. Available in Castle Age — transition target when Archers are massing."
-      - name: "Hussar / Light Cavalry"
-        type: soft
-        reason: "Fast enough to close the gap. Archers deal reduced melee damage, so cavalry wins in direct contact. Works best as a raider forcing archers to reposition rather than a frontal counter."
+        reason: "Focus on a fast Castle Age time and add a Mangonel — its area damage shreds grouped archers, and one well-placed volley can delete an entire Archer formation."
       - name: "Eagle Warrior"
         type: soft
         reason: "Aztec / Maya / Inca unit — fast, pierce-resistant infantry. Catches archers and takes hits better than standard foot soldiers. Good for Meso civs without cavalry."

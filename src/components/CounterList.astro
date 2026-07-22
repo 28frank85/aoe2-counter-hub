@@ -1,4 +1,6 @@
 ---
+import { UNIT_ICON_MAP } from '../data/unitIcons';
+
 export interface Counter {
   name: string;
   /** "hard" oder "soft" — steuert das Badge */
@@ -16,18 +18,53 @@ const LABEL = {
   hard: 'Hard Counter',
   soft: 'Soft Counter',
 } as const;
+
+/** /icons/104_50730.png — nur wenn der Name exakt im Map steht, sonst null (kein Broken-Image). */
+function iconSrc(name: string): string | null {
+  const id = UNIT_ICON_MAP[name];
+  if (id === undefined) return null;
+  return `/icons/${String(id).padStart(3, '0')}_50730.png`;
+}
 ---
 
 <ul class="counter-list">
   {
-    items.map((item) => (
-      <li class="counter-item">
-        <div class="counter-meta">
-          <span class="counter-name">{item.name}</span>
-          <span class={`badge badge-${item.type}`}>{LABEL[item.type]}</span>
-        </div>
-        <span class="counter-reason">{item.reason}</span>
-      </li>
-    ))
+    items.map((item) => {
+      const src = iconSrc(item.name);
+      return (
+        <li class="counter-item">
+          {src && (
+            <img
+              class="counter-icon"
+              src={src}
+              alt={item.name}
+              width="56"
+              height="56"
+              loading="lazy"
+              decoding="async"
+            />
+          )}
+          <div class="counter-meta">
+            <span class="counter-name">{item.name}</span>
+            <span class={`badge badge-${item.type}`}>{LABEL[item.type]}</span>
+          </div>
+          <span class="counter-reason">{item.reason}</span>
+        </li>
+      );
+    })
   }
 </ul>
+
+<style>
+  /* Quadratisches Icon, vertikal an der Zeile zentriert, füllt die Zeilenhöhe optisch. Original-PNG ohne Tönung. */
+  .counter-icon {
+    flex: 0 0 auto;
+    align-self: center;
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+  }
+  @media (max-width: 640px) {
+    .counter-icon { width: 48px; height: 48px; }
+  }
+</style>
