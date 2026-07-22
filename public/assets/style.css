@@ -16,8 +16,8 @@
   --border:    #dfe3ea;
   --border2:   #c8cedb;
 
-  --accent:    #4457d4;
-  --accent-sub:#eaedfb;
+  --accent:    #18181b;
+  --accent-sub:#eef0f4;
 
   --hard:      #d33a3a;
   --hard-bg:   #fdeaea;
@@ -35,7 +35,16 @@
   --radius:    12px;
   --radius-sm: 8px;
 
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Source Sans 3 — lokal eingebettet (offline-fähig, kein externer Font-Request) */
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('fonts/source-sans-3-latin.woff2') format('woff2');
 }
 
 [data-theme="dark"] {
@@ -51,8 +60,8 @@
   --border:    #262f3d;
   --border2:   #364154;
 
-  --accent:    #8b9cff;
-  --accent-sub:#1c2440;
+  --accent:    #e8edf5;
+  --accent-sub:#1c2330;
 
   --hard:      #f2685f;
   --hard-bg:   #3a1c1c;
@@ -77,10 +86,12 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
-  font-size: 16px;
+  font-size: 18px;
   min-height: 100vh;
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 :focus-visible {
@@ -369,6 +380,10 @@ a { color: var(--accent); }
 }
 
 .cta-btn:hover { filter: brightness(1.1); }
+
+/* Monochrome accent: im Dark-Theme ist --accent nahezu weiß → dunkler Text für Kontrast */
+[data-theme="dark"] .cta-btn { color: #0d1117; }
+[data-theme="dark"] .cta-btn:hover { filter: brightness(0.92); }
 
 [data-theme="dark"] .cta-btn { color: #0d1117; }
 

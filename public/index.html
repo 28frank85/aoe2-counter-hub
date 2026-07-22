@@ -54,8 +54,8 @@
       --border:    #dfe3ea;
       --border2:   #c8cedb;
 
-      --accent:    #4457d4;
-      --accent-sub:#eaedfb;
+      --accent:    #18181b;
+      --accent-sub:#eef0f4;
 
       --hard:      #d33a3a;
       --hard-bg:   #fdeaea;
@@ -75,7 +75,16 @@
       --radius:    12px;
       --radius-sm: 8px;
 
-      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      --font: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    /* Source Sans 3 — lokal eingebettet (offline-fähig, kein externer Font-Request) */
+    @font-face {
+      font-family: 'Source Sans 3';
+      font-style: normal;
+      font-weight: 400 800;
+      font-display: swap;
+      src: url('assets/fonts/source-sans-3-latin.woff2') format('woff2');
     }
 
     [data-theme="dark"] {
@@ -91,8 +100,8 @@
       --border:    #262f3d;
       --border2:   #364154;
 
-      --accent:    #8b9cff;
-      --accent-sub:#1c2440;
+      --accent:    #e8edf5;
+      --accent-sub:#1c2330;
 
       --hard:      #f2685f;
       --hard-bg:   #3a1c1c;
@@ -118,28 +127,76 @@
       background: var(--bg);
       color: var(--text);
       font-family: var(--font);
-      font-size: 16px;
-      line-height: 1.5;
+      font-size: 18px;
+      line-height: 1.65;
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
     }
 
     /* ---------- Header ---------- */
     header {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
       max-width: 880px;
       margin: 0 auto;
-      padding: 1.1rem 1rem 0.9rem;
+      padding: 0.85rem 1rem;
     }
 
-    header h1 {
-      font-size: clamp(1.05rem, 3.6vw, 1.4rem);
-      font-weight: 700;
-      letter-spacing: -0.01em;
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      text-decoration: none;
+      color: inherit;
+      min-width: 0;
+      border-radius: var(--radius-sm);
+    }
+
+    .brand-mark {
+      flex: none;
+      width: 52px;
+      height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.15rem;
+      color: var(--bg);
+      background: var(--text);
+      border-radius: 11px;
+      box-shadow: var(--shadow-sm);
+      line-height: 0;
+    }
+
+    .brand-text { display: flex; flex-direction: column; min-width: 0; gap: 1px; }
+
+    .brand-name {
+      font-size: clamp(1.02rem, 3.4vw, 1.32rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
       color: var(--text);
+      text-wrap: balance;
+    }
+
+    .brand-tagline {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text2);
+      line-height: 1.3;
+    }
+
+    @media (max-width: 420px) {
+      .brand-tagline { display: none; }
+      .brand-mark { width: 42px; height: 42px; font-size: 1.45rem; }
     }
 
     .theme-toggle {
@@ -211,9 +268,10 @@
       left: 1rem;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 1.05rem;
+      display: inline-flex;
+      color: var(--text);
       pointer-events: none;
-      opacity: 0.75;
+      opacity: 0.7;
     }
 
     .suggestions {
@@ -573,8 +631,9 @@
     }
 
     .tip .sword {
-      font-size: 2.4rem;
-      display: block;
+      display: flex;
+      justify-content: center;
+      color: var(--text2);
       margin-bottom: 0.8rem;
       opacity: 0.5;
     }
@@ -735,6 +794,7 @@
     [data-theme="dark"] .lang-btn.active { color: #0d1117; }
 
     @media (max-width: 480px) {
+      html, body { font-size: 19px; }
       .lang-btn { padding: 0 0.65rem; font-size: 0.74rem; }
       .theme-toggle { width: 38px; height: 38px; }
       .lang-toggle { height: 38px; }
@@ -744,16 +804,21 @@
 <body>
 
 <header>
-  <div class="header-text">
-    <h1>⚔ AoE2 Counter Hub</h1>
-    <p>Unit Counter Guide for Age of Empires II Definitive Edition</p>
-  </div>
-  <div class="header-controls">
-    <div class="lang-toggle" role="group" aria-label="App language">
-      <button type="button" class="lang-btn" data-lang="en">EN</button>
-      <button type="button" class="lang-btn" data-lang="de">DE</button>
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Age of Empires 2 Unit Counter Hub — Home &amp; Guide">
+      <span class="brand-mark" aria-hidden="true">⚔</span>
+      <span class="brand-text">
+        <h1 class="brand-name">Age of Empires 2 Unit Counter Hub</h1>
+        <span class="brand-tagline">Unit Counter Guide for Age of Empires II: Definitive Edition</span>
+      </span>
+    </a>
+    <div class="header-controls">
+      <div class="lang-toggle" role="group" aria-label="App language">
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="de">DE</button>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme" title="Light / dark theme">🌙</button>
     </div>
-    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme" title="Light / dark theme">🌙</button>
   </div>
 </header>
 
@@ -762,7 +827,7 @@
   <p class="intro-text">Find any AoE2 unit counter in seconds. Search by unit name — English or German — and discover exactly what beats it, with hard counters, soft counters, and bonus damage data.</p>
 
   <div class="search-wrap">
-    <span class="search-icon">🔍</span>
+    <span class="search-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
     <input type="text" id="search" placeholder="Einheit eingeben — DE oder EN (z.B. Ritter, Knight, Bogenschütze…)" autocomplete="off" spellcheck="false">
     <div class="suggestions" id="suggestions"></div>
   </div>
@@ -773,7 +838,7 @@
   </div>
 
   <div class="tip" id="tip">
-    <span class="sword">⚔️</span>
+    <span class="sword" aria-hidden="true"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 17.5 3 6V3h3l11.5 11.5"></path><path d="m13 19 6-6"></path><path d="m16 16 4 4"></path><path d="m19 21 2-2"></path><path d="M9.5 17.5 21 6V3h-3L6.5 14.5"></path><path d="m11 19-6-6"></path><path d="m8 16-4 4"></path><path d="m5 21-2-2"></path></svg></span>
     <span id="tip-text">Type a unit name above to find its counters — English or German supported.</span>
   </div>
 
