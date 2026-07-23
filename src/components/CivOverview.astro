@@ -30,7 +30,7 @@ const pad = (n: number) => String(n).padStart(3, '0');
     <h2>Unique Units</h2>
     <div class="civ-uu-grid">
       {uu.map((u) => (
-        <a class="civ-uu" href="unique-unit-counters.html">
+        <a class="civ-uu" href="/unique-unit-counters.html">
           {u.pic != null && (
             <img src={`/icons/${pad(u.pic)}_50730.png`} alt={u.name} width="56" height="56" loading="lazy" />
           )}

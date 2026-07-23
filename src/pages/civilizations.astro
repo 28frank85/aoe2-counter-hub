@@ -20,7 +20,7 @@ const sorted = [...civs].sort((a, b) => a.name_en.localeCompare(b.name_en));
 
   <nav class="civ-grid" aria-label="Civilizations">
     {sorted.map((c) => (
-      <a class="civ-tile" href={`civs/${c.key.toLowerCase()}.html`}>
+      <a class="civ-tile" href={`/civs/${c.key.toLowerCase()}.html`}>
         <img src={`/icons/civs/${c.emblem}`} alt={`${c.name_en} emblem`} width="56" height="56" loading="lazy" />
         <span>{c.name_en}</span>
       </a>
