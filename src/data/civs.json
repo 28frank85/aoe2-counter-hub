@@ -1,0 +1,3504 @@
+[
+ {
+  "key": "Armenians",
+  "name_en": "Armenians",
+  "name_de": "Armenier",
+  "en": {
+   "playstyle": "Infantry and Naval civilization",
+   "bonuses": [
+    "Mule Carts cost -25%",
+    "Mule Cart technology effects +40%",
+    "Spearman- and Militia-line upgrades (except Man-at-Arms) available one age earlier",
+    "First Fortified Church receives a free Relic",
+    "Galley-line and Dromons fire an additional projectile"
+   ],
+   "uu": [
+    {
+     "name": "Composite Bowman",
+     "type": "Foot Archer), Warrior Priest (Infantry",
+     "pic": 407,
+     "desc": "Armenian unique Foot Archer that ignores armor. Strong vs. Infantry and Cavalry. Weak vs. Archery Units and Siege Weapons."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Cilician Fleet",
+     "desc": "Demolition Ships +20% blast radius; Galley-line and Dromons +1 range",
+     "pic": 33
+    },
+    {
+     "name": "Fereters",
+     "desc": "Infantry (except Spearman-line) +30 HP; Warrior Priests heal +100% faster",
+     "pic": 107
+    }
+   ],
+   "team": "Infantry +2 line of sight"
+  },
+  "de": {
+   "playstyle": "Infanterie- und Marinezivilisation",
+   "bonuses": [
+    "Maultierkarren kosten -25 %",
+    "Maultierkarren-Technologieeffekte steigen um +40 %",
+    "Die erste Wehrkirche erhält eine kostenlose Reliquie",
+    "Normale Kaserneneinheiten (außer Waffenknechte) sind ein Zeitalter früher verfügbar",
+    "Einheiten der Galeerenlinie und Dromone feuern ein zusätzliches Geschoss ab"
+   ],
+   "uu": [
+    {
+     "name": "Kompositbogenschütze",
+     "type": "Bogenschütze), Kriegerpriester (Infanterieeinheit",
+     "pic": 407,
+     "desc": ""
+    }
+   ],
+   "ut": [
+    {
+     "name": "Kilikische Flotte",
+     "desc": "Brander +20 % Explosionsradius; Galeerenlinie und Dromonen +1 Reichweite",
+     "pic": 33
+    },
+    {
+     "name": "Fereter",
+     "desc": "Infanterieeinheit außer Speerkämpferlinie +30 LP, Kriegerpriester +100 % Heilungsgeschwindigkeit",
+     "pic": 107
+    }
+   ],
+   "team": "Infanterieeinheit +2 Sichtweite"
+  },
+  "emblem": "armenians.png"
+ },
+ {
+  "key": "Aztecs",
+  "name_en": "Aztecs",
+  "name_de": "Azteken",
+  "en": {
+   "playstyle": "Infantry and Monk civilization",
+   "bonuses": [
+    "Start with +50 gold",
+    "Villagers carry +3",
+    "Military Units train +15% faster",
+    "Monks gain +5 HP for each researched Monastery technology"
+   ],
+   "uu": [
+    {
+     "name": "Jaguar Warrior",
+     "type": "Infantry",
+     "pic": 110,
+     "desc": "Aztec unique Infantry that gains additional damage when defeating military units. Exceptionally strong vs. Infantry. Weak vs. Cavalry and Archery Units."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Atlatl",
+     "desc": "Skirmishers +1 attack, +1 range",
+     "pic": 33
+    },
+    {
+     "name": "Garland Wars",
+     "desc": "Infantry +4 attack",
+     "pic": 107
+    }
+   ],
+   "team": "Relics generate +33% gold"
+  },
+  "de": {
+   "playstyle": "Infanterie- und Mönch-Zivilisation",
+   "bonuses": [
+    "Start mit + 50 Gold",
+    "Dorfbewohner tragen +3",
+    "Militäreinheiten bilden 15 % schneller aus",
+    "Mönche erhalten +5 LP für jede entwickelte Kloster-Technologie"
+   ],
+   "uu": [
+    {
+     "name": "Jaguarkrieger",
+     "type": "Infanterie",
+     "pic": 110,
+     "desc": "Spezialinfanterie der Azteken, die zusätzlichen Schaden bewirkt, wenn sie Militäreinheiten besiegt. Außergewöhnlich stark gegen Infanterieeinheiten. Schwach gegen Kavallerie und Bogenschützen."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Speerschleuder",
+     "desc": "Plänkler +1 Angriffsstärke, +1 Reichweite",
+     "pic": 33
+    },
+    {
+     "name": "Blumenkriege",
+     "desc": "Infanterie +4 Angriffsstärke",
+     "pic": 107
+    }
+   ],
+   "team": "Reliquien erzeugen +33 % Gold"
+  },
+  "emblem": "aztecs.png"
+ },
+ {
+  "key": "Bengalis",
+  "name_en": "Bengalis",
+  "name_de": "Bengalen",
+  "en": {
+   "playstyle": "Elephant and Naval civilization",
+   "bonuses": [
+    "Town Centers spawn 2 Villagers when the next Age is reached",
+    "Cavalry +2 attack vs. Skirmishers",
+    "Elephant Units receive -25% bonus damage and are more resistant to conversion",
+    "Monks +3 melee/+3 pierce armor",
+    "Ships regenerate 15 HP per minute"
+   ],
+   "uu": [
+    {
+     "name": "Ratha",
+     "type": "Mounted Archer",
+     "pic": 389,
+     "desc": "Bengali unique Mounted Archer that can switch between melee and ranged attacks. Strong vs. Infantry. Weak vs. Skirmishers and Camel Riders."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Paiks",
+     "desc": "Rathas and Elephant Units attack +20% faster",
+     "pic": 33
+    },
+    {
+     "name": "Mahayana",
+     "desc": "Villagers and Monks take -10% population space",
+     "pic": 107
+    }
+   ],
+   "team": "Trade Units generate +10% food in addition to gold"
+  },
+  "de": {
+   "playstyle": "Elefanten- und Seefahrer-Zivilisation",
+   "bonuses": [
+    "Dorfzentren bringen beim Erreichen des nächsten Zeitalters 2 Dorfbewohner hervor",
+    "Die Kavallerie bekommt +2 Angriffsstärke gegen Plänkler",
+    "Elefanteneinheiten erleiden –25 % Bonusschaden und sind widerstandsfähiger gegen Bekehrung",
+    "Mönche erhalten +3 Punkte für Nahkampf/Rüstungsdurchschlag",
+    "Schiffe regenerieren 15 LP pro Minute"
+   ],
+   "uu": [
+    {
+     "name": "Ratha",
+     "type": "berittener Bogenschütze",
+     "pic": 389,
+     "desc": "Bengalischer berittener Spezial-Bogenschütze, der zwischen Nahkampf- und Fernkampfangriffen wechseln kann. Wirksam gegen Infanterieeinheiten. Schwach gegen Plänkler und Kamelreiter."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Paiks",
+     "desc": "Rathas und Elefanteneinheiten greifen um 20 % schneller an",
+     "pic": 33
+    },
+    {
+     "name": "Mahayana",
+     "desc": "Dorfbewohner und Mönche benötigen 10 % weniger Platz für Bevölkerungseinheiten",
+     "pic": 107
+    }
+   ],
+   "team": "Handelseinheiten erzeugen neben Gold auch +10 % Nahrung"
+  },
+  "emblem": "bengalis.png"
+ },
+ {
+  "key": "Berbers",
+  "name_en": "Berbers",
+  "name_de": "Berber",
+  "en": {
+   "playstyle": "Cavalry and Naval civilization",
+   "bonuses": [
+    "Villagers move +5% faster in Dark Age, +10% faster starting in Feudal Age",
+    "Stable Units cost -15/20% in Castle/Imperial Age",
+    "Ships move +10% faster"
+   ],
+   "uu": [
+    {
+     "name": "Camel Archer",
+     "type": "Mounted Archer), Genitour (Mounted Skirmisher",
+     "pic": 191,
+     "desc": "Berber unique Mounted Archer. Exceptionally strong vs. Mounted Archers. Weak vs. Spearman-line, Skirmishers and Camel Riders."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Kasbah",
+     "desc": "Team Castles work +25% faster",
+     "pic": 33
+    },
+    {
+     "name": "Maghrebi Camels",
+     "desc": "Camel Units regenerate 15 HP per minute",
+     "pic": 107
+    }
+   ],
+   "team": "Genitour available at the Archery Range starting in Castle Age"
+  },
+  "de": {
+   "playstyle": "Kavallerie- und Seefahrer-Zivilisation",
+   "bonuses": [
+    "Dorfbewohner bewegen sich in der Dunklen Zeit 5 % schneller, in der Feudalzeit 10 % schneller",
+    "Stalleinheiten kosten 15/20 % weniger in der Burg-/Imperialzeit",
+    "Schiffe bewegen sich 10 % schneller"
+   ],
+   "uu": [
+    {
+     "name": "Kamelbogenschützen",
+     "type": "berittener Bogenschütze), Ginete (berittener Plänkler",
+     "pic": 191,
+     "desc": "Berittene Bogenschützen-Spezialeinheit der Berber. Außergewöhnlich stark gegen Bogenschützen-Einheiten. Schwach gegen Speerkämpfer, Plänkler und Kamelreiter."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Kasbah",
+     "desc": "Team-Burgen arbeiten 25 % schneller",
+     "pic": 33
+    },
+    {
+     "name": "Maghreb-Kamele",
+     "desc": "Kameleinheiten regenerieren 15 LP pro Minute",
+     "pic": 107
+    }
+   ],
+   "team": "Ginete im Schießstand ab der Ritterzeit verfügbar"
+  },
+  "emblem": "berbers.png"
+ },
+ {
+  "key": "Bohemians",
+  "name_en": "Bohemians",
+  "name_de": "Böhmen",
+  "en": {
+   "playstyle": "Gunpowder and Monk civilization",
+   "bonuses": [
+    "Mining Camp technologies free",
+    "Blacksmiths and Universities cost -100 wood",
+    "Spearman-line deals +25% bonus damage",
+    "Fervor and Sanctity affect Villagers",
+    "Chemistry and Hand Cannoneer available in Castle Age"
+   ],
+   "uu": [
+    {
+     "name": "Hussite Wagon",
+     "type": "Siege Gunpowder Unit), Houfnice (Siege Gunpowder Unit",
+     "pic": 370,
+     "desc": ""
+    }
+   ],
+   "ut": [
+    {
+     "name": "Wagenburg Tactics",
+     "desc": "Gunpowder Units move +15% faster",
+     "pic": null
+    },
+    {
+     "name": "Hussite Reforms",
+     "desc": "Monks and Monastery technologies gold cost is replaced by food cost",
+     "pic": 107
+    }
+   ],
+   "team": "Markets work +80% faster"
+  },
+  "de": {
+   "playstyle": "Schießpulver- und Mönch-Zivilisation",
+   "bonuses": [
+    "Bergarbeiterlager-Technologien gratis",
+    "Schmieden und Universitäten kosten -100 Holz",
+    "Speerkämpfer verursachen +25 % Bonusschaden",
+    "Eifer und Heiligkeit beeinflussen Dorfbewohner",
+    "Chemie und Handkanonier verfügbar in der Ritterzeit"
+   ],
+   "uu": [
+    {
+     "name": "Hussitenwagen",
+     "type": "Belagerungs-Schießpulvereinheit), Haufnitze (Belagerungs-Schießpulvereinheit",
+     "pic": 370,
+     "desc": "Spezial-Belagerungseinheit der Böhmen. Einheiten hinter dem Wagen erleiden -50 % Schaden durch Geschosse. Wirksam gegen Fernkampfsoldaten. Schwach gegen Mangonel-Linien."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Wagenburg-Taktik",
+     "desc": "Schießpulvereinheiten bewegen sich +15 % schneller",
+     "pic": null
+    },
+    {
+     "name": "Hussitenreformen",
+     "desc": "Mönche und Kloster-Technologien kosten Nahrung statt Gold",
+     "pic": 107
+    }
+   ],
+   "team": "Märkte arbeiten +80 % schneller"
+  },
+  "emblem": "bohemians.png"
+ },
+ {
+  "key": "Britons",
+  "name_en": "Britons",
+  "name_de": "Briten",
+  "en": {
+   "playstyle": "Foot Archer civilization",
+   "bonuses": [
+    "Shepherds work +25% faster",
+    "Town Centers cost -50% wood starting in Castle Age",
+    "Foot Archers +1/+2 range in Castle/Imperial Age"
+   ],
+   "uu": [
+    {
+     "name": "Longbowman",
+     "type": "Foot Archer",
+     "pic": 41,
+     "desc": "British unique Foot Archer with exceptional range. Strong vs. Infantry. Weak vs. Cavalry and Skirmishers."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Yeomen",
+     "desc": "Foot Archers and Skirmisher-line +1 range; Watch Tower-line +2 attack",
+     "pic": 33
+    },
+    {
+     "name": "Warwolf",
+     "desc": "Trebuchets deal blast damage and are more accurate",
+     "pic": 107
+    }
+   ],
+   "team": "Archery Ranges work +10% faster"
+  },
+  "de": {
+   "playstyle": "Zivilisation mit einfachen Bogenschützen",
+   "bonuses": [
+    "Schäfer arbeiten um 25 % schneller",
+    "Dorfzentren kosten ab der Ritterzeit 50 % Holz weniger",
+    "+1/+2 Reichweite in der Ritter-/Imperialzeit für einfache Bogenschützen"
+   ],
+   "uu": [
+    {
+     "name": "Langbogenschütze",
+     "type": "einfacher Bogenschütze",
+     "pic": 41,
+     "desc": "Einfacher Spezial-Bogenschütze der Briten mit außergewöhnlicher Reichweite. Wirksam gegen Infanterieeinheiten. Schwach gegen Kavallerie und Plänkler."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Freisassen",
+     "desc": "+1 Angriffsstärke für einfache Bogenschützen und Plänkler; +2 Angriffsstärke für Turm",
+     "pic": 33
+    },
+    {
+     "name": "Warwulf",
+     "desc": "Triboke verursachen Sprengschaden und sind treffsicherer",
+     "pic": 107
+    }
+   ],
+   "team": "Schießstände arbeiten um 10 % schneller"
+  },
+  "emblem": "britons.png"
+ },
+ {
+  "key": "Bulgarians",
+  "name_en": "Bulgarians",
+  "name_de": "Bulgaren",
+  "en": {
+   "playstyle": "Infantry and Cavalry civilization",
+   "bonuses": [
+    "Militia-line upgrades free",
+    "Blacksmith and Siege Workshop technologies cost -50% food",
+    "Town Centers cost -50% stone",
+    "Can build Krepost in Castle Age"
+   ],
+   "uu": [
+    {
+     "name": "Konnik",
+     "type": "Cavalry",
+     "pic": 249,
+     "desc": "Bulgarian unique Heavy Cavalry that fights on as Infantry when felled. Strong vs. Infantry and Cavalry. Weak vs. Spearman-line and Monks."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Stirrups",
+     "desc": "Cavalry attacks +33% faster",
+     "pic": 33
+    },
+    {
+     "name": "Bagains",
+     "desc": "Militia-line +5 melee armor",
+     "pic": 107
+    }
+   ],
+   "team": "Blacksmiths work +80% faster"
+  },
+  "de": {
+   "playstyle": "Infanterie- und Kavallerievolk",
+   "bonuses": [
+    "Weiterentwicklungen für Milizsoldatenzweig gratis",
+    "Schmiede- und Belagerungswerkstattentechnologien kosten -50 % Nahrung",
+    "Dorfzentren kosten -50 % Steine",
+    "Kann Kreposte in Ritterzeit bauen"
+   ],
+   "uu": [
+    {
+     "name": "Konnik",
+     "type": "Kavallerie",
+     "pic": 249,
+     "desc": "Schwere Spezial-Kavallerie der Bulgaren, die als Infanterieeinheit weiterkämpft, wenn sie fällt. Wirksam gegen Infanterieeinheiten und Kavallerie. Schwach gegen Speerkämpfer-Linien und Mönche."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Steigbügel",
+     "desc": "+33 % Angriffsgeschwindigkeit für Kavallerie",
+     "pic": 33
+    },
+    {
+     "name": "Bagaine",
+     "desc": "Milizsoldatenzweig +5 Nahkampfrüstung",
+     "pic": 107
+    }
+   ],
+   "team": "Schmieden arbeiten 80 % schneller"
+  },
+  "emblem": "bulgarians.png"
+ },
+ {
+  "key": "Burgundians",
+  "name_en": "Burgundians",
+  "name_de": "Burgunder",
+  "en": {
+   "playstyle": "Cavalry civilization",
+   "bonuses": [
+    "Economic upgrades available one age earlier and cost -40% food",
+    "Stable technologies cost -50%",
+    "Cavalier upgrade available in Castle Age",
+    "Gunpowder Units +25% attack"
+   ],
+   "uu": [
+    {
+     "name": "Coustillier",
+     "type": "Cavalry), Flemish Militia (Infantry",
+     "pic": 355,
+     "desc": "Burgundian unique Heavy Cavalry with a powerful charged attack. Strong vs. Infantry and Archery Units. Weak vs. Camel Riders and Monks."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Burgundian Vineyards",
+     "desc": "Farmers slowly generate gold in addition to food",
+     "pic": 33
+    },
+    {
+     "name": "Flemish Revolution",
+     "desc": "All existing Villagers are transformed to Flemish Militia",
+     "pic": 107
+    }
+   ],
+   "team": "Relics generate food in addition to gold"
+  },
+  "de": {
+   "playstyle": "Zivilisation mit Kavallerie",
+   "bonuses": [
+    "Wirtschaftsentwicklungen kosten 40 % weniger Nahrung und sind ein Zeitalter früher verfügbar",
+    "Stalltechnologien kosten 50 % weniger",
+    "Kavalier-Weiterentwicklung in der Ritterzeit verfügbar",
+    "+25 % Angriffsstärke für Schießpulvereinheiten"
+   ],
+   "uu": [
+    {
+     "name": "Coustillier",
+     "type": "Kavallerie), flämischer Milizsoldat (Infanterie",
+     "pic": 355,
+     "desc": ""
+    }
+   ],
+   "ut": [
+    {
+     "name": "Burgundische Weinberge",
+     "desc": "Bauern erzeugen neben Nahrung auch Gold",
+     "pic": 33
+    },
+    {
+     "name": "Flämische Revolution",
+     "desc": "entwickelt alle Dorfbewohner zu flämischen Milizsoldaten weiter",
+     "pic": 107
+    }
+   ],
+   "team": "Reliquien erzeugen neben dem Gold auch Nahrung"
+  },
+  "emblem": "burgundians.png"
+ },
+ {
+  "key": "Burmese",
+  "name_en": "Burmese",
+  "name_de": "Birmanen",
+  "en": {
+   "playstyle": "Infantry and Cavalry civilization",
+   "bonuses": [
+    "Lumber Camp technologies free",
+    "Infantry +1/+2/+3 attack in Feudal/Castle/Imperial Age",
+    "Battle Elephants +1 melee/+1 pierce armor",
+    "Monastery technologies cost -50%"
+   ],
+   "uu": [
+    {
+     "name": "Arambai",
+     "type": "Ranged Mounted Unit",
+     "pic": 230,
+     "desc": "Burmese unique ranged Mounted Unit with a powerful but inaccurate attack. Strong vs. units at medium and close range. Weak vs. Archery Units and Siege Weapons."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Manipur Cavalry",
+     "desc": "Cavalry +4 attack vs. Ranged Soldiers",
+     "pic": 33
+    },
+    {
+     "name": "Howdah",
+     "desc": "Battle Elephants +1 melee/+1 pierce armor",
+     "pic": 107
+    }
+   ],
+   "team": "Relics visible on the map at the start of the game"
+  },
+  "de": {
+   "playstyle": "Infanterie- und Kavallerievolk",
+   "bonuses": [
+    "Technologien im Holzfällerlager gratis",
+    "Infanterie +1/+2/+3 Angriffsstärke in Feudal-/Ritter-/Imperialzeit",
+    "Elefantenreiter +1 Nahkampf /+1 Rüstung durchschlagen",
+    "Klostertechnologien 50 % günstiger"
+   ],
+   "uu": [
+    {
+     "name": "Arambai",
+     "type": "berittene Fernkampfeinheit",
+     "pic": 230,
+     "desc": "Berittene Spezial-Fernkampfeinheit der Birmanen mit starkem, aber unpräzisem Pfeilangriff. Wirksam gegen Einheiten in mittlerer und großer Reichweite. Schwach gegen Bogenschützen und Belagerungseinheiten."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Manipur-Kavallerie",
+     "desc": "Kavallerie +4 Angriffsstärke gg. Fernkampfsoldat",
+     "pic": 33
+    },
+    {
+     "name": "Howdah",
+     "desc": "Elefantenreiter +1 Nahkampf/+1 Rüstung durchschlagen",
+     "pic": 107
+    }
+   ],
+   "team": "Reliquien zu Spielbeginn auf der Karte sichtbar"
+  },
+  "emblem": "burmese.png"
+ },
+ {
+  "key": "Byzantines",
+  "name_en": "Byzantines",
+  "name_de": "Byzantiner",
+  "en": {
+   "playstyle": "Defensive civilization",
+   "bonuses": [
+    "Buildings +10/20/30/40% HP in Dark/Feudal/Castle/Imperial Age",
+    "Camel Riders, Skirmishers and Spearman-line cost -25%",
+    "Town Watch, Town Patrol free",
+    "Advancing to Imperial Age costs -33%",
+    "Fire Ships and Dromons attack +25% faster"
+   ],
+   "uu": [
+    {
+     "name": "Cataphract",
+     "type": "Cavalry",
+     "pic": 35,
+     "desc": "Byzantine unique Heavy Cavalry. Exceptionally strong vs. Infantry. Weak vs. Archery Units."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Greek Fire",
+     "desc": "Fire Ships +1 range; Dromons and Bombard Towers increased blast radius",
+     "pic": 33
+    },
+    {
+     "name": "Logistica",
+     "desc": "Cataphracts deal trample damage, +6 attack vs. Infantry",
+     "pic": 107
+    }
+   ],
+   "team": "Monks heal +100% faster"
+  },
+  "de": {
+   "playstyle": "Defensive Zivilisation",
+   "bonuses": [
+    "+10/20/30/40 % LP für Gebäude in der Dunklen/Feudal-/Ritter-/Imperialzeit",
+    "Kamelreiter, Plänkler und Speerkämpfer kosten -25 %",
+    "Stadtwache und Nachtwache gratis",
+    "Voranschreiten zur Imperialzeit kostet -33 %",
+    "Feuerschiffe und Dromonen greifen um 25 % schneller an"
+   ],
+   "uu": [
+    {
+     "name": "Gepanzerte Reiter",
+     "type": "Kavallerie",
+     "pic": 35,
+     "desc": ""
+    }
+   ],
+   "ut": [
+    {
+     "name": "Griechisches Feuer",
+     "desc": "+1 Reichweite für Feuerschiffe; Sprengradius von Dromone und Kanonenturm erhöht",
+     "pic": 33
+    },
+    {
+     "name": "Logistik",
+     "desc": "+6 Angriffsstärke für gepanzerten Reiter, dazu Schaden durch Zertrampeln",
+     "pic": 107
+    }
+   ],
+   "team": "Mönche heilen um 100 % schneller"
+  },
+  "emblem": "byzantines.png"
+ },
+ {
+  "key": "Celts",
+  "name_en": "Celts",
+  "name_de": "Kelten",
+  "en": {
+   "playstyle": "Infantry and Siege civilization",
+   "bonuses": [
+    "Lumberjacks work +15% faster",
+    "Livestock animals within Celt unit line of sight cannot be stolen",
+    "Infantry moves +5/10/15/20% faster in Dark/Feudal/Castle/Imperial Age",
+    "Siege Weapons attack +25% faster"
+   ],
+   "uu": [
+    {
+     "name": "Woad Raider",
+     "type": "Infantry",
+     "pic": 47,
+     "desc": "Celtic unique Infantry with fast movement speed. Strong vs. Infantry and Siege Weapons. Weak vs. Archery Units and Cavalry."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Stronghold",
+     "desc": "Castles and Watch Tower-line attack +33% faster; Castles heal allied Infantry in a 7 tile radius",
+     "pic": 33
+    },
+    {
+     "name": "Furor Celtica",
+     "desc": "Siege Weapons +40% HP",
+     "pic": 107
+    }
+   ],
+   "team": "Siege Workshops work +20% faster"
+  },
+  "de": {
+   "playstyle": "Zivilisation mit Infanterie- und Belagerungseinheiten",
+   "bonuses": [
+    "Holzfäller arbeiten um +15 % schneller",
+    "Nutztiere in der Sichtweite keltischer Einheiten können nicht gestohlen werden",
+    "Infanterie bewegt sich um +5/10/15/20 % schneller in der Dunklen/Feudal-/Ritter-/Imperialzeit",
+    "+25 % schnellere Angriffe mit Belagerungswaffen"
+   ],
+   "uu": [
+    {
+     "name": "Freischärler",
+     "type": "Infanterie",
+     "pic": 47,
+     "desc": "Infanterieeinheit der Kelten mit hoher Bewegungsgeschwindigkeit. Wirksam gegen Infanterieeinheiten und Belagerungswaffen. Schwach gegen Bogenschützen-Einheiten und Kavallerie."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Festung",
+     "desc": "Burgen- und Turmangriffe laufen um 33 % schneller ab, Burgen heilen verbündete Infanterie in einem Radius von 7 Feldern",
+     "pic": 33
+    },
+    {
+     "name": "Keltischer Zorn",
+     "desc": "+40 % LP für Belagerungswaffen",
+     "pic": 107
+    }
+   ],
+   "team": "Belagerungswerkstätten arbeiten um 20 % schneller"
+  },
+  "emblem": "celts.png"
+ },
+ {
+  "key": "Chinese",
+  "name_en": "Chinese",
+  "name_de": "Chinesen",
+  "en": {
+   "playstyle": "Archer and Gunpowder civilization",
+   "bonuses": [
+    "Start with +3 Villagers, but -50 wood and -200 food",
+    "Technologies cost -5/10/15% in Feudal/Castle/Imperial Age",
+    "Town Centers +7 line of sight and provide +15 population space",
+    "Fire Lancers and Fire Ships move +5/10% faster in Castle/Imperial Age"
+   ],
+   "uu": [
+    {
+     "name": "Chu Ko Nu",
+     "type": "Foot Archer), Dragon Ship (Warship",
+     "pic": 36,
+     "desc": "Chinese unique Foot Archer with rapid-fire attack. Strong vs. Infantry. Weak vs. Archery Units and Siege Weapons."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Great Wall",
+     "desc": "Walls, Watch Tower-line and Bombard Towers +30% HP",
+     "pic": 33
+    },
+    {
+     "name": "Rocketry",
+     "desc": "Scorpions, Rocket Carts and Lou Chuans +25% attack; Lou Chuans fire rockets",
+     "pic": 107
+    }
+   ],
+   "team": "Farms +10% food"
+  },
+  "de": {
+   "playstyle": "Zivilisation mit Bogenschützen und Schießpulver",
+   "bonuses": [
+    "Sie starten mit +3 Dorfbewohnern, aber –50 Holz und –200 Nahrung",
+    "Technologien kosten in der Feudal-/Ritter-/Imperialzeit 5/10/15 % weniger",
+    "+7 Punkte Sichtweite für Dorfzentren, dazu +15 Punkte Platz für Bevölkerungseinheiten",
+    "Feuer-Lanzenreiter und Feuerschiffe bewegen sich im Ritter/Imperialzeitalter um 5/10 % schneller"
+   ],
+   "uu": [
+    {
+     "name": "Chu Ko Nu",
+     "type": "unberittener Bogenschütze), Drachenboot (Kriegsschiff",
+     "pic": 36,
+     "desc": "Spezialeinheit der Chinesen. Unberittener Bogenschütze mit hoher Feuerrate. Wirksam gegen Infanterieeinheiten. Schwach gegen Bogenschützen und Belagerungswaffen."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Große Mauer",
+     "desc": "+30 % LP für Mauern, Türme und Kanonentürme",
+     "pic": 33
+    },
+    {
+     "name": "Raketen",
+     "desc": "+25 % Angriffsstärke für Skorpione, Raketenkarren und Lou Chuans; Lou Chuans feuern Raketen ab",
+     "pic": 107
+    }
+   ],
+   "team": "Felder werfen +10 % Nahrung ab"
+  },
+  "emblem": "chinese.png"
+ },
+ {
+  "key": "Cumans",
+  "name_en": "Cumans",
+  "name_de": "Kumanen",
+  "en": {
+   "playstyle": "Cavalry civilization",
+   "bonuses": [
+    "One additional Town Center can be built in Feudal Age",
+    "Mounted Units move +5/10/15% faster in Feudal/Castle/Imperial Age",
+    "Archery Ranges and Stables cost -75 wood",
+    "Siege Workshop and Battering Ram available in Feudal Age; Capped Ram available in Castle Age"
+   ],
+   "uu": [
+    {
+     "name": "Kipchak",
+     "type": "Mounted Archer",
+     "pic": 252,
+     "desc": "Cuman unique Mounted Archer that fires multiple arrows. Strong vs. Infantry and Siege Weapons. Weak vs. Foot Archers."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Steppe Husbandry",
+     "desc": "Scout Cavalry-line, Steppe Lancers and Cavalry Archers train +100% faster",
+     "pic": 33
+    },
+    {
+     "name": "Cuman Mercenaries",
+     "desc": "All team members can train 5 free Elite Kipchaks per Castle",
+     "pic": 107
+    }
+   ],
+   "team": "Palisade Walls +33% HP"
+  },
+  "de": {
+   "playstyle": "Berittenes Volk",
+   "bonuses": [
+    "Möglichkeit zum Bau eines zusätzlichen Dorfzentrums in der Feudalzeit",
+    "Berittene Einheiten bewegen sich in der Feudal-/Ritter-/Imperialzeit um +5/10/15 % schneller",
+    "Schießstände und Ställe kosten -75 Holz",
+    "Belagerungswerkstatt und Rammbock in der Feudalzeit verfügbar; Sturmbock in der Ritterzeit verfügbar"
+   ],
+   "uu": [
+    {
+     "name": "Kiptschak",
+     "type": "berittener Bogenschütze",
+     "pic": 252,
+     "desc": "Einzigartiger berittener Bogenschütze der Kumanen, der mehrere Pfeile abfeuert. Stark gegen Infanterie und Belagerungswaffen. Schwach gegen Bogenschützen zu Fuß."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Steppentierhaltung",
+     "desc": "Berittener-Späher-Linie, Steppenlanzenreiter, berittene Bogenschützen werden um +100 % schneller ausgebildet",
+     "pic": 33
+    },
+    {
+     "name": "Kumanische Söldner",
+     "desc": "alle Teammitglieder können 5 kostenlose Elite-Kiptschaks pro Burg ausbilden",
+     "pic": 107
+    }
+   ],
+   "team": "Palisadenwälle +33 % LP"
+  },
+  "emblem": "cumans.png"
+ },
+ {
+  "key": "Dravidians",
+  "name_en": "Dravidians",
+  "name_de": "Draviden",
+  "en": {
+   "playstyle": "Infantry and Naval civilization",
+   "bonuses": [
+    "Fishermen and Fishing Ships carry +15",
+    "Receive +200 wood when advancing to the next Age",
+    "Skirmishers and Elephant Archers attack +25% faster",
+    "Barracks technologies cost -50%",
+    "Siege Weapons cost -33% wood"
+   ],
+   "uu": [
+    {
+     "name": "Urumi Swordsman",
+     "type": "Infantry), Thirisadai (Warship",
+     "pic": 386,
+     "desc": "Dravidian unique Infantry with a charged blast attack. Strong vs. buildings and units at close range. Weak vs. Ranged Soldiers at long range."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Medical Corps",
+     "desc": "Elephant Units regenerate 30 HP per minute",
+     "pic": 33
+    },
+    {
+     "name": "Wootz Steel",
+     "desc": "Infantry and Cavalry attacks ignore armor",
+     "pic": 107
+    }
+   ],
+   "team": "Docks provide +5 population space"
+  },
+  "de": {
+   "playstyle": "Infanterie- und Seefahrer-Zivilisation",
+   "bonuses": [
+    "Fischer und Fischkutter tragen +15",
+    "Erhalten Sie +200 Holz beim Voranschreiten zum nächsten Zeitalter",
+    "Plänkler und Elefantenbogenschützen greifen +25 % schneller an",
+    "Kasernen-Technologien kosten -50 % weniger",
+    "Belagerungswaffen kosten -33 % weniger Holz"
+   ],
+   "uu": [
+    {
+     "name": "Urumi-Schwertkämpfer",
+     "type": "Infanterie), Thirisadai (Kriegsschiff",
+     "pic": 386,
+     "desc": "Dravidische Spezial-Infanerieeinheit mit einem aufgeladenen Explosionsangriff. Wirksam gegen Gebäude und Einheiten im Nahbereich. Schwach gegen Fernkämpfer bei großer Reichweite."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Medizintruppen",
+     "desc": "Elefanteneinheiten stellen pro Minute 30 LP wieder her",
+     "pic": 33
+    },
+    {
+     "name": "Wootz-Stahl",
+     "desc": "Infanterie- und Kavallerieangriffe ignorieren Rüstung",
+     "pic": 107
+    }
+   ],
+   "team": "Häfen liefern +5 Platz für Bevölkerung"
+  },
+  "emblem": "dravidians.png"
+ },
+ {
+  "key": "Ethiopians",
+  "name_en": "Ethiopians",
+  "name_de": "Äthiopier",
+  "en": {
+   "playstyle": "Archer civilization",
+   "bonuses": [
+    "Receive +100 gold and +100 food when advancing to the next Age",
+    "Foot Archers attack +18% faster",
+    "Pikeman upgrade free"
+   ],
+   "uu": [
+    {
+     "name": "Shotel Warrior",
+     "type": "Infantry",
+     "pic": 195,
+     "desc": "Ethiopian unique Infantry with high attack and fast training speed. Fast-moving. Strong vs. Infantry. Weak vs. Archery Units."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Royal Heirs",
+     "desc": "Shotel Warriors and Camel Riders receive -3 damage from Mounted Units",
+     "pic": 33
+    },
+    {
+     "name": "Torsion Engines",
+     "desc": "Siege Workshop Units' blast radius increased",
+     "pic": 107
+    }
+   ],
+   "team": "Outposts +3 line of sight and cost no stone"
+  },
+  "de": {
+   "playstyle": "Bogenschützen-Zivilisation",
+   "bonuses": [
+    "+100 Gold, +100 Nahrung bei Voranschreiten ins nächste Zeitalter",
+    "Einfache Bogenschützen greifen 18 % schneller an",
+    "Pikenier-Entwicklung gratis"
+   ],
+   "uu": [
+    {
+     "name": "Shotelkrieger",
+     "type": "Infanterie",
+     "pic": 195,
+     "desc": "Infanterie-Spezialeinheit der Äthiopier mit hoher Angriffsstärke, die schnell erschaffen wird. Schnell. Wirksam gegen Infanterieeinheiten. Schwach gegen Bogenschützen."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Königliche Erben",
+     "desc": "Shotelkrieger und Kamelreiter erleiden -3 Schaden von berittenen Einheiten",
+     "pic": 33
+    },
+    {
+     "name": "Torsionsgeschütze",
+     "desc": "erhöht Explosionsradius von Belagerungseinheiten",
+     "pic": 107
+    }
+   ],
+   "team": "Außenposten +3 Sichtweite und ohne Kosten für Stein"
+  },
+  "emblem": "ethiopians.png"
+ },
+ {
+  "key": "Franks",
+  "name_en": "Franks",
+  "name_de": "Franken",
+  "en": {
+   "playstyle": "Cavalry civilization",
+   "bonuses": [
+    "Foragers work +15% faster",
+    "Mill technologies free",
+    "Mounted Units +20% HP starting in Feudal Age",
+    "Castles cost -15/25% in Castle/Imperial Age"
+   ],
+   "uu": [
+    {
+     "name": "Throwing Axeman",
+     "type": "Infantry",
+     "pic": 46,
+     "desc": "Frankish unique Infantry with ranged melee attack. Strong vs. Infantry. Weak vs. Archery Units and Siege Weapons."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Bearded Axe",
+     "desc": "Throwing Axemen +2 range",
+     "pic": 33
+    },
+    {
+     "name": "Chivalry",
+     "desc": "Stables work +40% faster",
+     "pic": 107
+    }
+   ],
+   "team": "Knight-line +2 line of sight"
+  },
+  "de": {
+   "playstyle": "Berittene Zivilisation",
+   "bonuses": [
+    "Sammler arbeiten um +15 % schneller",
+    "Mühlentechnologien gratis",
+    "Berittene Einheiten erhalten in der Feudalzeit +20 % LP",
+    "Burgen kosten in der Ritter-/Imperialzeit 15/25 % weniger"
+   ],
+   "uu": [
+    {
+     "name": "Axtwerfer",
+     "type": "Infanterieeinheit",
+     "pic": 46,
+     "desc": "Spezial-Infanterieeinheit der Franken mit Nahkampfangriff mit Reichweite. Wirksam gegen Infanterieeinheiten. Schwach gegen Bogenschützen-Einheiten und Belagerungswaffen."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Bartaxt",
+     "desc": "+2 Reichweite für Axtwerfer",
+     "pic": 33
+    },
+    {
+     "name": "Rittertum",
+     "desc": "Ställe arbeiten um 40 % schneller",
+     "pic": 107
+    }
+   ],
+   "team": "Ritter haben +2 Punkte an Sichtweite"
+  },
+  "emblem": "franks.png"
+ },
+ {
+  "key": "Georgians",
+  "name_en": "Georgians",
+  "name_de": "Georgier",
+  "en": {
+   "playstyle": "Defensive and Cavalry civilization",
+   "bonuses": [
+    "Start with a Mule Cart",
+    "Units and buildings receive -15% damage when located on higher elevation",
+    "Mounted Units regenerate 2/8/14 HP per minute in Feudal/Castle/Imperial Age",
+    "Fortified Churches provide Villagers in a 9 tiles radius with +10% work rate"
+   ],
+   "uu": [
+    {
+     "name": "Monaspa",
+     "type": "Cavalry",
+     "pic": 408,
+     "desc": "Georgian unique Heavy Cavalry that becomes stronger when other Monaspas or Knight-line units are nearby. Strong vs. Infantry and Cavalry. Weak vs. Spearman-line and Monks."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Svan Towers",
+     "desc": "Fortifications +2 attack; Watch Tower-line deals pass through damage",
+     "pic": 33
+    },
+    {
+     "name": "Aznauri Cavalry",
+     "desc": "Mounted Units take -20% population space",
+     "pic": 107
+    }
+   ],
+   "team": "Building repairs cost -25%"
+  },
+  "de": {
+   "playstyle": "Defensive Zivilisation mit Kavallerie",
+   "bonuses": [
+    "Maultierkarren beim Start",
+    "Einheiten und Gebäude erleiden -15 % Schaden, wenn sie sich an einem erhöhten Punkt befinden.",
+    "Berittene Einheiten regenerieren in der Feudal-/Ritter-/Imperialzeit 2/8/14 LP pro Minute.",
+    "Befestigte Kirchen verleihen Dorfbewohnern in einem Radius von 9 Feldern +10 % Arbeitsrate."
+   ],
+   "uu": [
+    {
+     "name": "Monaspa",
+     "type": "Kavallerie",
+     "pic": 408,
+     "desc": "Kavallerie-Spezialeinheit der Georgier, die stärker wird, wenn andere Monaspas oder Einheiten der Ritter-Reihe in der Nähe sind. Wirksam gegen Infanterie. Schwach gegen Pikeniere und Kamelreiter."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Swanetische Türme",
+     "desc": "+2 Angriffsstärke für Befestigungen, Turm verursacht Durchschlagsschaden",
+     "pic": 33
+    },
+    {
+     "name": "Aznauri-Kavallerie",
+     "desc": "Berittene Einheiten benötigen -20 % Platz in der Bevölkerung.",
+     "pic": 107
+    }
+   ],
+   "team": "Reparatur von Gebäuden kostet -25 %."
+  },
+  "emblem": "georgians.png"
+ },
+ {
+  "key": "Goths",
+  "name_en": "Goths",
+  "name_de": "Goten",
+  "en": {
+   "playstyle": "Infantry civilization",
+   "bonuses": [
+    "Loom is researched instantly",
+    "Hunters carry +15; hunted animals last +20% longer",
+    "Infantry costs -15/20/25/30% in Dark/Feudal/Castle/Imperial Age",
+    "Infantry +1/+2/+3 attack vs. buildings in Feudal/Castle/Imperial Age",
+    "+10 population space in Imperial Age"
+   ],
+   "uu": [
+    {
+     "name": "Huskarl",
+     "type": "Infantry",
+     "pic": 50,
+     "desc": "Gothic unique Infantry with exceptional pierce armor. Strong vs. Ranged Soldiers and buildings. Weak vs. Cavalry and Militia-line."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Anarchy",
+     "desc": "Huskarls can be trained at Barracks",
+     "pic": 33
+    },
+    {
+     "name": "Perfusion",
+     "desc": "Barracks work +100% faster",
+     "pic": 107
+    }
+   ],
+   "team": "Barracks work +20% faster"
+  },
+  "de": {
+   "playstyle": "Zivilisation mit Infanterie",
+   "bonuses": [
+    "Möglichkeit zur sofortigen Entwicklung des Webstuhls",
+    "Tragfähigkeit von +15 für Jäger, erlegte Tiere um 20 % ergiebiger",
+    "Infanterieeinheiten kosten 15/20/25/30 % weniger in der Dunklen/Feudal-/Ritter-/Imperialzeit",
+    "+1/+2/+3 Angriffsstärke von Infanterieeinheiten beim Kampf gegen Gebäude in der Feudal-/Ritter-/Imperialzeit",
+    "+10 Platz in der Bevölkerung in der Imperialzeit"
+   ],
+   "uu": [
+    {
+     "name": "Huskarl",
+     "type": "Infanterie",
+     "pic": 50,
+     "desc": "Einzigartige Infanterieeinheit der Goten mit herausragendem Rüstungsdurchschlag. Wirksam gegen Fernkämpfer und Gebäude. Schwach gegen Kavallerie und Milizsoldatenlinien."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Anarchie",
+     "desc": "Huskarls können in Kasernen ausgebildet werden",
+     "pic": 33
+    },
+    {
+     "name": "Mobilität",
+     "desc": "Kasernen arbeiten um 100 % schneller",
+     "pic": 107
+    }
+   ],
+   "team": "Kasernen arbeiten um +20 % schneller"
+  },
+  "emblem": "goths.png"
+ },
+ {
+  "key": "Gurjaras",
+  "name_en": "Gurjaras",
+  "name_de": "Gurjara",
+  "en": {
+   "playstyle": "Cavalry and Camel civilization",
+   "bonuses": [
+    "Start with 2 Forage Bushes",
+    "Can garrison livestock in Mills to passively produce food",
+    "Mounted Units deal +20/30/40% bonus damage in Feudal/Castle/Imperial Age",
+    "Docks +5 garrison capacity"
+   ],
+   "uu": [
+    {
+     "name": "Chakram Thrower",
+     "type": "Infantry), Shrivamsha Rider (Cavalry), Camel Scout (Cavalry",
+     "pic": 390,
+     "desc": "Gurjara unique Infantry with ranged melee attack that deals pass through damage. Strong vs. Infantry and large groups of units. Weak vs. Cavalry and Siege Weapons."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Kshatriyas",
+     "desc": "Military Units cost -25% food",
+     "pic": 33
+    },
+    {
+     "name": "Frontier Guards",
+     "desc": "Camel Riders and Elephant Archers +4 melee armor",
+     "pic": 107
+    }
+   ],
+   "team": "Camel and Elephant Units train +25% faster"
+  },
+  "de": {
+   "playstyle": "Berittenes Volk mit Kamelen",
+   "bonuses": [
+    "Beginnt mit 2 Beerensträuchern",
+    "Kann Vieh in Mühlen einquartieren, um passiv Nahrung zu produzieren",
+    "Berittene Einheiten verursachen +20/30/40 % Bonusschaden in der Feudal-/Ritter-/Imperialzeit",
+    "Häfen haben +5 Quartierkapazität"
+   ],
+   "uu": [
+    {
+     "name": "Chakramwerfer",
+     "type": "Infanterieeinheit), Shrivamsha-Reiter (Kavallerie), Kamelspäher (Kavallerie",
+     "pic": 390,
+     "desc": "Spezial-Infanterieeinheit der Gurjara mit durchdringendem Fernangriff, der Nahkampfschaden verursacht. Wirksam gegen Infanterieeinheiten und große Einheitengruppen. Schwach gegen Kavallerie und Belagerungswaffen."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Kshatriyas",
+     "desc": "Militäreinheiten kosten -25 % Nahrung",
+     "pic": 33
+    },
+    {
+     "name": "Grenzwachen",
+     "desc": "Kamelreiter und Elefantenbogenschützen +4 Nahkampfrüstung",
+     "pic": 107
+    }
+   ],
+   "team": "Kamel- und Elefanteneinheiten werden +25 % schneller ausgebildet"
+  },
+  "emblem": "gurjaras.png"
+ },
+ {
+  "key": "Hindustanis",
+  "name_en": "Hindustanis",
+  "name_de": "Hindustani",
+  "en": {
+   "playstyle": "Camel and Gunpowder civilization",
+   "bonuses": [
+    "Villagers cost -8/13/18/23% in Dark/Feudal/Castle/Imperial Age",
+    "Camel Riders attack +20% faster",
+    "Gunpowder Units +1 melee/+1 pierce armor",
+    "Can build Caravanserai in Imperial Age"
+   ],
+   "uu": [
+    {
+     "name": "Ghulam",
+     "type": "Infantry), Imperial Camel Rider (Cavalry",
+     "pic": 385,
+     "desc": "Hindustani unique Infantry that thrusts its spear through multiple targets. Exceptionally strong vs. Archery Units and Spearman-line. Weak vs. Cavalry."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Grand Trunk Road",
+     "desc": "All gold income +10% faster; Market trading fee reduced to 10%",
+     "pic": 33
+    },
+    {
+     "name": "Shatagni",
+     "desc": "Hand Cannoneers +2 range",
+     "pic": 107
+    }
+   ],
+   "team": "Scout Cavalry-line and Camel Units +2 attack vs. buildings"
+  },
+  "de": {
+   "playstyle": "Volk von Kamelreitern mit Schießpulver",
+   "bonuses": [
+    "Dorfbewohner kosten -8/13/18/23 % in der Dunklen/Feudal-/Ritter-/Imperialzeit",
+    "Kamelreiter greifen um +20 % schneller an",
+    "+1 Nahkampf/+1 Durchschlagspanzerung für Schießpulvereinheiten",
+    "Bau von Karawanserei in der Imperialzeit möglich"
+   ],
+   "uu": [
+    {
+     "name": "Ghulam",
+     "type": "Infanterieeinheit), Imperialer Kamelreiter (Kavallerie",
+     "pic": 385,
+     "desc": "Hindustanische Spezial-Infanterieeinheit, die ihre Speere durch mehrere Ziele treibt. Außerordentlich wirksam gegen Bogenschützen-Einheiten und Speerkämpfer-Linien. Schwach gegen Kavallerie."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Große Fernstraße",
+     "desc": "gesamtes Goldeinkommen um +10 % schneller; Markthandelsgebühr auf 10 % reduziert",
+     "pic": 33
+    },
+    {
+     "name": "Shatagni",
+     "desc": "+2 Reichweite für Handrohrschützen",
+     "pic": 107
+    }
+   ],
+   "team": "Berittener-Späher-Linie und Kameleinheiten +2 Angriffsstärke gegen Gebäude"
+  },
+  "emblem": "hindustanis.png"
+ },
+ {
+  "key": "Huns",
+  "name_en": "Huns",
+  "name_de": "Hunnen",
+  "en": {
+   "playstyle": "Cavalry civilization",
+   "bonuses": [
+    "Do not need houses, but start with -100 wood",
+    "Cavalry Archers cost -10/20% in Castle/Imperial Age",
+    "Trebuchets fire more accurately at units and small targets",
+    "On Nomadic maps, the first Town Center spawns a scouting Horse"
+   ],
+   "uu": [
+    {
+     "name": "Tarkan",
+     "type": "Cavalry",
+     "pic": 105,
+     "desc": "Hunnic unique Heavy Cavalry. Exceptionally strong vs. buildings. Weak vs. Spearman-line and Camel Riders."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Marauders",
+     "desc": "Tarkans can be trained at Stables",
+     "pic": 33
+    },
+    {
+     "name": "Atheism",
+     "desc": "Enemy Relics generate -50% resources; Wonder and Relic victory takes +100 years",
+     "pic": 107
+    }
+   ],
+   "team": "Stables work +20% faster"
+  },
+  "de": {
+   "playstyle": "Kavallerie-Zivilisation",
+   "bonuses": [
+    "Brauchen keine Häuser, aber Start mit -100 Holz",
+    "Berittene Bogenschützen kosten -10/20 % in der Burg-/Imperialzeit",
+    "Triböcke feuern bei Einheiten und kleinen Zielen genauer ab",
+    "Auf nomadischen Karten bringt das erste Dorfzentrum ein Spähpferd hervor"
+   ],
+   "uu": [
+    {
+     "name": "Tarkan",
+     "type": "Kavallerie",
+     "pic": 105,
+     "desc": "Schwere Spezial-Kavallerie der Hunnen. Außergewöhnlich wirksam gegen Gebäude. Schwach gegen Speerkämpfer und Kamelreiter."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Marodeure",
+     "desc": "Tarkane können in Ställen ausgebildet werden",
+     "pic": 33
+    },
+    {
+     "name": "Atheismus",
+     "desc": "feindliche Reliquien erzeugen 50 % weniger Rohstoffe, Weltwunder und Reliquiensieg dauern 100 Jahre länger",
+     "pic": 107
+    }
+   ],
+   "team": "Ställe arbeiten 20 % schneller"
+  },
+  "emblem": "huns.png"
+ },
+ {
+  "key": "Incas",
+  "name_en": "Inca",
+  "name_de": "Inka",
+  "en": {
+   "playstyle": "Infantry civilization",
+   "bonuses": [
+    "Houses and Settlements provide +5 population space",
+    "Buildings cost -15% stone",
+    "Military Units cost -15/20/25/30% food in Dark/Feudal/Castle/Imperial Age",
+    "Villagers affected by Infantry Blacksmith upgrades starting in Castle Age"
+   ],
+   "uu": [
+    {
+     "name": "Kamayuk",
+     "type": "Infantry",
+     "pic": 97,
+     "desc": "Inca unique Infantry with increased attack range. Strong vs. Cavalry and Infantry. Weak vs. Archery Units and Gunners."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Andean Sling",
+     "desc": "Skirmishers and Slingers no minimum range; Slingers +1 attack",
+     "pic": 33
+    },
+    {
+     "name": "Fabric Shields",
+     "desc": "Kamayuks, Slingers and Champi Warriors +1 melee/+1 pierce armor",
+     "pic": 107
+    }
+   ],
+   "team": "Start with a free Llama"
+  },
+  "de": {
+   "playstyle": "Unberittenes Volk",
+   "bonuses": [
+    "Häuser und Siedlungen liefern +5 Platz in der Bevölkerung",
+    "Gebäude kosten 15 % weniger Steine",
+    "Militäreinheiten kosten in der Dunklen/Feudal-/Ritter-/Imperialzeit 15/20/25/30 % weniger Nahrung",
+    "Dorfbewohner sind ab der Ritterzeit von Infanterie-Schmiede-Weiterentwicklungen betroffen"
+   ],
+   "uu": [
+    {
+     "name": "Kamayuk",
+     "type": "Infanterieeinheit",
+     "pic": 97,
+     "desc": "Spezialinfanterie der Inka mit erhöhter Reichweite beim Angriff. Stark gegen Kavallerie und Infanterie. Schwach gegen Bogenschützen-Einheiten und Gewehrschützen."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Andenschleuder",
+     "desc": "keine Mindestreichweite für Plänkler und Schleuderer; Schleuderer +1 Angriffsstärke",
+     "pic": 33
+    },
+    {
+     "name": "Stoffschilde",
+     "desc": "Kamayuks, Schleuderer und Champi-Krieger +1 Nahkampf/+1 Rüstung durchschlagen",
+     "pic": 107
+    }
+   ],
+   "team": "Beginnt mit einem kostenlosen Lama"
+  },
+  "emblem": "incas.png"
+ },
+ {
+  "key": "Italians",
+  "name_en": "Italians",
+  "name_de": "Italiener",
+  "en": {
+   "playstyle": "Archer and Naval civilization",
+   "bonuses": [
+    "Advancing to the next Age costs -15%",
+    "Foot Archers and Condottieri +1 melee/+1 pierce armor",
+    "Dock and University technologies cost -25%",
+    "Gunpowder Units cost -20%",
+    "Fishing Ships cost -15%"
+   ],
+   "uu": [
+    {
+     "name": "Genoese Crossbowman",
+     "type": "Foot Archer), Condottiero (Infantry",
+     "pic": 133,
+     "desc": "Italian unique Foot Archer. Exceptionally strong vs. Cavalry. Weak vs. Archery Units and Siege Weapons."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Silk Road",
+     "desc": "Trade Units cost -50%",
+     "pic": 33
+    },
+    {
+     "name": "Pirotechnia",
+     "desc": "Hand Cannoneers deal +15% pass through damage and are more accurate",
+     "pic": 107
+    }
+   ],
+   "team": "Condottiero available at the Barracks in Imperial Age"
+  },
+  "de": {
+   "playstyle": "Volk von Bogenschützen und Seefahrern",
+   "bonuses": [
+    "Voranschreiten in das nächste Zeitalter kostet -15 %",
+    "Einfache Bogenschützen und Condottieri erhalten +1 Nahkampf-/+1 Durchschlagspanzerung",
+    "Hafen- und Universitäts-Technologien kosten -25 %",
+    "Schießpulvereinheiten kosten -20 %",
+    "Fischkutter kosten -15 %"
+   ],
+   "uu": [
+    {
+     "name": "Genuesischer Armbrustschütze",
+     "type": "einfacher Bogenschütze), Condottiere (Infanterieeinheit",
+     "pic": 133,
+     "desc": ""
+    }
+   ],
+   "ut": [
+    {
+     "name": "Seidenstraße",
+     "desc": "Handelseinheiten kosten -50 %",
+     "pic": 33
+    },
+    {
+     "name": "Piritechnoloia",
+     "desc": "Handkanoniere verursachen +15 % Durchschlagsschaden und sind treffsicherer",
+     "pic": 107
+    }
+   ],
+   "team": "Condottiere ist in der Imperialzeit in der Kaserne verfügbar"
+  },
+  "emblem": "italians.png"
+ },
+ {
+  "key": "Japanese",
+  "name_en": "Japanese",
+  "name_de": "Japaner",
+  "en": {
+   "playstyle": "Infantry civilization",
+   "bonuses": [
+    "Mills, Lumber- and Mining Camps cost -50%",
+    "Infantry attacks +33% faster starting in Feudal Age",
+    "Cavalry Archers +2 attack vs. Ranged Soldiers (except Skirmishers)",
+    "Fishing Ships work +5/10/15/20% faster in Dark/Feudal/Castle/Imperial Age; +100% HP"
+   ],
+   "uu": [
+    {
+     "name": "Samurai",
+     "type": "Infantry",
+     "pic": 44,
+     "desc": "Japanese unique Infantry that quickly charges into battle and has fast attack. Strong vs. Unique Units. Weak vs. Archery Units and Gunners."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Yasama",
+     "desc": "Watch Tower-line fires additional arrows",
+     "pic": 33
+    },
+    {
+     "name": "Kataparuto",
+     "desc": "Trebuchets attack and pack/unpack faster",
+     "pic": 107
+    }
+   ],
+   "team": "Galley-line +4 line of sight"
+  },
+  "de": {
+   "playstyle": "Unberittenes Volk",
+   "bonuses": [
+    "Mühlen, Holzfäller- und Bergarbeiterlager kosten -50 %",
+    "Infanterieeinheiten greifen ab der Feudalzeit um +33 % schneller an",
+    "+2 Angriffsstärke der berittenen Bogenschützen gegen Fernkampfsoldaten (außer Plänkler)",
+    "Fischkutter arbeiten in der Dunklen/Feudal-/Ritter-/Imperialzeit um +5/10/15/20 % schneller; +100 % LP"
+   ],
+   "uu": [
+    {
+     "name": "Samurai",
+     "type": "Infanterieeinheit",
+     "pic": 44,
+     "desc": "Spezial-Infanterieeinheit der Japaner mit schnellem Angriff. Attackiert blitzschnell feindliche Einheiten. Wirksam gegen Spezialeinheiten. Schwach gegen Bogenschützen und Gewehrschützen."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Yasama",
+     "desc": "Turm verschießt zusätzliche Pfeile",
+     "pic": 33
+    },
+    {
+     "name": "Kataparuto",
+     "desc": "Triboke greifen schneller an und laden/entladen schneller",
+     "pic": 107
+    }
+   ],
+   "team": "Galeeren-Linie +4 Sichtweite"
+  },
+  "emblem": "japanese.png"
+ },
+ {
+  "key": "Jurchens",
+  "name_en": "Jurchens",
+  "name_de": "Jurchen",
+  "en": {
+   "playstyle": "Cavalry and Gunpowder civilization",
+   "bonuses": [
+    "Meat of hunted and livestock animals doesn't decay",
+    "Mounted Units and Fire Lancers attack +25% faster starting in Feudal Age",
+    "Siege Engineers available in Castle Age",
+    "Siege and Fortification upgrades cost -75% wood and research +100% faster",
+    "Units receive -50% friendly fire damage"
+   ],
+   "uu": [
+    {
+     "name": "Iron Pagoda",
+     "type": "Cavalry), Grenadier (Gunpowder Unit",
+     "pic": 461,
+     "desc": "Jurchen unique Heavy Cavalry with durable armor that can completely block melee attacks. Strong vs. Infantry and Ranged Soldiers. Weak vs. Spearman-line and Camel Riders."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Fortified Bastions",
+     "desc": "Fortifications regenerate 500 HP per minute",
+     "pic": 33
+    },
+    {
+     "name": "Thunderclap Bombs",
+     "desc": "Rocket Carts, Grenadiers and Lou Chuans detonate when defeated; projectiles produce additional explosions",
+     "pic": 107
+    }
+   ],
+   "team": "Gunpowder Units +2 line of sight"
+  },
+  "de": {
+   "playstyle": "Zivilisation mit Kavallerie und Schießpulver",
+   "bonuses": [
+    "Fleisch von erlegten Tieren und von Vieh verfällt nicht.",
+    "Berittene Einheiten und Feuer-Lanzenreiter greifen ab der Feudalzeit um 25 % schneller an.",
+    "In der Ritterzeit sind Belagerungsingenieure verfügbar.",
+    "Weiterentwicklungen für Belagerungen und Befestigungen kosten -75 % Holz und lassen sich um 100 % schneller entwickeln.",
+    "Einheiten erhalten -50 % Schaden durch eigene Einheiten."
+   ],
+   "uu": [
+    {
+     "name": "Eiserne Pagode",
+     "type": "Kavallerie), Grenadier (Schießpulvereinheit",
+     "pic": 461,
+     "desc": ""
+    }
+   ],
+   "ut": [
+    {
+     "name": "Befestigte Bastionen",
+     "desc": "Befestigungen regenerieren 500 LP pro Minute.",
+     "pic": 33
+    },
+    {
+     "name": "Donnerschlag-Bomben",
+     "desc": "Raketenkarren, Grenadiere und Lou-Chuans detonieren, wenn sie besiegt werden. Geschosse bewirken zusätzliche Explosionen.",
+     "pic": 107
+    }
+   ],
+   "team": "Schießpulvereinheiten erhalten +2 Sichtweite."
+  },
+  "emblem": "jurchens.png"
+ },
+ {
+  "key": "Khitans",
+  "name_en": "Khitans",
+  "name_de": "Kitan",
+  "en": {
+   "playstyle": "Infantry and Cavalry civilization",
+   "bonuses": [
+    "Pastures replace Farms",
+    "Melee attack upgrade effects are doubled",
+    "Skirmishers, Spearman-, and Scout Cavalry-line train and upgrade +15% faster",
+    "Heavy Cavalry Archer upgrade available in Castle Age and costs -50%"
+   ],
+   "uu": [
+    {
+     "name": "Liao Dao",
+     "type": "Infantry), Mounted Trebuchet (Siege Cavalry",
+     "pic": 463,
+     "desc": "Khitan unique Infantry with powerful attack that wounds enemies, dealing damage over time. Strong vs. Cavalry and Infantry. Weak vs. Ranged Soldiers at long range."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Lamellar Armor",
+     "desc": "Infantry and Skirmishers reflect 25% melee damage back to the attacker",
+     "pic": 33
+    },
+    {
+     "name": "Ordo Cavalry",
+     "desc": "Cavalry regenerates HP in combat",
+     "pic": 107
+    }
+   ],
+   "team": "Infantry +2 attack vs. Ranged Soldiers"
+  },
+  "de": {
+   "playstyle": "Volk mit Infanterieeinheiten und Kavallerie",
+   "bonuses": [
+    "Weiden ersetzen Felder",
+    "Effekte von Nahkampfangriff-Weiterentwicklungen verdoppeln sich",
+    "Plänkler, Speerkämpfer und berittene Späher werden um +15 % schneller ausgebildet und weiterentwickelt",
+    "Weiterentwicklung für schwere berittene Bogenschützen in der Ritterzeit verfügbar und kosten -50 %"
+   ],
+   "uu": [
+    {
+     "name": "Lio Dao",
+     "type": "Infanterieeinheit), berittener Tribok (Belagerungskavallerie",
+     "pic": 463,
+     "desc": ""
+    }
+   ],
+   "ut": [
+    {
+     "name": "Lamellenrüstung",
+     "desc": "Infanterieeinheiten und Plänkler werfen 25 % des Nahkampfschadens auf den Angreifer zurück",
+     "pic": 33
+    },
+    {
+     "name": "Kavallerie von Ordo",
+     "desc": "Kavallerie regeneriert LP im Kampf",
+     "pic": 107
+    }
+   ],
+   "team": "Infanterieeinheiten +2 Angriffsstärke gegen Fernkampfsoldaten"
+  },
+  "emblem": "khitans.png"
+ },
+ {
+  "key": "Khmer",
+  "name_en": "Khmer",
+  "name_de": "Khmer",
+  "en": {
+   "playstyle": "Siege and Elephant civilization",
+   "bonuses": [
+    "No buildings required to advance to the next Age or to unlock other buildings",
+    "Farmers don't require Mills or Town Centers to drop off food",
+    "Villagers can garrison in Houses",
+    "Battle Elephants move +10% faster"
+   ],
+   "uu": [
+    {
+     "name": "Ballista Elephant",
+     "type": "Siege Cavalry",
+     "pic": 231,
+     "desc": "Khmer unique Siege Cavalry with ranged pass through attack. Can destroy trees. Strong vs. Infantry and Ranged Soldiers. Weak vs. Cavalry and Siege Weapons."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Tusk Swords",
+     "desc": "Battle Elephants +3 attack",
+     "pic": 33
+    },
+    {
+     "name": "Double Crossbow",
+     "desc": "Ballista Elephants and Scorpions fire an additional projectile",
+     "pic": 107
+    }
+   ],
+   "team": "Scorpions +1 range"
+  },
+  "de": {
+   "playstyle": "Volk von Belagerern und Elefantenreitern",
+   "bonuses": [
+    "Keine Gebäude benötigt, um in das nächste Zeitalter voranzuschreiten oder andere Gebäude freizuschalten",
+    "Bauern benötigen keine Mühlen oder Dorfzentren, um Nahrung abzuliefern",
+    "Dorfbewohner können in Häuser einquartiert werden",
+    "Elefantenreiter +10 % schneller"
+   ],
+   "uu": [
+    {
+     "name": "Ballistenelefant",
+     "type": "Belagerungskavallerie",
+     "pic": 231,
+     "desc": ""
+    }
+   ],
+   "ut": [
+    {
+     "name": "Stoßzahnschwerter",
+     "desc": "Elefantenreiter +3 Angriffsstärke",
+     "pic": 33
+    },
+    {
+     "name": "Doppelarmbrust",
+     "desc": "Ballistenelefanten und Skorpione schießen ein zusätzliches Projektil",
+     "pic": 107
+    }
+   ],
+   "team": "Skorpione +1 Reichweite"
+  },
+  "emblem": "khmer.png"
+ },
+ {
+  "key": "Koreans",
+  "name_en": "Koreans",
+  "name_de": "Koreaner",
+  "en": {
+   "playstyle": "Defensive and Naval civilization",
+   "bonuses": [
+    "Stone miners work +20% faster",
+    "Ranged Soldiers and Infantry cost -50% wood",
+    "Archer armor and tower upgrades free (Bombard Tower requires Chemistry)",
+    "Warships cost -20% wood"
+   ],
+   "uu": [
+    {
+     "name": "War Wagon",
+     "type": "Mounted Archer), Turtle Ship (Warship",
+     "pic": 117,
+     "desc": "Korean unique Mounted Archer. Slow but durable. Strong vs. Infantry and Archery Units. Weak vs. Spearman-line, Skirmishers and Camel Riders."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Eupseong",
+     "desc": "Watch Tower-line +2 range",
+     "pic": 33
+    },
+    {
+     "name": "Shinkichon",
+     "desc": "Rocket Carts and Turtle Ships +1 range, fire additional projectiles",
+     "pic": 107
+    }
+   ],
+   "team": "Villagers +3 line of sight"
+  },
+  "de": {
+   "playstyle": "Defensive Zivilisation von Seefahrern",
+   "bonuses": [
+    "Steinhauer arbeiten um 20 % schneller",
+    "Fernkampfsoldaten und Infanterie kosten 50 % weniger Holz",
+    "Weiterentwicklungen für Bogenschützen-Rüstung und Türme gratis (Kanonenturm benötigt Chemie)",
+    "Kriegsschiffe kosten 20 % weniger Holz"
+   ],
+   "uu": [
+    {
+     "name": "Kriegswagen",
+     "type": "berittener Bogenschütze), Schildkrötenschiff (Kriegsschiff",
+     "pic": 117,
+     "desc": "Berittene Bogenschützen-Spezialeinheit der Koreaner. Sind langsam, aber zäh. Wirksam gegen Infanterie und Bogenschützen. Schwach gegen Speerkämpfer, Plänkler und Kamelreiter."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Eupseong",
+     "desc": "+2 Sichtweite für Türme",
+     "pic": 33
+    },
+    {
+     "name": "Shinkichon",
+     "desc": "+1 Reichweite für Raketenkarren und Schildkrötenschiff, Abfeuern zusätzlicher Geschosse",
+     "pic": 107
+    }
+   ],
+   "team": "+3 Sichtweite für Dorfbewohner"
+  },
+  "emblem": "koreans.png"
+ },
+ {
+  "key": "Lithuanians",
+  "name_en": "Lithuanians",
+  "name_de": "Litauer",
+  "en": {
+   "playstyle": "Cavalry and Monk civilization",
+   "bonuses": [
+    "Each Town Center provides +100 food",
+    "Spearman-line and Skirmisher-line move +10% faster",
+    "Each garrisoned Relic provides +1 attack to Knight-line and Leitis (maximum +4)"
+   ],
+   "uu": [
+    {
+     "name": "Leitis",
+     "type": "Cavalry), Winged Hussar (Cavalry",
+     "pic": 253,
+     "desc": "Lithuanian unique Heavy Cavalry that ignores armor. Strong vs. Cavalry and Infantry, especially with high armor. Weak vs. Archery Units."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Hill Forts",
+     "desc": "Town Centers +3 range",
+     "pic": 33
+    },
+    {
+     "name": "Tower Shields",
+     "desc": "Spearman-line and Skirmishers +2 pierce armor",
+     "pic": 107
+    }
+   ],
+   "team": "Monasteries work +20% faster"
+  },
+  "de": {
+   "playstyle": "Kavallerie- und Mönch-Zivilisation",
+   "bonuses": [
+    "Jedes Dorfzentrum stellt +100 Nahrung bereit",
+    "Speerkämpfer und Plänkler bewegen sich +10 % schneller",
+    "Jede einquartierte Reliquie gewährt Rittern und Leitis +1 Angriffsstärke (max. +4)"
+   ],
+   "uu": [
+    {
+     "name": "Leitis",
+     "type": "Kavallerie), Flügelhusar (Kavallerie",
+     "pic": 253,
+     "desc": "Litauische einzigartige schwere Kavallerie, für die Rüstung keine Rolle spielt. Stark gegen Kavallerie und Infanterie, insbesondere mit schwerer Rüstung. Schwach gegen Bogenschützen-Einheiten."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Hügelfestungen",
+     "desc": "+3 Reichweite für Dorfzentren",
+     "pic": 33
+    },
+    {
+     "name": "Turmschilde",
+     "desc": "Speerkämpfer und Plänkler +2 Durchschlagsrüstung",
+     "pic": 107
+    }
+   ],
+   "team": "Klöster arbeiten +20 % schneller"
+  },
+  "emblem": "lithuanians.png"
+ },
+ {
+  "key": "Magyars",
+  "name_en": "Magyars",
+  "name_de": "Ungarn",
+  "en": {
+   "playstyle": "Cavalry civilization",
+   "bonuses": [
+    "Villagers defeat wolves with one strike",
+    "Scout Cavalry-line costs -15%",
+    "Melee attack upgrades free"
+   ],
+   "uu": [
+    {
+     "name": "Magyar Huszar",
+     "type": "Cavalry",
+     "pic": 99,
+     "desc": "Magyar unique Cavalry. Strong vs. Siege Weapons. Weak vs. Spearman-line and Camel Riders."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Corvinian Army",
+     "desc": "Magyar Huszar gold cost is replaced by additional food cost",
+     "pic": 33
+    },
+    {
+     "name": "Recurve Bow",
+     "desc": "Mounted Archers +1 attack, +1 range",
+     "pic": 107
+    }
+   ],
+   "team": "Mounted Archers train +25% faster"
+  },
+  "de": {
+   "playstyle": "Zivilisation mit Kavallerie",
+   "bonuses": [
+    "Dorfbewohner besiegen Wölfe mit einem einzigen Schlag",
+    "Berittene Späher kostet -15 % weniger",
+    "Weiterentwicklungen für Nahkampfangriffe gratis"
+   ],
+   "uu": [
+    {
+     "name": "Ungarische Husar",
+     "type": "Kavallerie",
+     "pic": 99,
+     "desc": ""
+    }
+   ],
+   "ut": [
+    {
+     "name": "Corvinianische Armee",
+     "desc": "Goldpreis für ungarische Husaren durch zusätzliche Nahrungskosten ersetzt",
+     "pic": 33
+    },
+    {
+     "name": "Recurvebogen",
+     "desc": "+1 Angriffsstärke und +1 Reichweite für berittene Bogenschützen",
+     "pic": 107
+    }
+   ],
+   "team": "Berittene Bogenschützen werden um +25 % schneller ausgebildet"
+  },
+  "emblem": "magyars.png"
+ },
+ {
+  "key": "Malay",
+  "name_en": "Malay",
+  "name_de": "Malaien",
+  "en": {
+   "playstyle": "Naval civilization",
+   "bonuses": [
+    "Advancing to the next Age is +66% faster",
+    "Infantry armor upgrades free",
+    "Battle Elephants cost -25/35% in Castle/Imperial Age",
+    "Fish Traps cost -33% and provide +200% food"
+   ],
+   "uu": [
+    {
+     "name": "Karambit Warrior",
+     "type": "Infantry",
+     "pic": 233,
+     "desc": "Malay unique Infantry that only takes half population space. Strong in high numbers. Weak vs. Cavalry and Ranged Soldiers."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Thalassocracy",
+     "desc": "Docks are upgraded to Harbors",
+     "pic": 33
+    },
+    {
+     "name": "Forced Levy",
+     "desc": "Militia-line gold cost is replaced by additional food cost",
+     "pic": 107
+    }
+   ],
+   "team": "Docks +6 line of sight"
+  },
+  "de": {
+   "playstyle": "Zivilisation von Seefahrern",
+   "bonuses": [
+    "Voranschreiten in das nächste Zeitalter +66 % schneller",
+    "Kostenlose Weiterentwicklung für Infanterierüstung",
+    "Elefantenreiter kosten 25/35 % in Ritter-/Imperialzeit",
+    "35 % Reusen kosten -33 % und bieten +200 % mehr Nahrung"
+   ],
+   "uu": [
+    {
+     "name": "Karambitkämpfer",
+     "type": "Infanterie",
+     "pic": 233,
+     "desc": "Spezial-Infanterieeinheit der Malaien, die nur die Hälfte des Platzes in der Bevölkerung einnimmt. Wirksam in hoher Anzahl. Schwach gegen Kavallerie und Fernkampfsoldaten."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Thalassokratie",
+     "desc": "Entwickelt Häfen zu Kriegshäfen",
+     "pic": 33
+    },
+    {
+     "name": "Zwangsrekrutierung",
+     "desc": "Einheiten der Milizsoldat-Reihe kosten zusätzliche Nahrung statt Gold",
+     "pic": 107
+    }
+   ],
+   "team": "Häfen +6 % Sichtweite"
+  },
+  "emblem": "malay.png"
+ },
+ {
+  "key": "Malians",
+  "name_en": "Malians",
+  "name_de": "Malier",
+  "en": {
+   "playstyle": "Infantry civilization",
+   "bonuses": [
+    "Buildings cost -15% wood",
+    "Villagers drop off +10% more gold",
+    "Barracks Units +1/+2/+3 pierce armor in Feudal/Castle/Imperial Age"
+   ],
+   "uu": [
+    {
+     "name": "Gbeto",
+     "type": "Infantry",
+     "pic": 197,
+     "desc": "Malian unique Infantry with ranged melee attack. Fast-moving. Strong vs. Infantry and Siege Weapons. Weak vs. Ranged Soldiers."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Tigui",
+     "desc": "Town Centers fire arrows without garrison",
+     "pic": 33
+    },
+    {
+     "name": "Farimba",
+     "desc": "Cavalry +5 attack",
+     "pic": 107
+    }
+   ],
+   "team": "Universities work +80% faster"
+  },
+  "de": {
+   "playstyle": "Zivilisation mit Infanterie",
+   "bonuses": [
+    "Gebäude kosten -15 % weniger Holz",
+    "Dorfbewohner liefern +10 % mehr Gold",
+    "Kasernen-Einheiten haben +1/+2/+3 Rüstungsdurchschlag in der Feudal-/Ritter-/Imperialzeit"
+   ],
+   "uu": [
+    {
+     "name": "Gbeto",
+     "type": "Infanterie",
+     "pic": 197,
+     "desc": "Infanterie-Spezialeinheit der Malier mit Nahkampfangriff mit Reichweite. Schnell. Wirksam gegen Infanterieeinheiten und Belagerungseinheiten. Schwach gegen Fernkampfsoldaten und Belagerungswaffen."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Tigui",
+     "desc": "Dorfzentren schießen auch, wenn die Einheiten nicht in Garnison liegen",
+     "pic": 33
+    },
+    {
+     "name": "Farimba",
+     "desc": "+5 Angriffsstärke für Kavallerie",
+     "pic": 107
+    }
+   ],
+   "team": "Universitäten arbeiten um +80 % schneller"
+  },
+  "emblem": "malians.png"
+ },
+ {
+  "key": "Mapuche",
+  "name_en": "Mapuche",
+  "name_de": "Mapuche",
+  "en": {
+   "playstyle": "Cavalry and Counter-Units civilization",
+   "bonuses": [
+    "Foragers drop off +25% food",
+    "Settlements can train Spearman-line and Skirmishers",
+    "Infantry, Slingers and Skirmishers +5/10/15 HP in Feudal/Castle/Imperial Age",
+    "Mounted Units generate +3 gold when defeating military units",
+    "Enemy Castles are revealed on the map"
+   ],
+   "uu": [
+    {
+     "name": "Kona",
+     "type": "Cavalry), Bolas Rider (Mounted Archer",
+     "pic": 545,
+     "desc": "Mapuche unique Cavalry that deals increasing damage to injured units. Strong vs. Infantry and Foot Archers. Weak vs. Spearman-line, Camel Riders and Monks."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Malon",
+     "desc": "Bolas Riders, Slingers and Skirmishers deal pass through damage",
+     "pic": 33
+    },
+    {
+     "name": "Butalmapu",
+     "desc": "Team Castle Unique Units and Bolas Riders cost -15%",
+     "pic": 107
+    }
+   ],
+   "team": "Spearman-line and Skirmishers +2 line of sight"
+  },
+  "de": {
+   "playstyle": "Berittenes Volk mit Konter-Einheiten",
+   "bonuses": [
+    "Sammler liefern +25 % Nahrung ab.",
+    "Siedlungen können Speerkämpfer-Einheiten und Plänkler ausbilden.",
+    "Infanterieeinheiten, Schleuderer und Plänkler erhalten in der Feudal-/Ritter-/Imperialzeit +5/10/15 LP.",
+    "Berittene Einheiten erzeugen +3 Gold, wenn sie Militäreinheiten besiegen.",
+    "Feindliche Burgen werden auf der Karte enthüllt."
+   ],
+   "uu": [
+    {
+     "name": "Kona",
+     "type": "Kavallerie), Bolasreiter (berittener Bogenschütze",
+     "pic": 545,
+     "desc": "Spezialeinheit der Mapuche. Kavallerie, die zunehmenden Schaden an verletzten Einheiten verursacht. Wirksam gegen Infanterieeinheiten und einfache Bogenschützen. Schwach gegen Speerkämpfer, Kamelreiter und Mönche."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Malón",
+     "desc": "Bolasreiter, Schleuderer und Plänkler verursachen Durchschlagschaden.",
+     "pic": 33
+    },
+    {
+     "name": "Butalmapu",
+     "desc": "Spezialeinheiten des Burgteams und Bolasreiter kosten -15 %.",
+     "pic": 107
+    }
+   ],
+   "team": "Speerkämpferlinie und Plänkler erhalten +2 Sichtweite."
+  },
+  "emblem": "mapuche.png"
+ },
+ {
+  "key": "Mayans",
+  "name_en": "Maya",
+  "name_de": "Maya",
+  "en": {
+   "playstyle": "Archer civilization",
+   "bonuses": [
+    "Start with +1 Villager, but -50 food",
+    "Resources last +15% longer",
+    "Foot Archers cost -10/20/30% in Feudal/Castle/Imperial Age"
+   ],
+   "uu": [
+    {
+     "name": "Plumed Archer",
+     "type": "Foot Archer",
+     "pic": 108,
+     "desc": "Mayan unique Foot Archer with fast movement speed. Strong vs. Archery Units and Infantry. Weak vs. Cavalry."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Hul'che Javelineers",
+     "desc": "Skirmishers fire an additional projectile",
+     "pic": null
+    },
+    {
+     "name": "Holcans",
+     "desc": "Eagle Warriors +40 HP",
+     "pic": null
+    }
+   ],
+   "team": "Walls cost -50%"
+  },
+  "de": {
+   "playstyle": "Volk berittener Bogenschützen",
+   "bonuses": [
+    "Beginn mit +1 Dorfbewohner, aber -50 Nahrung",
+    "Rohstoffe halten +15 % länger",
+    "Einfache Bogenschützen kosten -10/20/30 % in der Feudal-/Ritter-/Imperialzeit"
+   ],
+   "uu": [
+    {
+     "name": "Federpfeilschütze",
+     "type": "einfacher Bogenschütze",
+     "pic": 108,
+     "desc": ""
+    }
+   ],
+   "ut": [
+    {
+     "name": "Hul 'che-Speerschleuderer",
+     "desc": "Plänkler feuern ein zusätzliches Projektil ab",
+     "pic": null
+    },
+    {
+     "name": "Holcans",
+     "desc": "Adlerkrieger +40 LP",
+     "pic": null
+    }
+   ],
+   "team": "Mauern kosten -50 %"
+  },
+  "emblem": "mayans.png"
+ },
+ {
+  "key": "Mongols",
+  "name_en": "Mongols",
+  "name_de": "Mongolen",
+  "en": {
+   "playstyle": "Cavalry Archer civilization",
+   "bonuses": [
+    "Hunters work +40% faster",
+    "Cavalry Archers attack +25% faster",
+    "Scout Cavalry-line and Steppe Lancers +20/30% HP in Castle/Imperial Age"
+   ],
+   "uu": [
+    {
+     "name": "Mangudai",
+     "type": "Mounted Archer",
+     "pic": 42,
+     "desc": "Mongol unique Mounted Archer with fast attack. Strong vs. Siege Weapons and Infantry. Weak vs. Skirmishers, Spearman-line and Camel Riders."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Nomads",
+     "desc": "Lost Houses do not decrease population space",
+     "pic": 33
+    },
+    {
+     "name": "Drill",
+     "desc": "Siege Workshop Units move +50% faster",
+     "pic": 107
+    }
+   ],
+   "team": "Scout Cavalry-line +2 line of sight"
+  },
+  "de": {
+   "playstyle": "Volk berittener Bogenschützen",
+   "bonuses": [
+    "Jäger arbeiten um +40 % schneller",
+    "Berittene Bogenschützen greifen um +25 % schneller an",
+    "Berittener-Späher-Linie und Steppenlanzenreiter +20/30 % LP in der Ritter-/Imperialzeit"
+   ],
+   "uu": [
+    {
+     "name": "Mangudai",
+     "type": "Berittener Bogenschütze",
+     "pic": 42,
+     "desc": "Berittene Spezial-Bogenschützeneinheit der Mongolen mit schnellem Angriff. Wirksam gegen Belagerungswaffen und Infanterieeinheiten. Schwach gegen Plänkler, Speerkämpfer und Kamelreiter."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Nomaden",
+     "desc": "Zerstörte Häuser verringern Platz in der Bevölkerung nicht",
+     "pic": 33
+    },
+    {
+     "name": "Drill",
+     "desc": "Belagerungseinheiten bewegen sich um +50 % schneller",
+     "pic": 107
+    }
+   ],
+   "team": "Berittener-Späher-Linie +2 Sichtweite"
+  },
+  "emblem": "mongols.png"
+ },
+ {
+  "key": "Muisca",
+  "name_en": "Muisca",
+  "name_de": "Muisca",
+  "en": {
+   "playstyle": "Archer and Monk civilization",
+   "bonuses": [
+    "Advancing to the next Age costs -50% gold",
+    "Settlements cost -33% and heal nearby units",
+    "Champi Warriors and Archery Range Units +1/2/3 melee armor in Feudal/Castle/Imperial Age",
+    "Monks regain faith +50% faster",
+    "Caravan, Guilds free"
+   ],
+   "uu": [
+    {
+     "name": "Guecha Warrior",
+     "type": "Skirmisher), Temple Guard (Infantry",
+     "pic": 543,
+     "desc": "Muisca unique Skirmisher that regenerates HP when a nearby Guecha Warrior is defeated. Strong vs. Ranged Soldiers. Weak vs. units at close range."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Herbalism",
+     "desc": "Archer-line and Champi Warriors move +15% faster",
+     "pic": 33
+    },
+    {
+     "name": "Huaracas",
+     "desc": "Slingers +1 range; train +50% faster",
+     "pic": null
+    }
+   ],
+   "team": "Natural gold sources last +15% longer"
+  },
+  "de": {
+   "playstyle": "Volk von Bogenschützen und Mönchen",
+   "bonuses": [
+    "Voranschreiten ins nächste Zeitalter kostet -50 % Gold",
+    "Siedlungen kosten -33 % und heilen Einheiten in der Nähe",
+    "Champi-Krieger und Schießstand-Einheiten +1/2/3 Punkte Nahkampfrüstung in Feudal-/Ritter-/Imperialzeit",
+    "Mönche erhalten Glauben +50 % schneller zurück",
+    "Karawane, Gilden kostenlos"
+   ],
+   "uu": [
+    {
+     "name": "Guecha-Krieger",
+     "type": "Plänkler), Tempelwächter (Infanterieeinheit",
+     "pic": 543,
+     "desc": "Spezialeinheit der Muisca. Plänkler, der LP regeneriert, wenn ein Guecha-Krieger in der Nähe besiegt wird. Wirksam gegen Fernkampfsoldaten. Schwach gegen Einheiten im Nahbereich."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Kräuterkunde",
+     "desc": "Bogenschützeneinheiten und Champi-Krieger bewegen sich um 15 % schneller",
+     "pic": 33
+    },
+    {
+     "name": "Huaracas",
+     "desc": "Schleuderer +1 Reichweite; werden um 50 % schneller ausgebildet",
+     "pic": null
+    }
+   ],
+   "team": "Natürliche Goldquellen halten 15 % länger"
+  },
+  "emblem": "muisca.png"
+ },
+ {
+  "key": "Persians",
+  "name_en": "Persians",
+  "name_de": "Perser",
+  "en": {
+   "playstyle": "Cavalry civilization",
+   "bonuses": [
+    "Start with +50 wood and +50 food",
+    "Town Centers and Docks +100% HP and work +5/10/15/20% faster in Dark/Feudal/Castle/Imperial Age",
+    "Parthian Tactics available in Castle Age",
+    "Can build Caravanserai in Imperial Age"
+   ],
+   "uu": [
+    {
+     "name": "War Elephant",
+     "type": "Cavalry), Savar (Cavalry",
+     "pic": 43,
+     "desc": "Persian unique Cavalry that deals trample damage. Strong vs. buildings and units at close range. Weak vs. Spearman-line and Monks."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Kamandaran",
+     "desc": "Archer-line gold cost replaced by additional wood cost",
+     "pic": 33
+    },
+    {
+     "name": "Citadels",
+     "desc": "Castles +4 attack, +3 vs. Rams, +3 vs. Infantry and receive -25% bonus damage",
+     "pic": 107
+    }
+   ],
+   "team": "Knight-line +2 attack vs. Ranged Soldiers"
+  },
+  "de": {
+   "playstyle": "Berittenes Volk",
+   "bonuses": [
+    "Beginnen Sie mit +50 Einheiten Holz und +50 Einheiten Nahrung",
+    "Dorfzentren und Häfen mit +100 % LP und um +5/10/15/20 % schneller in der Dunklen/Feudal-/Ritter-/Imperialzeit",
+    "Parthische Taktik in der Ritterzeit verfügbar",
+    "Kann Karawanserei in der Imperialzeit errichten"
+   ],
+   "uu": [
+    {
+     "name": "Kriegselefant",
+     "type": "Kavallerie), Savar (Kavallerie",
+     "pic": 43,
+     "desc": ""
+    }
+   ],
+   "ut": [
+    {
+     "name": "Kamandaran",
+     "desc": "Goldkosten für Bogenschützen werden durch zusätzliche Holzkosten ersetzt",
+     "pic": 33
+    },
+    {
+     "name": "Zitadellen",
+     "desc": "Burgen +4 Angriffsstärke, +3 gegen Rammböcke, +3 gegen Infanterieeinheiten und -25 % Bonusschaden",
+     "pic": 107
+    }
+   ],
+   "team": "Ritter +2 Angriffsstärke gegen Fernkampfsoldaten"
+  },
+  "emblem": "persians.png"
+ },
+ {
+  "key": "Poles",
+  "name_en": "Poles",
+  "name_de": "Polen",
+  "en": {
+   "playstyle": "Cavalry civilization",
+   "bonuses": [
+    "Folwark replaces Mill",
+    "Villagers regenerate 10/15/20 HP in Feudal/Castle/Imperial Age",
+    "Stone Miners generate gold in addition to stone",
+    "Bloodlines and Scout Cavalry-line upgrades cost -50% food"
+   ],
+   "uu": [
+    {
+     "name": "Obuch",
+     "type": "Infantry), Winged Hussar (Cavalry",
+     "pic": 369,
+     "desc": "Polish unique Infantry that tears the armor of units it is fighting. Strong vs. buildings, Cavalry and Infantry. Weak vs. Archery Units and Gunners."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Szlachta Privileges",
+     "desc": "Knight-line costs -60% gold",
+     "pic": 33
+    },
+    {
+     "name": "Lechitic Legacy",
+     "desc": "Scout Cavalry-line deals trample damage",
+     "pic": 107
+    }
+   ],
+   "team": "Scout Cavalry-line +1 attack vs. Ranged Soldiers"
+  },
+  "de": {
+   "playstyle": "Kavallerie-Zivilisation",
+   "bonuses": [
+    "Gutshof ersetzt Mühlen",
+    "Dorfbewohner regenerieren 10/15/20 LP in der Feudal-/Ritter-/Imperialzeit",
+    "Steinhauer generieren neben Stein auch Gold",
+    "Weiterentwicklungen für Zuchtauswahl und berittene Späher kosten -50 % Nahrung"
+   ],
+   "uu": [
+    {
+     "name": "Obuch",
+     "type": "Infanterie), geflügelter Husar (Kavallerie",
+     "pic": 369,
+     "desc": "Polnische Spezial-Infanterieeinheit, die die Rüstung der Einheiten bricht, die sie bekämpft. Wirksam gegen Gebäude, Kavallerie und Infanterieeinheiten. Schwach gegen Bogenschützen-Einheiten und Gewehrschützen."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Szlachta-Privilegien",
+     "desc": "Ritter kosten -60 % Gold",
+     "pic": 33
+    },
+    {
+     "name": "Lechisches Vermächtnis",
+     "desc": "berittene Späher verursachen Trampelschaden",
+     "pic": 107
+    }
+   ],
+   "team": "Späherkavallerie +1 Angriffsstärke gegen Fernkampfsoldaten"
+  },
+  "emblem": "poles.png"
+ },
+ {
+  "key": "Portuguese",
+  "name_en": "Portuguese",
+  "name_de": "Portugiesen",
+  "en": {
+   "playstyle": "Naval and Gunpowder civilization",
+   "bonuses": [
+    "Foragers generate wood in addition to food",
+    "All units cost -20% gold",
+    "Can build Feitoria in Imperial Age",
+    "Ships +10/15/20% HP in Feudal/Castle/Imperial Age"
+   ],
+   "uu": [
+    {
+     "name": "Organ Gun",
+     "type": "Siege Gunpowder Unit), Caravel (Warship",
+     "pic": 190,
+     "desc": "Portuguese unique Siege Gunpowder Unit. Fires a volley of bullets. Strong vs. large groups of units. Weak vs. Cavalry and Mangonel-line."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Circumnavigation",
+     "desc": "Sets the entire map to explored; Ships train +33% faster",
+     "pic": 33
+    },
+    {
+     "name": "Arquebus",
+     "desc": "Gunpowder Units fire more accurately at moving targets",
+     "pic": 107
+    }
+   ],
+   "team": "Technologies research +25% faster"
+  },
+  "de": {
+   "playstyle": "Volk von Seefahrern mit Schießpulver",
+   "bonuses": [
+    "Sammler generieren neben Nahrung auch Holz",
+    "Alle Einheiten kosten -20 % Gold",
+    "Kann Feitoria in der Imperialzeit bauen",
+    "Schiffe +10/15/20 % LP in der Feudal-/Ritter-/Imperialzeit"
+   ],
+   "uu": [
+    {
+     "name": "Orgelkanone",
+     "type": "Belagerungseinheit mit Schießpulver), Karavelle (Kriegsschiff",
+     "pic": 190,
+     "desc": "Portugiesische Spezialeinheit. Belagerungswaffe, die eine Salve von Kugeln verschießt. Wirksam gegen große Gruppen von Einheiten. Schwach gegen Kavallerie und Mangen."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Weltumsegelung",
+     "desc": "setzt die gesamte Karte auf „Erkundet“; Schiffe bilden +33 % schneller aus",
+     "pic": 33
+    },
+    {
+     "name": "Arkebuse",
+     "desc": "Schießpulvereinheiten feuern treffsicherer auf bewegliche Ziele",
+     "pic": 107
+    }
+   ],
+   "team": "Technologien werden +25 % schneller entwickelt"
+  },
+  "emblem": "portuguese.png"
+ },
+ {
+  "key": "Romans",
+  "name_en": "Romans",
+  "name_de": "Römer",
+  "en": {
+   "playstyle": "Infantry and Cavalry civilization",
+   "bonuses": [
+    "Villagers gather, build, and repair +5% faster",
+    "Infantry armor upgrade effects are doubled",
+    "Scorpions cost -50% gold",
+    "Galley-line and Dromons +1 melee/+1 pierce armor"
+   ],
+   "uu": [
+    {
+     "name": "Centurion",
+     "type": "Cavalry), Legionary (Infantry",
+     "pic": 405,
+     "desc": "Roman unique Heavy Cavalry that increases movement and attack speed of nearby Militia-line units. Strong vs. Infantry and Foot Archers. Weak vs. Spearman-line and Camel Riders."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Ballistas",
+     "desc": "Scorpions attack +33% faster; Galley-line +2 attack",
+     "pic": 33
+    },
+    {
+     "name": "Comitatenses",
+     "desc": "Militia-line, Knight-line, and Centurions train +50% faster and receive a charge attack",
+     "pic": 107
+    }
+   ],
+   "team": "Scorpions minimum range reduced"
+  },
+  "de": {
+   "playstyle": "Infanterie- und Kavallerievolk",
+   "bonuses": [
+    "Dorfbewohner sammeln, bauen und reparieren Objekte um +5 % schneller",
+    "Weiterentwicklungseffekte für die Rüstung von Infanterieeinheiten verdoppeln sich",
+    "Skorpione kosten 50 % weniger Gold",
+    "+1 Nahkampf/+1 Durchschlagspanzerung für Galeeren und Dromonen"
+   ],
+   "uu": [
+    {
+     "name": "Zenturio",
+     "type": "Kavallerie), Legionär (Infanterieeinheit",
+     "pic": 405,
+     "desc": "Die römische schwere Spezial-Kavallerie, die Bewegungsgeschwindigkeit von Milizeinheiten in der Nähe erhöht. Stark gegen Infanterie und Fußbogenschützen. Schwach gegen Speerkämpfer und Kamelreiter."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Ballisten",
+     "desc": "Skorpione greifen um +33 % schneller an, +2 Angriffsstärke für Galeeren",
+     "pic": 33
+    },
+    {
+     "name": "Comitatenses",
+     "desc": "Milizsoldaten-Linie, Ritter-Linie und Zenturionen werden um +50 % schnellere ausgebildet und erhalten zusätzliche Sturmangriff",
+     "pic": 107
+    }
+   ],
+   "team": "Mindestreichweite der Skorpione reduziert"
+  },
+  "emblem": "romans.png"
+ },
+ {
+  "key": "Saracens",
+  "name_en": "Saracens",
+  "name_de": "Sarazenen",
+  "en": {
+   "playstyle": "Camel and Naval civilization",
+   "bonuses": [
+    "Market trading fee only 5%; Markets cost -100 wood",
+    "Camel Units +25% HP",
+    "Galley-line attacks +25% faster",
+    "Transport Ships +100% HP, +20 carry capacity"
+   ],
+   "uu": [
+    {
+     "name": "Mameluke",
+     "type": "Cavalry",
+     "pic": 37,
+     "desc": "Saracen unique Cavalry with ranged melee attack. Strong vs. Mounted Units. Weak vs. Archery Units and Spearman-line."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Bimaristan",
+     "desc": "Monks passively heal multiple nearby units",
+     "pic": 33
+    },
+    {
+     "name": "Counterweights",
+     "desc": "Trebuchets and Mangonel-line +15% attack",
+     "pic": 107
+    }
+   ],
+   "team": "Foot Archers and Skirmishers +2 attack vs. buildings"
+  },
+  "de": {
+   "playstyle": "Volk von Kamelreitern und Seefahrern",
+   "bonuses": [
+    "Handelskosten für Marktplatz nur 5 %, Marktplätze kosten -100 Holz",
+    "Kameleinheiten +25 % LP",
+    "Galeeren-Einheiten greifen +25 % schneller an",
+    "Transportschiffe +100 % LP, +20 Tragfähigkeit"
+   ],
+   "uu": [
+    {
+     "name": "Mameluck",
+     "type": "Kavallerie",
+     "pic": 37,
+     "desc": "Spezialkavallerie der Sarazenen mit weiter entfernten Nahkampfangriffen. Stark gegen berittene Einheiten. Schwach gegen Bogenschützen-Einheiten und Speerkämpfer."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Bimaristan",
+     "desc": "Mönche heilen passiv mehrere Einheiten in der Nähe",
+     "pic": 33
+    },
+    {
+     "name": "Gegengewichte",
+     "desc": "Triboke und Mangonel +15 % Angriffsstärke",
+     "pic": 107
+    }
+   ],
+   "team": "Einfache Bogenschützen und Plänkler erhalten +2 Angriffsstärke gegen Gebäude"
+  },
+  "emblem": "saracens.png"
+ },
+ {
+  "key": "Shu",
+  "name_en": "Shu",
+  "name_de": "Shu",
+  "en": {
+   "playstyle": "Archer and Siege civilization",
+   "bonuses": [
+    "Lumberjacks generate food in addition to wood",
+    "Archery Unit technologies at the Archery Range and Blacksmith cost -25%",
+    "Siege Weapons and Siege Warships move +10/15% faster in Castle/Imperial Age"
+   ],
+   "uu": [
+    {
+     "name": "White Feather Guard",
+     "type": "Infantry), War Chariot (Siege Weapon), Liu Bei (Hero",
+     "pic": 434,
+     "desc": "Shu unique Infantry that temporarily slows down the unit it attacks. Strong vs. Cavalry. Weak vs. Ranged Soldiers."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Coiled Serpent Array",
+     "desc": "Spearman-line and White Feather Guards gain additional HP when near each other",
+     "pic": 33
+    },
+    {
+     "name": "Bolt Magazine",
+     "desc": "Archer-line, War Chariots and Lou Chuans fire additional projectiles",
+     "pic": 107
+    }
+   ],
+   "team": "Foot Archers +2 line of sight"
+  },
+  "de": {
+   "playstyle": "Zivilisation mit Bogenschützen und Belagerung",
+   "bonuses": [
+    "Holzfäller erzeugen neben Holz auch Nahrung",
+    "Technologien für Bogenschützeneinheiten kosten am Schießstand und in der Schmiede -25 % weniger",
+    "Belagerungswaffen und Belagerungskriegsschiffe bewegen sich in der Ritter-/Imperialzeit um +10/15 % schneller"
+   ],
+   "uu": [
+    {
+     "name": "Wächter der weißen Feder",
+     "type": "Infanterieeinheit), Kriegswagen (Belagerungswaffe), Liu Bei (Held",
+     "pic": 434,
+     "desc": "Spezialinfanterieeinhat der Shu, die die angegriffene Einheit vorübergehend verlangsamt. Wirksam gegen Kavallerie und Infanterieeinheiten. Schwach gegen Soldaten im Fernkampf."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Schlangenaufstellung",
+     "desc": "Speerkämpfer und Wächter der weißen Feder erhalten zusätzliche LP, wenn sich beide nahe sind",
+     "pic": 33
+    },
+    {
+     "name": "Bolzenmagazin",
+     "desc": "Armbrustschützen, Kriegswagen und Lou Chuans feuern zusätzliche Geschosse ab",
+     "pic": 107
+    }
+   ],
+   "team": "+2 Sichtweite für einfache Bogenschützen"
+  },
+  "emblem": "shu.png"
+ },
+ {
+  "key": "Sicilians",
+  "name_en": "Sicilians",
+  "name_de": "Sizilianer",
+  "en": {
+   "playstyle": "Infantry and Cavalry civilization",
+   "bonuses": [
+    "Start with +100 stone",
+    "Farm upgrades provide +125% additional food",
+    "Soldiers receive -40% bonus damage",
+    "Can build Donjon in Dark Age, replaces Watch Tower-line",
+    "Fortifications built +50% faster; Town Centers built +100% faster"
+   ],
+   "uu": [
+    {
+     "name": "Serjeant",
+     "type": "Infantry",
+     "pic": 356,
+     "desc": "Sicilian unique Infantry that can construct Donjons. Strong vs. Infantry and Camel Riders. Weak vs. Mounted Archers and Gunners."
+    }
+   ],
+   "ut": [
+    {
+     "name": "First Crusade",
+     "desc": "Up to 5 Town Centers spawn 5 Serjeants each; units more resistant to conversion",
+     "pic": 33
+    },
+    {
+     "name": "Hauberk",
+     "desc": "Knight-line +1 melee/+2 pierce armor",
+     "pic": 107
+    }
+   ],
+   "team": "Transport Ships +5 line of sight and cost -50%"
+  },
+  "de": {
+   "playstyle": "Infanterie- und Kavallerie-Zivilisation",
+   "bonuses": [
+    "Start mit +100 Stein",
+    "Felder-Weiterentwicklungen bieten +125 % zusätzliche Nahrung",
+    "Soldaten erhalten -40 % Bonusschaden",
+    "Kann Donjon in der Dunklen Zeit errichten, ersetzt Türme",
+    "Befestigungsanlagen werden um 50 % schneller gebaut; Dorfzentren werden um 100 % schneller gebaut"
+   ],
+   "uu": [
+    {
+     "name": "Serjeant",
+     "type": "Infanterie",
+     "pic": 356,
+     "desc": "Sizilianische Spezial-Infanterieeinheit, die Verliese bauen kann. Wirksam gegen Infanterieeinheiten und Kamelreiter. Schwach gegen berittene Bogenschützen und Gewehrschützen."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Erster Kreuzzug",
+     "desc": "bis zu 5 Dorfzentren produzieren jeweils 5 Serjeants, Einheiten sind widerstandsfähiger gegen Bekehrung",
+     "pic": 33
+    },
+    {
+     "name": "Panzerhemd",
+     "desc": "Rittereinheit +1 Nahkampf-/+2 Rüstungsdurchschlag",
+     "pic": 107
+    }
+   ],
+   "team": "Transportschiffe +5 Sichtweite und -50 % Kosten"
+  },
+  "emblem": "sicilians.png"
+ },
+ {
+  "key": "Slavs",
+  "name_en": "Slavs",
+  "name_de": "Slawen",
+  "en": {
+   "playstyle": "Infantry and Siege civilization",
+   "bonuses": [
+    "Farmers work +15% faster",
+    "Arson, Gambesons free",
+    "Siege Workshop Units cost -15%",
+    "Monks move +20% faster"
+   ],
+   "uu": [
+    {
+     "name": "Boyar",
+     "type": "Cavalry",
+     "pic": 114,
+     "desc": "Slavic unique Cavalry with exceptional melee armor. Strong vs. units at close range. Weak vs. Spearman-line and Monks."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Detinets",
+     "desc": "Replaces 40% of Castle and Watch Tower-line stone cost with additional wood cost",
+     "pic": 33
+    },
+    {
+     "name": "Druzhina",
+     "desc": "Infantry deals trample damage",
+     "pic": 107
+    }
+   ],
+   "team": "Military buildings (except Castles) provide +5 population space"
+  },
+  "de": {
+   "playstyle": "Infanterie- und Belagerungszivilisation",
+   "bonuses": [
+    "Bauern arbeiten +15 % schneller",
+    "Brandstiftung, Gambesons kostenlos",
+    "Belagerungswerkstatt-Einheiten kosten 15 % weniger",
+    "Mönche bewegen sich +20 % schneller"
+   ],
+   "uu": [
+    {
+     "name": "Bojar",
+     "type": "Kavallerie",
+     "pic": 114,
+     "desc": "Spezialkavallerie der Slawen mit außergewöhnlicher Nahkampfrüstung. Stark gegen Einheiten im Nahkampf. Schwach gegen Speerkämpfer und Mönche."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Detinets",
+     "desc": "ersetzt 40 % der Steinkosten für Burgen und Beobachtungstürme durch zusätzliche Holzkosten",
+     "pic": 33
+    },
+    {
+     "name": "Druschina",
+     "desc": "Infanterie verursacht Trampelschaden",
+     "pic": 107
+    }
+   ],
+   "team": "Militärgebäude (außer Burgen) liefern +5 Platz für Bevölkerung"
+  },
+  "emblem": "slavs.png"
+ },
+ {
+  "key": "Spanish",
+  "name_en": "Spanish",
+  "name_de": "Spanier",
+  "en": {
+   "playstyle": "Gunpowder and Monk civilization",
+   "bonuses": [
+    "Builders work +30% faster",
+    "Receive +20 gold for each technology researched",
+    "Blacksmith upgrades cost no gold",
+    "Gunpowder Units attack +18% faster",
+    "Cannon Galleons fire more accurately at moving targets"
+   ],
+   "uu": [
+    {
+     "name": "Conquistador",
+     "type": "Mounted Gunner), Missionary (Mounted Monk",
+     "pic": 106,
+     "desc": "Spanish unique Mounted Gunner with powerful attack and mobility. Strong vs. units at range. Weak vs. Spearman-line, Skirmishers, and Monks."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Inquisition",
+     "desc": "Monks and Missionaries convert faster; Missionaries +1 range",
+     "pic": 33
+    },
+    {
+     "name": "Supremacy",
+     "desc": "Villagers +40 HP, +6 attack, +2 melee/+2 pierce armor",
+     "pic": 107
+    }
+   ],
+   "team": "Trade Units generate +25% gold"
+  },
+  "de": {
+   "playstyle": "Volk von Mönchen mit Schießpulver",
+   "bonuses": [
+    "Bauarbeiter arbeiten +30 % schneller.",
+    "+20 Gold für jede erforschte Technologie",
+    "Weiterentwicklungen von Schmieden kosten kein Gold.",
+    "Schießpulvereinheiten greifen +18 % schneller an.",
+    "Kanonenschiffe feuern präziser bei beweglichen Zielen."
+   ],
+   "uu": [
+    {
+     "name": "Konquistador",
+     "type": "berittener Gewehrschütze), Missionar (berittener Mönch",
+     "pic": 106,
+     "desc": "Berittener Spezial-Gewehrschütze der Spanier mit effektivem Angriff und großer Beweglichkeit. Stark gegen Einheiten im Fernkampf. Schwach gegen Speerkämpfer, Plänkler und Mönche."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Inquisition",
+     "desc": "Mönche und Missionare bekehren schneller; Missionare erhalten +1 Reichweite",
+     "pic": 33
+    },
+    {
+     "name": "Überlegenheit",
+     "desc": "Dorfbewohner erhalten +40 LP, +6 Angriffsstärke, +2 Nahkampf-/+2 Durchschlagspanzerung",
+     "pic": 107
+    }
+   ],
+   "team": "Handelseinheiten generieren +25 % Gold."
+  },
+  "emblem": "spanish.png"
+ },
+ {
+  "key": "Tatars",
+  "name_en": "Tatars",
+  "name_de": "Tataren",
+  "en": {
+   "playstyle": "Cavalry Archer civilization",
+   "bonuses": [
+    "Livestock animals last +50% longer",
+    "Units deal +25% damage when fighting from higher elevation",
+    "New Town Centers spawn 2 Sheep starting in Castle Age",
+    "Thumb Ring, Parthian Tactics free"
+   ],
+   "uu": [
+    {
+     "name": "Keshik",
+     "type": "Cavalry), Flaming Camel (Siege Cavalry",
+     "pic": 251,
+     "desc": "Tatar unique Heavy Cavalry that generates gold when fighting other units. Strong vs. Archery Units. Weak vs. Spearman-line, Camel Riders and Monks."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Silk Armor",
+     "desc": "Scout Cavalry-line, Steppe Lancers and Cavalry Archers +1 melee/+1 pierce armor",
+     "pic": 33
+    },
+    {
+     "name": "Timurid Siegecraft",
+     "desc": "Trebuchets +2 range",
+     "pic": 107
+    }
+   ],
+   "team": "Mounted Archers +2 line of sight"
+  },
+  "de": {
+   "playstyle": "Volk berittener Bogenschützen",
+   "bonuses": [
+    "Nutztiere leben um +50 % länger",
+    "Einheiten verursachen um +25 % Schaden, wenn sie von höherer Ebene aus kämpfen",
+    "Neue Dorfzentren erzeugen 2 Schafe ab der Ritterzeit",
+    "Daumenring, Parthisches Manöver kostenlos"
+   ],
+   "uu": [
+    {
+     "name": "Keshik",
+     "type": "Kavallerie), Brandkamel (Belagerungskavallerie",
+     "pic": 251,
+     "desc": "Schwere Spezial-Kavallerie der Tataren, die beim Kampf gegen andere Einheiten Gold erzeugt. Wirksam gegen Bogenschützen. Schwach gegen Speerkämpfer-Linien, Kamelreiter und Mönche."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Seidenrüstung",
+     "desc": "Berittener-Späher-Linie,Steppenlanzenreiter und berittene Bogenschützen erhalten +1 Nahkampf/+1 Durchschlagspanzerung",
+     "pic": 33
+    },
+    {
+     "name": "Belagerungskunst der Timuriden",
+     "desc": "Triboke +2 Reichweite",
+     "pic": 107
+    }
+   ],
+   "team": "Berittene Bogenschützen +2 Sichtweite"
+  },
+  "emblem": "tatars.png"
+ },
+ {
+  "key": "Teutons",
+  "name_en": "Teutons",
+  "name_de": "Teutonen",
+  "en": {
+   "playstyle": "Infantry and Defensive civilization",
+   "bonuses": [
+    "Farms cost -40%",
+    "Town Centers +10 garrison capacity; Towers +5 garrison capacity",
+    "Barracks and Stable Units +1/+2 melee armor in Castle/Imperial Age",
+    "Monks +100% healing range",
+    "Murder Holes, Herbal Medicine free"
+   ],
+   "uu": [
+    {
+     "name": "Teutonic Knight",
+     "type": "Infantry",
+     "pic": 45,
+     "desc": "Teutonic unique Infantry with exceptional melee armor. Slow but resistant to conversion. Strong vs. melee units. Weak vs. Archery Units and Gunners."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Ironclad",
+     "desc": "Siege Weapons +4 melee armor",
+     "pic": 33
+    },
+    {
+     "name": "Crenellations",
+     "desc": "Castles +3 range, garrisoned Infantry fires arrows",
+     "pic": 107
+    }
+   ],
+   "team": "Units more resistant to conversion"
+  },
+  "de": {
+   "playstyle": "Defensives, unberittenes Volk",
+   "bonuses": [
+    "Felder kosten 40 % weniger",
+    "+10 Quartierkapazität für Dorfzentren; +5 Quartierkapazität für Türme",
+    "+1/+2 Nahkampfrüstung für Kasernen und Ställe in der Ritter-/Imperialzeit",
+    "Mönche +100 % Heilungsreichweite",
+    "Maschikulis und Kräutermedizin gratis"
+   ],
+   "uu": [
+    {
+     "name": "Deutschritter",
+     "type": "Infanterieeinheit",
+     "pic": 45,
+     "desc": ""
+    }
+   ],
+   "ut": [
+    {
+     "name": "Panzerung",
+     "desc": "+4 Nahkampfrüstung für Belagerungswaffen",
+     "pic": 33
+    },
+    {
+     "name": "Zinnen",
+     "desc": "+3 Reichweite für Burgen, in Garnison gelegte Infanterieeinheiten verschießen Pfeile",
+     "pic": 107
+    }
+   ],
+   "team": "Einheiten widerstandsfähiger gegen Bekehrung"
+  },
+  "emblem": "teutons.png"
+ },
+ {
+  "key": "Tupi",
+  "name_en": "Tupi",
+  "name_de": "Tupi",
+  "en": {
+   "playstyle": "Archer and Infantry civilization",
+   "bonuses": [
+    "Start with +25 of each resource",
+    "Villagers can garrison in Settlements",
+    "Fallen units return 15% of their cost",
+    "Archery Range and Barracks upgrades cost -50% food"
+   ],
+   "uu": [
+    {
+     "name": "Blackwood Archer",
+     "type": "Foot Archer), Ibirapema Warrior (Infantry",
+     "pic": 549,
+     "desc": ""
+    }
+   ],
+   "ut": [
+    {
+     "name": "Caciques",
+     "desc": "Champi Warriors and Slingers attack +25% faster",
+     "pic": 33
+    },
+    {
+     "name": "Curare",
+     "desc": "Foot Archers and Fortifications deal poison damage",
+     "pic": 107
+    }
+   ],
+   "team": "Towers and Castles provide +10 population space"
+  },
+  "de": {
+   "playstyle": "Unberittenes Volk von Bogenschützen",
+   "bonuses": [
+    "Beginnt mit +25 von jedem Rohstoff",
+    "Dorfbewohner können in Siedlungen in Garnison gelegt werden",
+    "Gefallene Einheiten geben 15 % ihrer Kosten zurück",
+    "Schießstand- und Kasernen-Weiterentwicklungen kosten -50 % Nahrung"
+   ],
+   "uu": [
+    {
+     "name": "Schwarzholz-Bogenschütze",
+     "type": "einfacher Bogenschütze), Ibirapema-Krieger (Infanterieeinheit",
+     "pic": 549,
+     "desc": ""
+    }
+   ],
+   "ut": [
+    {
+     "name": "Caciques",
+     "desc": "Champi-Krieger und Schleuderer greifen +25 % schneller an",
+     "pic": 33
+    },
+    {
+     "name": "Kurare",
+     "desc": "einfache Bogenschützen und Befestigungsanlagen verursachen Giftschaden",
+     "pic": 107
+    }
+   ],
+   "team": "Türme und Burgen bieten +10 Platz in der Bevölkerung"
+  },
+  "emblem": "tupi.png"
+ },
+ {
+  "key": "Turks",
+  "name_en": "Turks",
+  "name_de": "Türken",
+  "en": {
+   "playstyle": "Gunpowder civilization",
+   "bonuses": [
+    "Gold miners work +25% faster",
+    "Scout Cavalry-line +1 pierce armor and upgrades free",
+    "Chemistry free; Gunpowder technologies costs -50%",
+    "Gunpowder Units +25% HP"
+   ],
+   "uu": [
+    {
+     "name": "Janissary",
+     "type": "Foot Gunner",
+     "pic": 39,
+     "desc": "Turkish unique Foot Gunner with powerful attack. Strong vs. Infantry. Weak vs. Archery Units and Skirmishers."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Sipahi",
+     "desc": "Mounted Archers +20 HP",
+     "pic": 33
+    },
+    {
+     "name": "Artillery",
+     "desc": "Bombard Towers, Bombard Cannons, Cannon Galleons +2 range",
+     "pic": 107
+    }
+   ],
+   "team": "Gunpowder Units train +25% faster"
+  },
+  "de": {
+   "playstyle": "Zivilisation mit Schießpulver",
+   "bonuses": [
+    "Goldgräber arbeiten um 25 % schneller.",
+    "+1 Rüstungsdurchschlag für berittene Späher und Weiterentwicklungen gratis",
+    "Chemie gratis, Schießpulver-Technologien kosten -50 %",
+    "+25 % LP für Schießpulvereinheiten"
+   ],
+   "uu": [
+    {
+     "name": "Janitschar",
+     "type": "einfacher Gewehrschütze",
+     "pic": 39,
+     "desc": "Unberittener Spezial-Gewehrschütze der Türken mit effektivem Angriff. Stark gegen Infanterie. Schwach gegen Bogenschützen-Einheiten und Plänkler."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Sipahi",
+     "desc": "+20 LP für berittene Bogenschützen",
+     "pic": 33
+    },
+    {
+     "name": "Artillerie",
+     "desc": "+2 Reichweite für Kanonentürme, Belagerungskanonen, und Kanonenschiffe",
+     "pic": 107
+    }
+   ],
+   "team": "Schießpulvereinheiten werden um 25 % schneller ausgebildet."
+  },
+  "emblem": "turks.png"
+ },
+ {
+  "key": "Vietnamese",
+  "name_en": "Vietnamese",
+  "name_de": "Vietnamesen",
+  "en": {
+   "playstyle": "Archer civilization",
+   "bonuses": [
+    "Enemy Town Centers are revealed at the start of the game",
+    "Economic upgrades cost no wood and research +100% faster",
+    "Archery Range units and Fire Lancers +20% HP",
+    "Conscription free"
+   ],
+   "uu": [
+    {
+     "name": "Rattan Archer",
+     "type": "Foot Archer), Imperial Skirmisher (Skirmisher",
+     "pic": 232,
+     "desc": "Vietnamese unique Foot Archer with exceptional pierce armor. Strong vs. Archery Units and Infantry. Weak vs. Cavalry, Skirmishers and Siege Weapons."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Chatras",
+     "desc": "Battle Elephants +100 HP",
+     "pic": 33
+    },
+    {
+     "name": "Paper Money",
+     "desc": "Lumberjacks slowly generate gold in addition to wood",
+     "pic": 107
+    }
+   ],
+   "team": "Imperial Skirmisher upgrade available in Imperial Age"
+  },
+  "de": {
+   "playstyle": "Zivilisation mit Bogenschützen",
+   "bonuses": [
+    "Die Position der gegnerischen Dorfzentren wird zu Spielbeginn aufgedeckt",
+    "Wirtschaftsentwicklungen kosten kein Holz und werden +100 % schneller erforscht",
+    "+20 % LP für Schießstandeinheiten und Feuer-Lanzenreiter",
+    "Wehrpflicht gratis"
+   ],
+   "uu": [
+    {
+     "name": "Rattanschütze",
+     "type": "einfacher Bogenschütze), imperialer Plänkler (Plänkler",
+     "pic": 232,
+     "desc": ""
+    }
+   ],
+   "ut": [
+    {
+     "name": "Chatras",
+     "desc": "+100 LP für Elefantenreiter",
+     "pic": 33
+    },
+    {
+     "name": "Papiergeld",
+     "desc": "Holzfäller produzieren neben dem Holz auch langsam Gold",
+     "pic": 107
+    }
+   ],
+   "team": "Mögliche Weiterentwicklung zum imperialen Plänkler in der Imperialzeit"
+  },
+  "emblem": "vietnamese.png"
+ },
+ {
+  "key": "Vikings",
+  "name_en": "Vikings",
+  "name_de": "Wikinger",
+  "en": {
+   "playstyle": "Infantry and Naval civilization",
+   "bonuses": [
+    "Wheelbarrow, Hand Cart free",
+    "Infantry +20% HP starting in Feudal Age",
+    "Warships cost -10/15/20% in Feudal/Castle/Imperial Age"
+   ],
+   "uu": [
+    {
+     "name": "Berserk",
+     "type": "Infantry), Longboat (Warship",
+     "pic": 38,
+     "desc": "Viking unique Infantry that regenerates HP. Strong vs. Infantry and Siege Weapons. Weak vs. Archery Units and Gunners."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Chieftains",
+     "desc": "Infantry +5 attack vs. Cavalry, +4 vs. Camel Units; generate +5 gold when defeating Villagers, Trade Units and Monks",
+     "pic": 33
+    },
+    {
+     "name": "Bogsveigar",
+     "desc": "Archer-line and Longboats +1 attack",
+     "pic": 107
+    }
+   ],
+   "team": "Docks cost -15%"
+  },
+  "de": {
+   "playstyle": "Unberittenes Volk von Seefahrern",
+   "bonuses": [
+    "Schubkarre und Handkarren gratis",
+    "+20 % LP für Infanterieeinheiten beginnend in der Feudalzeit",
+    "Kriegsschiffe kosten in der Feudal-/Ritter-/Imperialzeit -10/15/20 %"
+   ],
+   "uu": [
+    {
+     "name": "Berserker",
+     "type": "Infanterieeinheit), Langschiff (Kriegsschiff",
+     "pic": 38,
+     "desc": "Spezialinfanterie der Wikinger, die LP regeneriert. Stark gegen Infanterie und Belagerungswaffen. Schwach gegen Bogenschützen-Einheiten und Gewehrschützen."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Stammesführer",
+     "desc": "+5 Angriffsstärke gegen Kavallerie, +4 gegen Kameleinheiten; erzeugt +5 Gold bei Sieg über Dorfbewohner, Handelseinheiten und Mönche",
+     "pic": 33
+    },
+    {
+     "name": "Bogsveigar",
+     "desc": "+1 Angriffsstärke für Bogenschützen-Linie und Langboote",
+     "pic": 107
+    }
+   ],
+   "team": "Häfen kosten -15 %"
+  },
+  "emblem": "vikings.png"
+ },
+ {
+  "key": "Wei",
+  "name_en": "Wei",
+  "name_de": "Wei",
+  "en": {
+   "playstyle": "Cavalry civilization",
+   "bonuses": [
+    "Receive one free Villager for each economic upgrade researched",
+    "Hei Guang Cavalry and Xianbei Raider +20/30% HP in Castle/Imperial Age",
+    "Traction Trebuchets and Lou Chuans cost -25%"
+   ],
+   "uu": [
+    {
+     "name": "Tiger Cavalry",
+     "type": "Cavalry), Xianbei Raider (Mounted Archer), Cao Cao (Hero",
+     "pic": 432,
+     "desc": "Wei unique Cavalry that gains HP and attack when defeating enemy military. Exceptionally strong vs. Ranged Soldiers. Weak vs. Spearman-line."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Tuntian",
+     "desc": "Soldiers passively produce food",
+     "pic": 33
+    },
+    {
+     "name": "Ming Guang Armor",
+     "desc": "Mounted Units +4 melee armor",
+     "pic": null
+    }
+   ],
+   "team": "Cavalry +2 attack vs. Siege Weapons"
+  },
+  "de": {
+   "playstyle": "Berittenes Volk",
+   "bonuses": [
+    "Sie erhalten für jede Wirtschaftsweiterentwicklung einen kostenlosen Dorfbewohner",
+    "Hei-Guang-Kavallerie und Xianbei-Räuber +20/30 % LP in Ritter-/Imperialzeit",
+    "Zug-Trebuchet und Lou Chuans kosten -25 %"
+   ],
+   "uu": [
+    {
+     "name": "Tiger-Kavallerie",
+     "type": "Kavallerie), Xianbei-Räuber (berittener Bogenschütze), Cao Cao (Held",
+     "pic": 432,
+     "desc": ""
+    }
+   ],
+   "ut": [
+    {
+     "name": "Tuntian",
+     "desc": "Soldaten produzieren passiv Nahrung",
+     "pic": 33
+    },
+    {
+     "name": "Ming-Guang-Rüstung",
+     "desc": "berittene Einheiten +4 Nahkampfrüstung",
+     "pic": null
+    }
+   ],
+   "team": "Kavallerie +2 Angriffsstärke gegen Belagerungswaffen"
+  },
+  "emblem": "wei.png"
+ },
+ {
+  "key": "Wu",
+  "name_en": "Wu",
+  "name_de": "Wu",
+  "en": {
+   "playstyle": "Infantry and Naval civilization",
+   "bonuses": [
+    "Military production buildings and Docks provide +55 food",
+    "Infantry regenerates 10/15/30 HP per minute in Feudal/Castle/Imperial Age",
+    "Jian Swordsmen and Hei Guang Cavalry +2 attack in Imperial Age",
+    "Careening, Dry Dock free"
+   ],
+   "uu": [
+    {
+     "name": "Fire Archer",
+     "type": "Foot Archer), Jian Swordsman (Infantry), Sun Jian (Hero",
+     "pic": 436,
+     "desc": "Wu unique Foot Archer that fires multiple arrows at units and uses a long range attack against buildings. Strong vs. Infantry, Siege Weapons and buildings. Weak vs. Cavalry and Skirmishers."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Red Cliffs Tactics",
+     "desc": "Demolition Ships and Fire Archers deal fire damage to ships and buildings",
+     "pic": null
+    },
+    {
+     "name": "Sitting Tiger",
+     "desc": "Traction Trebuchets and Lou Chuan trebuchet weapons fire additional projectiles",
+     "pic": 107
+    }
+   ],
+   "team": "Houses built +100% faster"
+  },
+  "de": {
+   "playstyle": "Unberittenes Volk von Seefahrern",
+   "bonuses": [
+    "Militärische Produktionsgebäude und Häfen liefern +55 Nahrung",
+    "Infanterieeinheit regeneriert 10/15/30 LP pro Minute in der Feudal-/Ritter-/Imperialzeit",
+    "Jian-Schwertkämpfer und Hei-Guang-Kavallerie verfügen in der Imperialzeit über +2 Angriffsstärke",
+    "Kielholen und Trockendock kostenlos"
+   ],
+   "uu": [
+    {
+     "name": "Feuer-Bogenschütze",
+     "type": "einfacher Bogenschütze), Jian-Schwertkämpfer (Infanterieeinheit), Dun Jian (Held",
+     "pic": 436,
+     "desc": "Einfacher Spezial-Bogenschütze der Wu, der mehrere Pfeile gegen Einheiten abfeuert und einen Fernangriff gegen Gebäude einsetzt. Wirksam gegen Infanterieeinheiten, Belagerungswaffen und Gebäude. Schwach gegen Kavallerie und Plänkler."
+    }
+   ],
+   "ut": [
+    {
+     "name": "Taktiken des Roten Felsen",
+     "desc": "Brander und Feuer-Bogenschützen fügen Schiffen und Gebäuden Feuerschaden zu",
+     "pic": null
+    },
+    {
+     "name": "Hockender Tiger",
+     "desc": "Zug-Trebuchets und Lou-Chuan-Trebuchets feuern zusätzliche Projektile ab",
+     "pic": 107
+    }
+   ],
+   "team": "Häuser werden +100 % schneller errichtet"
+  },
+  "emblem": "wu.png"
+ }
+]

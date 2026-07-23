@@ -1,0 +1,59 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import CivOverview from '../../components/CivOverview.astro';
+import civs from '../../data/civs.json';
+
+// Eine Seite pro Zivilisation: civs/<key>.html
+export function getStaticPaths() {
+  return civs.map((c) => ({
+    params: { civ: c.key.toLowerCase() },
+    props: { civ: c },
+  }));
+}
+
+const { civ } = Astro.props;
+const en = civ.en;
+const slug = `civs/${civ.key.toLowerCase()}.html`;
+const title = `${civ.name_en} — AoE2 Civilization Overview (Bonuses, Unique Units & Techs)`;
+const description =
+  `${civ.name_en} in Age of Empires 2: ${en.playstyle}. Full civilization bonuses, team bonus, ` +
+  `unique units and unique technologies.`;
+const uuNames = en.uu.map((u) => u.name).join(', ');
+const playNoun = en.playstyle.replace(/ civilization$/i, '');
+const article = /^[aeiou]/i.test(playNoun) ? 'an' : 'a';
+---
+
+<GuideLayout
+  slug={slug}
+  title={title}
+  description={description}
+  h1={`${civ.name_en} — Civilization Overview`}
+  subtitle={en.playstyle}
+  breadcrumb={civ.name_en}
+>
+  <div class="civ-hero">
+    <img src={`/icons/civs/${civ.emblem}`} alt={`${civ.name_en} emblem`} width="88" height="88" />
+    <p>
+      The <strong>{civ.name_en}</strong> are {article} {playNoun} civilization
+      in Age of Empires 2. {uuNames && <>Their unique {en.uu.length > 1 ? 'units are' : 'unit is'} the <strong>{uuNames}</strong>.</>}
+      Below is the full civilization overview — bonuses, team bonus, unique units and unique technologies,
+      straight from the game data.
+    </p>
+  </div>
+
+  <CivOverview bonuses={en.bonuses} team={en.team} uu={en.uu} ut={en.ut} />
+
+  <p slot="cta">
+    Playing against the {civ.name_en}? Look up any of their units in the interactive app to see exactly
+    what counters them — with bonus-damage values.
+  </p>
+</GuideLayout>
+
+<style>
+  .civ-hero { display: flex; gap: 1rem; align-items: flex-start; margin: 0.5rem 0 0.5rem; }
+  .civ-hero img { flex: 0 0 auto; }
+  .civ-hero p { margin: 0; }
+  @media (max-width: 520px) {
+    .civ-hero { flex-direction: column; align-items: center; text-align: center; }
+  }
+</style>

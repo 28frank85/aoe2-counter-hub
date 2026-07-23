@@ -1,0 +1,53 @@
+---
+import GuideLayout from '../layouts/GuideLayout.astro';
+import civs from '../data/civs.json';
+
+const sorted = [...civs].sort((a, b) => a.name_en.localeCompare(b.name_en));
+---
+
+<GuideLayout
+  slug="civilizations.html"
+  title="Age of Empires 2 Civilizations — Overview of All Bonuses, Unique Units & Techs"
+  description="Browse every Age of Empires 2 civilization. Select a civilization to see its civilization bonuses, team bonus, unique units and unique technologies."
+  h1="Age of Empires 2 Civilizations"
+  subtitle="All 53 civilizations — bonuses, team bonus, unique units and unique technologies"
+  breadcrumb="Civilizations"
+>
+  <p class="civ-intro">
+    Select a civilization to see its <strong>Civilization Bonuses</strong>, <strong>Team Bonus</strong>,
+    <strong>Unique Units</strong> and <strong>Unique Technologies</strong>.
+  </p>
+
+  <nav class="civ-grid" aria-label="Civilizations">
+    {sorted.map((c) => (
+      <a class="civ-tile" href={`civs/${c.key.toLowerCase()}.html`}>
+        <img src={`/icons/civs/${c.emblem}`} alt={`${c.name_en} emblem`} width="56" height="56" loading="lazy" />
+        <span>{c.name_en}</span>
+      </a>
+    ))}
+  </nav>
+</GuideLayout>
+
+<style>
+  .civ-intro { font-size: 1.05rem; margin: 0 0 1.5rem; }
+  .civ-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+    gap: 0.7rem;
+    margin: 0 0 1rem;
+  }
+  .civ-tile {
+    display: flex; flex-direction: column; align-items: center; gap: 0.45rem;
+    padding: 0.85rem 0.5rem;
+    text-decoration: none; color: inherit;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow);
+    transition: border-color 0.12s, transform 0.12s;
+    text-align: center;
+  }
+  .civ-tile:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .civ-tile img { width: 56px; height: 56px; object-fit: contain; }
+  .civ-tile span { font-size: 0.85rem; font-weight: 600; line-height: 1.2; }
+</style>

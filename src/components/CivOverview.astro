@@ -1,0 +1,112 @@
+---
+// Rendert die vier Civilization-Overview-Boxen (Boni → Team-Bonus → Unique Units → Unique Techs).
+// Sprache: Englisch (Site-Sprache). Die deutschen Daten liegen in civs.json bereit für einen späteren Toggle.
+export interface UU { name: string; type: string; pic: number | null; desc: string; }
+export interface UT { name: string; desc: string; pic: number | null; }
+export interface Props {
+  bonuses: string[];
+  team: string;
+  uu: UU[];
+  ut: UT[];
+}
+const { bonuses, team, uu, ut } = Astro.props;
+const pad = (n: number) => String(n).padStart(3, '0');
+---
+
+<div class="civ-boxes">
+  <section class="civ-box">
+    <h2>Civilization Bonuses</h2>
+    <ul class="civ-bonus-list">
+      {bonuses.map((b) => <li>{b}</li>)}
+    </ul>
+  </section>
+
+  <section class="civ-box">
+    <h2>Team Bonus</h2>
+    <p class="civ-team">{team}</p>
+  </section>
+
+  <section class="civ-box">
+    <h2>Unique Units</h2>
+    <div class="civ-uu-grid">
+      {uu.map((u) => (
+        <a class="civ-uu" href="unique-unit-counters.html">
+          {u.pic != null && (
+            <img src={`/icons/${pad(u.pic)}_50730.png`} alt={u.name} width="56" height="56" loading="lazy" />
+          )}
+          <div class="civ-uu-body">
+            <span class="civ-uu-name">{u.name}{u.type && <em> · {u.type}</em>}</span>
+            {u.desc && <span class="civ-uu-desc">{u.desc}</span>}
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="civ-box">
+    <h2>Unique Technologies</h2>
+    <div class="civ-ut-list">
+      {ut.map((u) => (
+        <div class="civ-ut">
+          {u.pic != null && (
+            <img src={`/icons/tech/${u.pic}.png`} alt="" width="40" height="40" loading="lazy" />
+          )}
+          <div class="civ-ut-body">
+            <span class="civ-ut-name">{u.name}</span>
+            {u.desc && <span class="civ-ut-desc">{u.desc}</span>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</div>
+
+<style>
+  .civ-boxes { display: grid; gap: 1.1rem; margin: 1.5rem 0; }
+  .civ-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.1rem 1.25rem 1.25rem;
+  }
+  .civ-box h2 {
+    margin: 0 0 0.85rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text2);
+    border: 0;
+    padding: 0;
+  }
+  .civ-bonus-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.5rem; }
+  .civ-bonus-list li { display: flex; gap: 0.6rem; font-size: 0.98rem; }
+  .civ-bonus-list li::before { content: "›"; color: var(--accent); font-weight: 700; }
+  .civ-team {
+    margin: 0;
+    background: var(--good-bg);
+    color: var(--good-tx);
+    border-radius: var(--radius-sm);
+    padding: 0.8rem 1rem;
+    font-weight: 600;
+  }
+  .civ-uu-grid { display: grid; gap: 0.75rem; }
+  .civ-uu {
+    display: flex; gap: 0.85rem; align-items: flex-start;
+    text-decoration: none; color: inherit;
+    border: 1px solid var(--border); border-radius: var(--radius-sm);
+    padding: 0.7rem 0.8rem; transition: border-color 0.12s, background 0.12s;
+  }
+  .civ-uu:hover { border-color: var(--accent); background: var(--bg2); }
+  .civ-uu img { flex: 0 0 auto; border-radius: 6px; }
+  .civ-uu-body { display: flex; flex-direction: column; gap: 0.15rem; }
+  .civ-uu-name { font-weight: 700; }
+  .civ-uu-name em { color: var(--text2); font-style: normal; font-weight: 500; }
+  .civ-uu-desc { font-size: 0.9rem; color: var(--text2); line-height: 1.45; }
+  .civ-ut-list { display: grid; gap: 0.7rem; }
+  .civ-ut { display: flex; gap: 0.75rem; align-items: flex-start; }
+  .civ-ut img { flex: 0 0 auto; }
+  .civ-ut-body { display: flex; flex-direction: column; gap: 0.1rem; }
+  .civ-ut-name { font-weight: 700; }
+  .civ-ut-desc { font-size: 0.9rem; color: var(--text2); line-height: 1.45; }
+</style>

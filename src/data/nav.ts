@@ -8,6 +8,7 @@ export const NAV = [
   { href: 'cavalry-archer-counters.html', label: 'Cav Archers' },
   { href: 'siege-counters.html', label: 'Siege' },
   { href: 'unique-unit-counters.html', label: 'Unique Units' },
+  { href: 'civilizations.html', label: 'Civilizations' },
   { href: 'naval-counters.html', label: 'Naval' },
   { href: 'beginners-counter-guide.html', label: "Beginner's Guide" },
 ];
