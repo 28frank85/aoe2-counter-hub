@@ -11,7 +11,8 @@
   --bg-hover:  #e4e7ee;
   --surface:   #ffffff;
 
-  --text:      #18181b;
+  --text:      #1a1a1a;
+  --heading:   #0a0a0a;
   --text2:     #5c6577;
   --border:    #dfe3ea;
   --border2:   #c8cedb;
@@ -55,7 +56,8 @@
   --bg-hover:  #253040;
   --surface:   #151b23;
 
-  --text:      #e8edf5;
+  --text:      #dcdfe4;
+  --heading:   #f5f7fa;
   --text2:     #97a3b6;
   --border:    #262f3d;
   --border2:   #364154;
@@ -108,12 +110,12 @@ header {
 }
 
 header h1 {
-  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--text);
+  color: var(--heading);
   margin-bottom: 0.4rem;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
 header p.subtitle {
@@ -206,19 +208,19 @@ header p.subtitle {
 
 /* ── TYPOGRAPHY ─────────────────────────────────────── */
 h2 {
-  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
   font-weight: 700;
   letter-spacing: -0.015em;
-  color: var(--text);
+  color: var(--heading);
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border);
   margin: 2.4rem 0 1.2rem;
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--heading);
   margin: 1.5rem 0 0.7rem;
 }
 
@@ -397,7 +399,7 @@ a { color: var(--accent); }
 }
 
 .faq-item h3 {
-  color: var(--text);
+  color: var(--heading);
   margin: 0 0 0.5rem;
   font-size: 0.98rem;
 }
