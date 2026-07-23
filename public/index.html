@@ -389,6 +389,26 @@
       margin-bottom: 1.2rem;
     }
 
+    /* Civ-Bonus mit Original-Wappen */
+    .civ-bonus-box {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.7rem 0.85rem;
+      background: var(--accent-sub);
+      border-radius: 8px;
+    }
+    .civ-emblem {
+      flex: 0 0 auto;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+    .civ-bonus-box .civ-bonus-list {
+      flex: 1;
+      padding: 0;
+      background: none;
+    }
+
     /* Civ-Bonus-Liste */
     .civ-bonus-list {
       list-style: none;
@@ -400,17 +420,60 @@
       background: var(--accent-sub);
       border-radius: 8px;
     }
-    .civ-bonus-list li {
-      position: relative;
-      padding-left: 1.1rem;
+
+    /* Unique Technologies */
+    .ut-grid { display: grid; gap: 0.5rem; }
+    .ut-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 0.6rem 0.8rem;
+      padding: 0.6rem 0.85rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
     }
+    .ut-icon { flex: 0 0 auto; border-radius: 6px; object-fit: contain; }
+    .ut-icon-ph {
+      display: flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; font-size: 1.1rem;
+      background: var(--accent-sub); border-radius: 6px;
+    }
+    /* Civ-Verstärkungen für generische Einheiten (zugeklappt) */
+    .civ-boosts summary {
+      cursor: pointer;
+      padding: 0.6rem 0.85rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      color: var(--text2);
+      list-style: none;
+    }
+    .civ-boosts summary::-webkit-details-marker { display: none; }
+    .civ-boosts summary::before { content: "▸ "; color: var(--accent); font-weight: 700; }
+    .civ-boosts[open] summary::before { content: "▾ "; }
+    .civ-boosts summary:hover { background: var(--bg-hover); }
+    .civ-boost-list { display: grid; gap: 0.45rem; margin-top: 0.45rem; }
+    .civ-boost {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: start;
+      gap: 0.7rem;
+      padding: 0.6rem 0.85rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+    }
+    .civ-boost-name { font-weight: 700; font-size: 0.9rem; color: var(--text); margin-bottom: 0.15rem; }
+    .civ-boost-lines { list-style: none; margin: 0; padding: 0; font-size: 0.85rem; color: var(--text2); line-height: 1.45; }
+    .civ-boost-lines li + li { margin-top: 0.2rem; }
+    .civ-boost-lines b { color: var(--text); font-weight: 600; }
+
+    .ut-name { font-weight: 600; font-size: 0.95rem; color: var(--text); line-height: 1.35; }
+    .ut-desc { font-size: 0.85rem; color: var(--text2); margin-top: 0.2rem; line-height: 1.45; }
+    .civ-bonus-list li { position: relative; }
     .civ-bonus-list li + li { margin-top: 0.4rem; }
-    .civ-bonus-list li::before {
-      content: "▸";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-    }
 
     .card-body { padding: 1.3rem; }
 
@@ -489,6 +552,38 @@
 
     .strength-badge.hard { background: var(--hard-bg); color: var(--hard-tx); }
     .strength-badge.soft { background: var(--soft-bg); color: var(--soft-tx); }
+    .strength-badge.strong { background: var(--good-bg); color: var(--good-tx); }
+    .counter-row.strong { border-left-color: var(--good); }
+
+    .section-title.mt { margin-top: 1.2rem; }
+
+    /* ---------- Werte/Kosten als Zeilen-Liste ---------- */
+    .data-grid { display: grid; gap: 0.45rem; margin-bottom: 1rem; }
+    .data-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.6rem 0.85rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+    }
+    .data-icon { font-size: 1.1rem; width: 1.4rem; text-align: center; line-height: 1; display: flex; align-items: center; justify-content: center; }
+    .stat-icon { width: 20px; height: 20px; object-fit: contain; display: block; }
+    .data-label {
+      font-size: 0.9rem; color: var(--text2);
+      text-transform: uppercase; letter-spacing: 0.04em; font-weight: 500;
+    }
+    .data-val {
+      font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em;
+      color: var(--text); font-variant-numeric: tabular-nums;
+    }
+    .data-val .sub { font-size: 0.72rem; color: var(--text2); font-weight: 400; margin-left: 0.15rem; }
+    .data-bonus {
+      background: var(--good-bg); color: var(--good-tx);
+      padding: 0.05rem 0.45rem; border-radius: 999px; font-size: 0.9rem;
+    }
 
     /* ---------- Bonus-Chips ---------- */
     .bonus-chips {
@@ -3740,7 +3835,8 @@ const UI = {
     h1: "⚔ Age of Empires 2 DE Unit Counter Guide",
     search_placeholder: "Find counters — type a unit (Knight, Archer, Pikeman…)",
     tip: "Type a unit and learn how to counter it.",
-    strong_vs_section: "⚔️ Strong vs. & Bonus Damage",
+    strong_vs_section: "Strong vs.",
+    strong_badge: "Strong",
     strong_vs_label: "Strong vs:",
     bonus_damage_label: "Bonus damage:",
     bonus_note: "Values from Age of Empires 2 DE game data. Base attack not included.",
@@ -3748,8 +3844,8 @@ const UI = {
     civ_bonus_label: "Bonuses",
     civ_threat_label: "⚠️ Watch for",
     civ_counter_label: "🛡️ Counter with",
-    hard_section: "🛡️ Hard Counters",
-    soft_section: "🟡 Soft Counters",
+    hard_section: "🔴 Hard Countered By",
+    soft_section: "🟡 Soft Countered By",
     hard_badge: "Hard",
     soft_badge: "Soft",
     no_data: "No specific counter data available.",
@@ -3770,7 +3866,11 @@ const UI = {
     train_time: "Train time",
     vs_word: "vs.",
     class_word: "Class",
-    profile_section: "📖 Profile",
+    profile_section: "📖 Unit Profile",
+    stats_section: "📊 Stats",
+    costs_section: "💰 Costs",
+    stat_atk_melee: "Melee Attack",
+    stat_atk_pierce: "Pierce Attack",
     unique_badge: "Unique Unit",
     uu_tag: "UU",
     uu_tag_title: "Unique Unit",
@@ -3781,7 +3881,8 @@ const UI = {
     h1: "⚔ Age of Empires 2 DE Einheiten-Konter-Guide",
     search_placeholder: "Konter finden — Einheit eingeben (Ritter, Bogenschütze, Pikenier…)",
     tip: "Gib eine Einheit ein und erfahre, womit du sie am besten bekämpfst.",
-    strong_vs_section: "⚔️ Stark gegen & Bonus-Schaden",
+    strong_vs_section: "Stark gegen",
+    strong_badge: "Stark",
     strong_vs_label: "Stark gegen:",
     bonus_damage_label: "Bonus-Schaden:",
     bonus_note: "Werte aus den Age of Empires 2 DE Spieldaten. Basisangriff nicht enthalten.",
@@ -3789,8 +3890,8 @@ const UI = {
     civ_bonus_label: "Boni",
     civ_threat_label: "⚠️ Achte auf",
     civ_counter_label: "🛡️ Konter mit",
-    hard_section: "🛡️ Harte Konter",
-    soft_section: "🟡 Weiche Konter",
+    hard_section: "🔴 Hart gekontert von",
+    soft_section: "🟡 Weich gekontert von",
     hard_badge: "Hart",
     soft_badge: "Weich",
     no_data: "Keine spezifischen Counter-Daten vorhanden.",
@@ -3811,7 +3912,11 @@ const UI = {
     train_time: "Trainingsdauer",
     vs_word: "gegen",
     class_word: "Klasse",
-    profile_section: "📖 Profil",
+    profile_section: "📖 Einheiten-Profil",
+    stats_section: "📊 Werte",
+    costs_section: "💰 Kosten",
+    stat_atk_melee: "Nahkampf-Angriff",
+    stat_atk_pierce: "Distanz-Angriff",
     unique_badge: "Einzigartige Einheit",
     uu_tag: "UU",
     uu_tag_title: "Einzigartige Einheit",
@@ -4707,6 +4812,13 @@ function uuTag(name) {
     : "";
 }
 
+// ── Schadensart je Einheit (aus AoE2-Spieldaten: Attacks-Klasse 3 = Pierce, 4 = Melee).
+// Keine Einheit hat beide Arten; nicht gelistete Einheiten schlagen im Nahkampf zu.
+const PIERCE_ATTACKERS = new Set(["Arambai","Arbalest","Arbalester","Archer","Ballista Elephant","Blackwood Archer","Bolas Rider","Camel Archer","Caravel","Cavalry Archer","Chu Ko Nu","Composite Bowman","Conquistador","Crossbowman","Elephant Archer","Elite Arambai","Elite Ballista Elephant","Elite Blackwood Archer","Elite Bolas Rider","Elite Camel Archer","Elite Caravel","Elite Chu Ko Nu","Elite Composite Bowman","Elite Conquistador","Elite Elephant Archer","Elite Fire Archer","Elite Genitour","Elite Genoese Crossbowman","Elite Guecha Warrior","Elite Hussite Wagon","Elite Janissary","Elite Kipchak","Elite Longboat","Elite Longbowman","Elite Mangudai","Elite Organ Gun","Elite Plumed Archer","Elite Ratha (Ranged)","Elite Rattan Archer","Elite Skirmisher","Elite Turtle Ship","Elite War Wagon","Fire Archer","Galleon","Galley","Genitour","Genoese Crossbowman","Grenadier","Guecha Warrior","Hand Cannoneer","Heavy Cavalry Archer","Heavy Scorpion","Hussite Wagon","Imperial Skirmisher","Janissary","Kipchak","Longboat","Longbowman","Mangudai","Organ Gun","Plumed Archer","Ratha (Ranged)","Rattan Archer","Scorpion","Skirmisher","Slinger","Thirisadai","Trebuchet","Turtle Ship","War Chariot (Barrage)","War Chariot (Focus Fire)","War Galley","War Wagon","Xianbei Raider"]);
+
+// ── Civ-Meta: Wappen-Emblem + Unique Techs je Civ (aus civs.json, en/de) ──
+const CIV_META = {"Armenier":{"emblem":"armenians.png","ut":[{"n":"Cilician Fleet","nd":"Kilikische Flotte","d":"Demolition Ships +20% blast radius; Galley-line and Dromons +1 range","dd":"Brander +20 % Explosionsradius; Galeerenlinie und Dromonen +1 Reichweite","p":33},{"n":"Fereters","nd":"Fereter","d":"Infantry (except Spearman-line) +30 HP; Warrior Priests heal +100% faster","dd":"Infanterieeinheit außer Speerkämpferlinie +30 LP, Kriegerpriester +100 % Heilungsgeschwindigkeit","p":107}]},"Azteken":{"emblem":"aztecs.png","ut":[{"n":"Atlatl","nd":"Speerschleuder","d":"Skirmishers +1 attack, +1 range","dd":"Plänkler +1 Angriffsstärke, +1 Reichweite","p":33},{"n":"Garland Wars","nd":"Blumenkriege","d":"Infantry +4 attack","dd":"Infanterie +4 Angriffsstärke","p":107}]},"Bengalen":{"emblem":"bengalis.png","ut":[{"n":"Paiks","nd":"Paiks","d":"Rathas and Elephant Units attack +20% faster","dd":"Rathas und Elefanteneinheiten greifen um 20 % schneller an","p":33},{"n":"Mahayana","nd":"Mahayana","d":"Villagers and Monks take -10% population space","dd":"Dorfbewohner und Mönche benötigen 10 % weniger Platz für Bevölkerungseinheiten","p":107}]},"Berber":{"emblem":"berbers.png","ut":[{"n":"Kasbah","nd":"Kasbah","d":"Team Castles work +25% faster","dd":"Team-Burgen arbeiten 25 % schneller","p":33},{"n":"Maghrebi Camels","nd":"Maghreb-Kamele","d":"Camel Units regenerate 15 HP per minute","dd":"Kameleinheiten regenerieren 15 LP pro Minute","p":107}]},"Böhmen":{"emblem":"bohemians.png","ut":[{"n":"Wagenburg Tactics","nd":"Wagenburg-Taktik","d":"Gunpowder Units move +15% faster","dd":"Schießpulvereinheiten bewegen sich +15 % schneller","p":null},{"n":"Hussite Reforms","nd":"Hussitenreformen","d":"Monks and Monastery technologies gold cost is replaced by food cost","dd":"Mönche und Kloster-Technologien kosten Nahrung statt Gold","p":107}]},"Briten":{"emblem":"britons.png","ut":[{"n":"Yeomen","nd":"Freisassen","d":"Foot Archers and Skirmisher-line +1 range; Watch Tower-line +2 attack","dd":"+1 Angriffsstärke für einfache Bogenschützen und Plänkler; +2 Angriffsstärke für Turm","p":33},{"n":"Warwolf","nd":"Warwulf","d":"Trebuchets deal blast damage and are more accurate","dd":"Triboke verursachen Sprengschaden und sind treffsicherer","p":107}]},"Bulgaren":{"emblem":"bulgarians.png","ut":[{"n":"Stirrups","nd":"Steigbügel","d":"Cavalry attacks +33% faster","dd":"+33 % Angriffsgeschwindigkeit für Kavallerie","p":33},{"n":"Bagains","nd":"Bagaine","d":"Militia-line +5 melee armor","dd":"Milizsoldatenzweig +5 Nahkampfrüstung","p":107}]},"Burgunder":{"emblem":"burgundians.png","ut":[{"n":"Burgundian Vineyards","nd":"Burgundische Weinberge","d":"Farmers slowly generate gold in addition to food","dd":"Bauern erzeugen neben Nahrung auch Gold","p":33},{"n":"Flemish Revolution","nd":"Flämische Revolution","d":"All existing Villagers are transformed to Flemish Militia","dd":"entwickelt alle Dorfbewohner zu flämischen Milizsoldaten weiter","p":107}]},"Birmanen":{"emblem":"burmese.png","ut":[{"n":"Manipur Cavalry","nd":"Manipur-Kavallerie","d":"Cavalry +4 attack vs. Ranged Soldiers","dd":"Kavallerie +4 Angriffsstärke gg. Fernkampfsoldat","p":33},{"n":"Howdah","nd":"Howdah","d":"Battle Elephants +1 melee/+1 pierce armor","dd":"Elefantenreiter +1 Nahkampf/+1 Rüstung durchschlagen","p":107}]},"Byzantiner":{"emblem":"byzantines.png","ut":[{"n":"Greek Fire","nd":"Griechisches Feuer","d":"Fire Ships +1 range; Dromons and Bombard Towers increased blast radius","dd":"+1 Reichweite für Feuerschiffe; Sprengradius von Dromone und Kanonenturm erhöht","p":33},{"n":"Logistica","nd":"Logistik","d":"Cataphracts deal trample damage, +6 attack vs. Infantry","dd":"+6 Angriffsstärke für gepanzerten Reiter, dazu Schaden durch Zertrampeln","p":107}]},"Kelten":{"emblem":"celts.png","ut":[{"n":"Stronghold","nd":"Festung","d":"Castles and Watch Tower-line attack +33% faster; Castles heal allied Infantry in a 7 tile radius","dd":"Burgen- und Turmangriffe laufen um 33 % schneller ab, Burgen heilen verbündete Infanterie in einem Radius von 7 Feldern","p":33},{"n":"Furor Celtica","nd":"Keltischer Zorn","d":"Siege Weapons +40% HP","dd":"+40 % LP für Belagerungswaffen","p":107}]},"Chinesen":{"emblem":"chinese.png","ut":[{"n":"Great Wall","nd":"Große Mauer","d":"Walls, Watch Tower-line and Bombard Towers +30% HP","dd":"+30 % LP für Mauern, Türme und Kanonentürme","p":33},{"n":"Rocketry","nd":"Raketen","d":"Scorpions, Rocket Carts and Lou Chuans +25% attack; Lou Chuans fire rockets","dd":"+25 % Angriffsstärke für Skorpione, Raketenkarren und Lou Chuans; Lou Chuans feuern Raketen ab","p":107}]},"Kumanen":{"emblem":"cumans.png","ut":[{"n":"Steppe Husbandry","nd":"Steppentierhaltung","d":"Scout Cavalry-line, Steppe Lancers and Cavalry Archers train +100% faster","dd":"Berittener-Späher-Linie, Steppenlanzenreiter, berittene Bogenschützen werden um +100 % schneller ausgebildet","p":33},{"n":"Cuman Mercenaries","nd":"Kumanische Söldner","d":"All team members can train 5 free Elite Kipchaks per Castle","dd":"alle Teammitglieder können 5 kostenlose Elite-Kiptschaks pro Burg ausbilden","p":107}]},"Draviden":{"emblem":"dravidians.png","ut":[{"n":"Medical Corps","nd":"Medizintruppen","d":"Elephant Units regenerate 30 HP per minute","dd":"Elefanteneinheiten stellen pro Minute 30 LP wieder her","p":33},{"n":"Wootz Steel","nd":"Wootz-Stahl","d":"Infantry and Cavalry attacks ignore armor","dd":"Infanterie- und Kavallerieangriffe ignorieren Rüstung","p":107}]},"Äthiopier":{"emblem":"ethiopians.png","ut":[{"n":"Royal Heirs","nd":"Königliche Erben","d":"Shotel Warriors and Camel Riders receive -3 damage from Mounted Units","dd":"Shotelkrieger und Kamelreiter erleiden -3 Schaden von berittenen Einheiten","p":33},{"n":"Torsion Engines","nd":"Torsionsgeschütze","d":"Siege Workshop Units' blast radius increased","dd":"erhöht Explosionsradius von Belagerungseinheiten","p":107}]},"Franken":{"emblem":"franks.png","ut":[{"n":"Bearded Axe","nd":"Bartaxt","d":"Throwing Axemen +2 range","dd":"+2 Reichweite für Axtwerfer","p":33},{"n":"Chivalry","nd":"Rittertum","d":"Stables work +40% faster","dd":"Ställe arbeiten um 40 % schneller","p":107}]},"Georgier":{"emblem":"georgians.png","ut":[{"n":"Svan Towers","nd":"Swanetische Türme","d":"Fortifications +2 attack; Watch Tower-line deals pass through damage","dd":"+2 Angriffsstärke für Befestigungen, Turm verursacht Durchschlagsschaden","p":33},{"n":"Aznauri Cavalry","nd":"Aznauri-Kavallerie","d":"Mounted Units take -20% population space","dd":"Berittene Einheiten benötigen -20 % Platz in der Bevölkerung.","p":107}]},"Goten":{"emblem":"goths.png","ut":[{"n":"Anarchy","nd":"Anarchie","d":"Huskarls can be trained at Barracks","dd":"Huskarls können in Kasernen ausgebildet werden","p":33},{"n":"Perfusion","nd":"Mobilität","d":"Barracks work +100% faster","dd":"Kasernen arbeiten um 100 % schneller","p":107}]},"Gurjara":{"emblem":"gurjaras.png","ut":[{"n":"Kshatriyas","nd":"Kshatriyas","d":"Military Units cost -25% food","dd":"Militäreinheiten kosten -25 % Nahrung","p":33},{"n":"Frontier Guards","nd":"Grenzwachen","d":"Camel Riders and Elephant Archers +4 melee armor","dd":"Kamelreiter und Elefantenbogenschützen +4 Nahkampfrüstung","p":107}]},"Hindustani":{"emblem":"hindustanis.png","ut":[{"n":"Grand Trunk Road","nd":"Große Fernstraße","d":"All gold income +10% faster; Market trading fee reduced to 10%","dd":"gesamtes Goldeinkommen um +10 % schneller; Markthandelsgebühr auf 10 % reduziert","p":33},{"n":"Shatagni","nd":"Shatagni","d":"Hand Cannoneers +2 range","dd":"+2 Reichweite für Handrohrschützen","p":107}]},"Hunnen":{"emblem":"huns.png","ut":[{"n":"Marauders","nd":"Marodeure","d":"Tarkans can be trained at Stables","dd":"Tarkane können in Ställen ausgebildet werden","p":33},{"n":"Atheism","nd":"Atheismus","d":"Enemy Relics generate -50% resources; Wonder and Relic victory takes +100 years","dd":"feindliche Reliquien erzeugen 50 % weniger Rohstoffe, Weltwunder und Reliquiensieg dauern 100 Jahre länger","p":107}]},"Inka":{"emblem":"incas.png","ut":[{"n":"Andean Sling","nd":"Andenschleuder","d":"Skirmishers and Slingers no minimum range; Slingers +1 attack","dd":"keine Mindestreichweite für Plänkler und Schleuderer; Schleuderer +1 Angriffsstärke","p":33},{"n":"Fabric Shields","nd":"Stoffschilde","d":"Kamayuks, Slingers and Champi Warriors +1 melee/+1 pierce armor","dd":"Kamayuks, Schleuderer und Champi-Krieger +1 Nahkampf/+1 Rüstung durchschlagen","p":107}]},"Italiener":{"emblem":"italians.png","ut":[{"n":"Silk Road","nd":"Seidenstraße","d":"Trade Units cost -50%","dd":"Handelseinheiten kosten -50 %","p":33},{"n":"Pirotechnia","nd":"Piritechnoloia","d":"Hand Cannoneers deal +15% pass through damage and are more accurate","dd":"Handkanoniere verursachen +15 % Durchschlagsschaden und sind treffsicherer","p":107}]},"Japaner":{"emblem":"japanese.png","ut":[{"n":"Yasama","nd":"Yasama","d":"Watch Tower-line fires additional arrows","dd":"Turm verschießt zusätzliche Pfeile","p":33},{"n":"Kataparuto","nd":"Kataparuto","d":"Trebuchets attack and pack/unpack faster","dd":"Triboke greifen schneller an und laden/entladen schneller","p":107}]},"Jurchen":{"emblem":"jurchens.png","ut":[{"n":"Fortified Bastions","nd":"Befestigte Bastionen","d":"Fortifications regenerate 500 HP per minute","dd":"Befestigungen regenerieren 500 LP pro Minute.","p":33},{"n":"Thunderclap Bombs","nd":"Donnerschlag-Bomben","d":"Rocket Carts, Grenadiers and Lou Chuans detonate when defeated; projectiles produce additional explosions","dd":"Raketenkarren, Grenadiere und Lou-Chuans detonieren, wenn sie besiegt werden. Geschosse bewirken zusätzliche Explosionen.","p":107}]},"Kitan":{"emblem":"khitans.png","ut":[{"n":"Lamellar Armor","nd":"Lamellenrüstung","d":"Infantry and Skirmishers reflect 25% melee damage back to the attacker","dd":"Infanterieeinheiten und Plänkler werfen 25 % des Nahkampfschadens auf den Angreifer zurück","p":33},{"n":"Ordo Cavalry","nd":"Kavallerie von Ordo","d":"Cavalry regenerates HP in combat","dd":"Kavallerie regeneriert LP im Kampf","p":107}]},"Khmer":{"emblem":"khmer.png","ut":[{"n":"Tusk Swords","nd":"Stoßzahnschwerter","d":"Battle Elephants +3 attack","dd":"Elefantenreiter +3 Angriffsstärke","p":33},{"n":"Double Crossbow","nd":"Doppelarmbrust","d":"Ballista Elephants and Scorpions fire an additional projectile","dd":"Ballistenelefanten und Skorpione schießen ein zusätzliches Projektil","p":107}]},"Koreaner":{"emblem":"koreans.png","ut":[{"n":"Eupseong","nd":"Eupseong","d":"Watch Tower-line +2 range","dd":"+2 Sichtweite für Türme","p":33},{"n":"Shinkichon","nd":"Shinkichon","d":"Rocket Carts and Turtle Ships +1 range, fire additional projectiles","dd":"+1 Reichweite für Raketenkarren und Schildkrötenschiff, Abfeuern zusätzlicher Geschosse","p":107}]},"Litauer":{"emblem":"lithuanians.png","ut":[{"n":"Hill Forts","nd":"Hügelfestungen","d":"Town Centers +3 range","dd":"+3 Reichweite für Dorfzentren","p":33},{"n":"Tower Shields","nd":"Turmschilde","d":"Spearman-line and Skirmishers +2 pierce armor","dd":"Speerkämpfer und Plänkler +2 Durchschlagsrüstung","p":107}]},"Ungarn":{"emblem":"magyars.png","ut":[{"n":"Corvinian Army","nd":"Corvinianische Armee","d":"Magyar Huszar gold cost is replaced by additional food cost","dd":"Goldpreis für ungarische Husaren durch zusätzliche Nahrungskosten ersetzt","p":33},{"n":"Recurve Bow","nd":"Recurvebogen","d":"Mounted Archers +1 attack, +1 range","dd":"+1 Angriffsstärke und +1 Reichweite für berittene Bogenschützen","p":107}]},"Malaien":{"emblem":"malay.png","ut":[{"n":"Thalassocracy","nd":"Thalassokratie","d":"Docks are upgraded to Harbors","dd":"Entwickelt Häfen zu Kriegshäfen","p":33},{"n":"Forced Levy","nd":"Zwangsrekrutierung","d":"Militia-line gold cost is replaced by additional food cost","dd":"Einheiten der Milizsoldat-Reihe kosten zusätzliche Nahrung statt Gold","p":107}]},"Malier":{"emblem":"malians.png","ut":[{"n":"Tigui","nd":"Tigui","d":"Town Centers fire arrows without garrison","dd":"Dorfzentren schießen auch, wenn die Einheiten nicht in Garnison liegen","p":33},{"n":"Farimba","nd":"Farimba","d":"Cavalry +5 attack","dd":"+5 Angriffsstärke für Kavallerie","p":107}]},"Mapuche":{"emblem":"mapuche.png","ut":[{"n":"Malon","nd":"Malón","d":"Bolas Riders, Slingers and Skirmishers deal pass through damage","dd":"Bolasreiter, Schleuderer und Plänkler verursachen Durchschlagschaden.","p":33},{"n":"Butalmapu","nd":"Butalmapu","d":"Team Castle Unique Units and Bolas Riders cost -15%","dd":"Spezialeinheiten des Burgteams und Bolasreiter kosten -15 %.","p":107}]},"Maya":{"emblem":"mayans.png","ut":[{"n":"Hul'che Javelineers","nd":"Hul 'che-Speerschleuderer","d":"Skirmishers fire an additional projectile","dd":"Plänkler feuern ein zusätzliches Projektil ab","p":null},{"n":"Holcans","nd":"Holcans","d":"Eagle Warriors +40 HP","dd":"Adlerkrieger +40 LP","p":null}]},"Mongolen":{"emblem":"mongols.png","ut":[{"n":"Nomads","nd":"Nomaden","d":"Lost Houses do not decrease population space","dd":"Zerstörte Häuser verringern Platz in der Bevölkerung nicht","p":33},{"n":"Drill","nd":"Drill","d":"Siege Workshop Units move +50% faster","dd":"Belagerungseinheiten bewegen sich um +50 % schneller","p":107}]},"Muisca":{"emblem":"muisca.png","ut":[{"n":"Herbalism","nd":"Kräuterkunde","d":"Archer-line and Champi Warriors move +15% faster","dd":"Bogenschützeneinheiten und Champi-Krieger bewegen sich um 15 % schneller","p":33},{"n":"Huaracas","nd":"Huaracas","d":"Slingers +1 range; train +50% faster","dd":"Schleuderer +1 Reichweite; werden um 50 % schneller ausgebildet","p":null}]},"Perser":{"emblem":"persians.png","ut":[{"n":"Kamandaran","nd":"Kamandaran","d":"Archer-line gold cost replaced by additional wood cost","dd":"Goldkosten für Bogenschützen werden durch zusätzliche Holzkosten ersetzt","p":33},{"n":"Citadels","nd":"Zitadellen","d":"Castles +4 attack, +3 vs. Rams, +3 vs. Infantry and receive -25% bonus damage","dd":"Burgen +4 Angriffsstärke, +3 gegen Rammböcke, +3 gegen Infanterieeinheiten und -25 % Bonusschaden","p":107}]},"Polen":{"emblem":"poles.png","ut":[{"n":"Szlachta Privileges","nd":"Szlachta-Privilegien","d":"Knight-line costs -60% gold","dd":"Ritter kosten -60 % Gold","p":33},{"n":"Lechitic Legacy","nd":"Lechisches Vermächtnis","d":"Scout Cavalry-line deals trample damage","dd":"berittene Späher verursachen Trampelschaden","p":107}]},"Portugiesen":{"emblem":"portuguese.png","ut":[{"n":"Circumnavigation","nd":"Weltumsegelung","d":"Sets the entire map to explored; Ships train +33% faster","dd":"setzt die gesamte Karte auf „Erkundet“; Schiffe bilden +33 % schneller aus","p":33},{"n":"Arquebus","nd":"Arkebuse","d":"Gunpowder Units fire more accurately at moving targets","dd":"Schießpulvereinheiten feuern treffsicherer auf bewegliche Ziele","p":107}]},"Römer":{"emblem":"romans.png","ut":[{"n":"Ballistas","nd":"Ballisten","d":"Scorpions attack +33% faster; Galley-line +2 attack","dd":"Skorpione greifen um +33 % schneller an, +2 Angriffsstärke für Galeeren","p":33},{"n":"Comitatenses","nd":"Comitatenses","d":"Militia-line, Knight-line, and Centurions train +50% faster and receive a charge attack","dd":"Milizsoldaten-Linie, Ritter-Linie und Zenturionen werden um +50 % schnellere ausgebildet und erhalten zusätzliche Sturmangriff","p":107}]},"Sarazenen":{"emblem":"saracens.png","ut":[{"n":"Bimaristan","nd":"Bimaristan","d":"Monks passively heal multiple nearby units","dd":"Mönche heilen passiv mehrere Einheiten in der Nähe","p":33},{"n":"Counterweights","nd":"Gegengewichte","d":"Trebuchets and Mangonel-line +15% attack","dd":"Triboke und Mangonel +15 % Angriffsstärke","p":107}]},"Shu":{"emblem":"shu.png","ut":[{"n":"Coiled Serpent Array","nd":"Schlangenaufstellung","d":"Spearman-line and White Feather Guards gain additional HP when near each other","dd":"Speerkämpfer und Wächter der weißen Feder erhalten zusätzliche LP, wenn sich beide nahe sind","p":33},{"n":"Bolt Magazine","nd":"Bolzenmagazin","d":"Archer-line, War Chariots and Lou Chuans fire additional projectiles","dd":"Armbrustschützen, Kriegswagen und Lou Chuans feuern zusätzliche Geschosse ab","p":107}]},"Sizilianer":{"emblem":"sicilians.png","ut":[{"n":"First Crusade","nd":"Erster Kreuzzug","d":"Up to 5 Town Centers spawn 5 Serjeants each; units more resistant to conversion","dd":"bis zu 5 Dorfzentren produzieren jeweils 5 Serjeants, Einheiten sind widerstandsfähiger gegen Bekehrung","p":33},{"n":"Hauberk","nd":"Panzerhemd","d":"Knight-line +1 melee/+2 pierce armor","dd":"Rittereinheit +1 Nahkampf-/+2 Rüstungsdurchschlag","p":107}]},"Slawen":{"emblem":"slavs.png","ut":[{"n":"Detinets","nd":"Detinets","d":"Replaces 40% of Castle and Watch Tower-line stone cost with additional wood cost","dd":"ersetzt 40 % der Steinkosten für Burgen und Beobachtungstürme durch zusätzliche Holzkosten","p":33},{"n":"Druzhina","nd":"Druschina","d":"Infantry deals trample damage","dd":"Infanterie verursacht Trampelschaden","p":107}]},"Spanier":{"emblem":"spanish.png","ut":[{"n":"Inquisition","nd":"Inquisition","d":"Monks and Missionaries convert faster; Missionaries +1 range","dd":"Mönche und Missionare bekehren schneller; Missionare erhalten +1 Reichweite","p":33},{"n":"Supremacy","nd":"Überlegenheit","d":"Villagers +40 HP, +6 attack, +2 melee/+2 pierce armor","dd":"Dorfbewohner erhalten +40 LP, +6 Angriffsstärke, +2 Nahkampf-/+2 Durchschlagspanzerung","p":107}]},"Tataren":{"emblem":"tatars.png","ut":[{"n":"Silk Armor","nd":"Seidenrüstung","d":"Scout Cavalry-line, Steppe Lancers and Cavalry Archers +1 melee/+1 pierce armor","dd":"Berittener-Späher-Linie,Steppenlanzenreiter und berittene Bogenschützen erhalten +1 Nahkampf/+1 Durchschlagspanzerung","p":33},{"n":"Timurid Siegecraft","nd":"Belagerungskunst der Timuriden","d":"Trebuchets +2 range","dd":"Triboke +2 Reichweite","p":107}]},"Teutonen":{"emblem":"teutons.png","ut":[{"n":"Ironclad","nd":"Panzerung","d":"Siege Weapons +4 melee armor","dd":"+4 Nahkampfrüstung für Belagerungswaffen","p":33},{"n":"Crenellations","nd":"Zinnen","d":"Castles +3 range, garrisoned Infantry fires arrows","dd":"+3 Reichweite für Burgen, in Garnison gelegte Infanterieeinheiten verschießen Pfeile","p":107}]},"Tupi":{"emblem":"tupi.png","ut":[{"n":"Caciques","nd":"Caciques","d":"Champi Warriors and Slingers attack +25% faster","dd":"Champi-Krieger und Schleuderer greifen +25 % schneller an","p":33},{"n":"Curare","nd":"Kurare","d":"Foot Archers and Fortifications deal poison damage","dd":"einfache Bogenschützen und Befestigungsanlagen verursachen Giftschaden","p":107}]},"Türken":{"emblem":"turks.png","ut":[{"n":"Sipahi","nd":"Sipahi","d":"Mounted Archers +20 HP","dd":"+20 LP für berittene Bogenschützen","p":33},{"n":"Artillery","nd":"Artillerie","d":"Bombard Towers, Bombard Cannons, Cannon Galleons +2 range","dd":"+2 Reichweite für Kanonentürme, Belagerungskanonen, und Kanonenschiffe","p":107}]},"Vietnamesen":{"emblem":"vietnamese.png","ut":[{"n":"Chatras","nd":"Chatras","d":"Battle Elephants +100 HP","dd":"+100 LP für Elefantenreiter","p":33},{"n":"Paper Money","nd":"Papiergeld","d":"Lumberjacks slowly generate gold in addition to wood","dd":"Holzfäller produzieren neben dem Holz auch langsam Gold","p":107}]},"Wikinger":{"emblem":"vikings.png","ut":[{"n":"Chieftains","nd":"Stammesführer","d":"Infantry +5 attack vs. Cavalry, +4 vs. Camel Units; generate +5 gold when defeating Villagers, Trade Units and Monks","dd":"+5 Angriffsstärke gegen Kavallerie, +4 gegen Kameleinheiten; erzeugt +5 Gold bei Sieg über Dorfbewohner, Handelseinheiten und Mönche","p":33},{"n":"Bogsveigar","nd":"Bogsveigar","d":"Archer-line and Longboats +1 attack","dd":"+1 Angriffsstärke für Bogenschützen-Linie und Langboote","p":107}]},"Wei":{"emblem":"wei.png","ut":[{"n":"Tuntian","nd":"Tuntian","d":"Soldiers passively produce food","dd":"Soldaten produzieren passiv Nahrung","p":33},{"n":"Ming Guang Armor","nd":"Ming-Guang-Rüstung","d":"Mounted Units +4 melee armor","dd":"berittene Einheiten +4 Nahkampfrüstung","p":null}]},"Wu":{"emblem":"wu.png","ut":[{"n":"Red Cliffs Tactics","nd":"Taktiken des Roten Felsen","d":"Demolition Ships and Fire Archers deal fire damage to ships and buildings","dd":"Brander und Feuer-Bogenschützen fügen Schiffen und Gebäuden Feuerschaden zu","p":null},{"n":"Sitting Tiger","nd":"Hockender Tiger","d":"Traction Trebuchets and Lou Chuan trebuchet weapons fire additional projectiles","dd":"Zug-Trebuchets und Lou-Chuan-Trebuchets feuern zusätzliche Projektile ab","p":107}]}};
+
 // ── Civ-Boni (Bonus-Stichpunkte je Civ aus den AoE2-DE-Spieltexten, en/de) ──
 const CIV_BONUSES = {
   "Briten": { en: ["Shepherds work +25% faster", "Town Centers cost -50% wood starting in Castle Age", "Foot Archers +1/+2 range in Castle/Imperial Age"], de: ["Schäfer arbeiten um 25 % schneller", "Dorfzentren kosten ab der Ritterzeit 50 % Holz weniger", "+1/+2 Reichweite in der Ritter-/Imperialzeit für einfache Bogenschützen"] },
@@ -4763,22 +4875,48 @@ const CIV_BONUSES = {
 };
 
 // Welche Bonus-Schlagworte betreffen den Einheitentyp?
+// Nennt der Text die Einheit direkt beim Namen? (z. B. "Logistica: Cataphracts …")
+// Fängt auch Pluralformen, da auf den Singular-Namen geprüft wird.
+function mentionsUnitByName(hay, unitName) {
+  if (!unitName) return false;
+  const base = unitName.replace(/^Elite\s+/i, "").trim().toLowerCase();
+  if (base.length <= 3) return false;
+  // Regulärer Plural deckt sich über den Singular ab; -man/-men zusätzlich prüfen
+  const forms = [base];
+  if (/man$/.test(base)) forms.push(base.replace(/man$/, "men"));
+  if (/men$/.test(base)) forms.push(base.replace(/men$/, "man"));
+  return forms.some(f => hay.includes(f));
+}
+
+// Boni, deren Subjekt die Dorfbewohner sind ("Villagers affected by Infantry …"),
+// gehören nicht auf die Karte einer Militäreinheit.
+function skipEcoBonus(text, unit) {
+  return /^\s*villagers?\b/i.test(text) && !/^Wirtschaft/.test((unit && unit.type) || "");
+}
+
 function civClassKeywords(type) {
   const kw = new Set();
   let cavArch = false;
-  if (/Kavallerie?bogen|Kavallerieogen/.test(type)) { cavArch = true; ["cavalry archer", "mounted"].forEach(k => kw.add(k)); }
-  if (/Bogenschütze/.test(type) && !cavArch) { ["foot archer", "archery range", "skirmisher", "arbalest", "crossbow", "archer"].forEach(k => kw.add(k)); }
-  if (/Infanterie/.test(type)) { ["infantry", "militia", "spearman", "pikeman", "halberdier", "barracks", "eagle"].forEach(k => kw.add(k)); }
-  if (/Kavallerie/.test(type) && !cavArch) { ["cavalry", "mounted", "knight", "cavalier", "paladin", "stable", "scout", "lancer", "battle elephant"].forEach(k => kw.add(k)); }
-  if (/Kamel/.test(type)) { ["camel", "cavalry", "mounted", "stable"].forEach(k => kw.add(k)); }
-  if (/Belagerung/.test(type)) { ["siege", "ram", "mangonel", "onager", "scorpion", "trebuchet", "bombard"].forEach(k => kw.add(k)); }
-  if (/Schiff/.test(type)) { ["ship", "warship", "galley", "navy", "dock", "fire ship", "galleon"].forEach(k => kw.add(k)); }
-  if (/Schusswaffe/.test(type)) { ["gunpowder", "cannon", "hand cannoneer", "bombard", "conquistador", "janissary"].forEach(k => kw.add(k)); }
+  // "Anti-Kavallerie" / "Anti-Bogenschütze" beschreiben das ZIEL, nicht die eigene Klasse —
+  // sonst bekäme z. B. der Kamayuk (Infanterie) fälschlich Kavallerie-Boni.
+  const t = String(type || "").replace(/Anti-[A-Za-zÄÖÜäöüß]+/g, " ");
+  if (/Kavallerie?bogen|Kavallerieogen/.test(t)) { cavArch = true; ["cavalry archer", "mounted"].forEach(k => kw.add(k)); }
+  if (/Bogenschütze/.test(t) && !cavArch) { ["foot archer", "archery range", "skirmisher", "arbalest", "crossbow", "archer"].forEach(k => kw.add(k)); }
+  if (/Infanterie/.test(t)) { ["infantry", "militia", "spearman", "pikeman", "halberdier", "barracks", "eagle"].forEach(k => kw.add(k)); }
+  if (/Kavallerie/.test(t) && !cavArch) { ["cavalry", "mounted", "knight", "cavalier", "paladin", "stable", "scout", "lancer", "battle elephant"].forEach(k => kw.add(k)); }
+  if (/Kamel/.test(t)) { ["camel", "cavalry", "mounted", "stable"].forEach(k => kw.add(k)); }
+  if (/Belagerung/.test(t)) { ["siege", "ram", "mangonel", "onager", "scorpion", "trebuchet", "bombard"].forEach(k => kw.add(k)); }
+  if (/Schiff/.test(t)) { ["ship", "warship", "galley", "navy", "dock", "fire ship", "galleon"].forEach(k => kw.add(k)); }
+  if (/Schusswaffe/.test(t)) { ["gunpowder", "cannon", "hand cannoneer", "bombard", "conquistador", "janissary"].forEach(k => kw.add(k)); }
+  // Reine Support-/Wirtschafts-/Spezialeinheiten (Anker, damit "Schiff / Support" o. Ä. nicht Mönchsboni zieht)
+  if (/^Support/.test(t)) { ["monk", "monastery", "relic", "conversion", "convert", "faith", "redemption", "healing", "missionary", "warrior priest"].forEach(k => kw.add(k)); }
+  if (/^Wirtschaft/.test(t)) { ["villager", "farmer", "lumberjack", "gold miner", "stone miner", "forager", "hunter", "shepherd", "builder", "trade", "market", "caravan"].forEach(k => kw.add(k)); }
+  if (/^Spezial/.test(t)) { ["king"].forEach(k => kw.add(k)); }
   return { kw: [...kw], cavArch };
 }
 
 // Boni, die diese konkrete Einheit unterstützen (in aktueller Sprache)
-function getCivBonuses(unit) {
+function getCivBonuses(unit, unitName) {
   if (!unit || unit.civ === "Generic") return null;
   const civ = unit.civ.split(" / ")[0].replace(/\s*\(.*\)\s*$/, "").trim();
   const cb = CIV_BONUSES[civ];
@@ -4786,13 +4924,81 @@ function getCivBonuses(unit) {
   const { kw, cavArch } = civClassKeywords(unit.type);
   const list = [];
   cb.en.forEach((en, i) => {
+    if (skipEcoBonus(en, unit)) return;
     let b = en.toLowerCase();
     if (!cavArch) b = b.replace(/cavalry archers?/g, " ");
-    if (kw.some(k => b.includes(k))) {
+    if (kw.some(k => b.includes(k)) || mentionsUnitByName(b, unitName)) {
       list.push(currentLang === "de" ? (cb.de[i] || en) : en);
     }
   });
   return { civ, list };
+}
+
+// Civ-Name einer Einheit auf den CIV_META/CIV_BONUSES-Key normalisieren
+function civKey(unit) {
+  if (!unit || unit.civ === "Generic") return null;
+  return unit.civ.split(" / ")[0].replace(/\s*\(.*\)\s*$/, "").trim();
+}
+
+// Original-Civ-Wappen der Einheit (aus dem Spiel), z. B. /icons/civs/celts.png
+function civEmblemHtml(unit, size = 40) {
+  const key = civKey(unit);
+  const meta = key && CIV_META[key];
+  if (!meta || !meta.emblem) return "";
+  return `<img class="civ-emblem" src="icons/civs/${meta.emblem}" alt="${tx('civs', key)}" width="${size}" height="${size}" loading="lazy">`;
+}
+
+// Unique Technologies der Civ — nur die, die DIESE Einheit betreffen
+// (gleiche Keyword-Logik wie bei den Civ-Boni; Original-Tech-Icons /icons/tech/{pic}.png)
+function getUniqueTechs(unit, unitName) {
+  const key = civKey(unit);
+  const meta = key && CIV_META[key];
+  if (!meta || !meta.ut || !meta.ut.length) return null;
+  const { kw, cavArch } = civClassKeywords(unit.type);
+  const list = [];
+  meta.ut.forEach(t => {
+    let hay = `${t.n} ${t.d}`.toLowerCase();
+    if (!cavArch) hay = hay.replace(/cavalry archers?/g, " ");
+    if (!kw.some(k => hay.includes(k)) && !mentionsUnitByName(hay, unitName)) return;
+    list.push({
+      name: currentLang === "de" ? (t.nd || t.n) : t.n,
+      desc: currentLang === "de" ? (t.dd || t.d) : t.d,
+      pic: t.p,
+    });
+  });
+  return list.length ? { civ: key, list } : null;
+}
+
+// Generische Einheiten haben keine eigene Civ — hier stattdessen zeigen,
+// WELCHE Civs diese Einheit verstärken (Boni + Unique Techs), z. B. Franken/Chivalry beim Ritter.
+function getCrossCivBoosts(unit, unitName) {
+  if (!unit || unit.civ !== "Generic") return null;
+  const { kw, cavArch } = civClassKeywords(unit.type);
+  const hit = (t) => {
+    let s = t.toLowerCase();
+    if (!cavArch) s = s.replace(/cavalry archers?/g, " ");
+    return kw.some(k => s.includes(k)) || mentionsUnitByName(s, unitName);
+  };
+  const out = [];
+  for (const civ of Object.keys(CIV_META)) {
+    const meta = CIV_META[civ];
+    const lines = [];
+    const cb = CIV_BONUSES[civ];
+    if (cb) cb.en.forEach((en, i) => {
+      if (skipEcoBonus(en, unit)) return;
+      if (hit(en)) lines.push({ ut: false, text: currentLang === "de" ? (cb.de[i] || en) : en });
+    });
+    (meta.ut || []).forEach(t => {
+      if (hit(`${t.n} ${t.d}`)) lines.push({
+        ut: true,
+        name: currentLang === "de" ? (t.nd || t.n) : t.n,
+        text: currentLang === "de" ? (t.dd || t.d) : t.d,
+        pic: t.p,
+      });
+    });
+    if (lines.length) out.push({ civ, emblem: meta.emblem, lines });
+  }
+  return out.length ? out : null;
 }
 
 let currentResultName = null;
@@ -4813,7 +5019,7 @@ function showResult(name) {
       <div class="unit-name">${displayName(name)}</div>
       <div class="unit-meta">
         ${uu ? `<span class="badge badge-uu">${ui('unique_badge')}</span>` : ""}
-        <span class="badge badge-type">${tx('types', unit.type).split("/")[0].trim()}</span>
+        ${!uu ? `<span class="badge badge-type">${tx('types', unit.type).split("/")[0].trim()}</span>` : ""}
         ${unit.civ !== "Generic" ? `<span class="badge badge-civ">${tx('civs', unit.civ)}</span>` : ""}
       </div>
     </div>
@@ -4860,15 +5066,37 @@ function showResult(name) {
     html += `<div class="no-data" style="padding:1rem">${ui('no_counters')}</div>`;
   }
 
-  // ── 3) Stark gegen (Klassen-Chips) ──
+  // ── 3) Stark gegen — als Icon-Zeilen (Repräsentant-Icon + Grund) ──
   const strongClusters = STRONG_VS_CLUSTERS[name];
   if (strongClusters && strongClusters.size > 0) {
     const sortedClusters = CLUSTER_ORDER.filter(c => strongClusters.has(c));
-    html += `<div class="section-title" style="margin-top:1.2rem">${ui('strong_vs_section')}</div>`;
-    html += `<div class="strong-vs-row">`;
-    html += `<span class="strong-vs-label">${ui('strong_vs_label')}</span>`;
+    // Bonus-Schaden je Cluster ableiten (für den Grund-Text)
+    const clusterBonus = {};
+    (BONUS_VS[name] || []).forEach(b => {
+      (CLASS_TO_CLUSTERS[b.c] || []).forEach(cl => {
+        if (clusterBonus[cl] === undefined || b.a > clusterBonus[cl]) clusterBonus[cl] = b.a;
+      });
+    });
+    const bonusWord = currentLang === "de" ? "Bonusschaden" : "bonus damage";
+    const genericReason = currentLang === "de" ? "Setzt dieser Linie stark zu" : "Strong against this line";
+    html += `<div class="section-title mt"><span>🟢 ${ui('strong_vs_section')}</span></div>`;
+    html += `<div class="counter-grid">`;
     for (const cluster of sortedClusters) {
-      html += `<span class="cluster-chip">${cluster}</span>`;
+      const rep = (CLUSTERS[cluster] || [])[0];
+      const icon = rep ? getUnitIconHtml(rep, UNITS[rep]?.type || "", 28) : `<span class="counter-icon">⚔️</span>`;
+      const reason = clusterBonus[cluster] !== undefined
+        ? `+${clusterBonus[cluster]} ${bonusWord}`
+        : genericReason;
+      const click = rep ? ` onclick="selectUnit('${rep.replace(/'/g, "\\'")}')" style="cursor:pointer"` : "";
+      html += `
+        <div class="counter-row strong"${click}>
+          ${icon}
+          <div>
+            <div class="counter-name">${cluster}</div>
+            <div class="counter-reason">${reason}</div>
+          </div>
+          <span class="strength-badge strong">${ui('strong_badge')}</span>
+        </div>`;
     }
     html += `</div>`;
   }
@@ -4880,62 +5108,110 @@ function showResult(name) {
     html += `<div class="unit-blurb">${desc}</div>`;
   }
 
-  // ── 5) Werte (HP, Angriff, Rüstungen …) + Bonus-Schaden + Kosten ──
+  // ── 5) Werte (HP, Angriff, Rüstungen …) + Bonus-Schaden + Kosten — als Zeilen-Liste ──
   if (s) {
     const fmt = (v) => (v === undefined || v === null) ? "—" : v;
     const isRanged = s.rng !== undefined;
-    html += `<div class="stats-grid" style="margin-top:.9rem">`;
-    html += `<div class="stat"><div class="stat-label">${ui('stat_hp')}</div><div class="stat-val">${fmt(s.hp)}</div></div>`;
-    html += `<div class="stat"><div class="stat-label">${ui('stat_atk')}</div><div class="stat-val">${fmt(s.atk)}${s.rl !== undefined ? `<span class="sub">/ ${s.rl}s</span>` : ""}</div></div>`;
-    html += `<div class="stat"><div class="stat-label">${ui('stat_ma')}</div><div class="stat-val">${fmt(s.ma)}</div></div>`;
-    html += `<div class="stat"><div class="stat-label">${ui('stat_pa')}</div><div class="stat-val">${fmt(s.pa)}</div></div>`;
-    if (isRanged) {
-      html += `<div class="stat"><div class="stat-label">${ui('stat_rng')}</div><div class="stat-val">${fmt(s.rng)}${s.mrng !== undefined ? `<span class="sub">${ui('stat_min')} ${s.mrng}</span>` : ""}</div></div>`;
-    }
-    html += `<div class="stat"><div class="stat-label">${ui('stat_spd')}</div><div class="stat-val">${fmt(s.spd)}</div></div>`;
-    if (s.acc !== undefined) {
-      html += `<div class="stat"><div class="stat-label">${ui('stat_acc')}</div><div class="stat-val">${s.acc}%</div></div>`;
-    }
+    // Führendes Emoji aus vorhandenen UI-Labels entfernen (Icon steht in eigener Spalte)
+    const stripIcon = (t) => t.replace(/^[^\p{L}\p{N}+]+/u, "");
+    // Original-Spiel-Icon aus icons/stat/
+    const si = (n) => `<img class="stat-icon" src="icons/stat/${n}.png" alt="" width="20" height="20">`;
+    const row = (icon, label, val) =>
+      `<div class="data-row"><span class="data-icon">${icon}</span><span class="data-label">${stripIcon(label)}</span><span class="data-val">${val}</span></div>`;
+
+    // Kampfwerte
+    html += `<div class="section-title mt"><span>${ui('stats_section')}</span></div>`;
+    html += `<div class="data-grid">`;
+    html += row(si('hp'), ui('stat_hp'), fmt(s.hp));
+    // Nahkampf- vs. Distanzschaden trennen (Schadensart aus den Spieldaten; nie beides zugleich)
+    const pierceAtk = PIERCE_ATTACKERS.has(name);
+    const rl = (s.rl !== undefined && s.atk) ? `<span class="sub">/ ${s.rl}s</span>` : "";
+    html += row(si('attack'), ui('stat_atk_melee'), pierceAtk ? "0" : `${fmt(s.atk)}${rl}`);
+    html += row(si('pierce-attack'), ui('stat_atk_pierce'), pierceAtk ? `${fmt(s.atk)}${rl}` : "0");
+    html += row(si('range'), ui('stat_rng'), isRanged ? `${fmt(s.rng)}${s.mrng !== undefined ? `<span class="sub">${ui('stat_min')} ${s.mrng}</span>` : ""}` : "0");
+    html += row(si('melee-armor'), ui('stat_ma'), fmt(s.ma));
+    html += row(si('pierce-armor'), ui('stat_pa'), fmt(s.pa));
+    html += row(si('speed'), ui('stat_spd'), fmt(s.spd));
+    if (s.acc !== undefined) html += row(si('attack'), ui('stat_acc'), `${s.acc}%`);
+    // Bonus-Schaden vs. Klassen als eigene Zeilen (kein eigenes Bonus-Icon -> Attack-Icon)
+    getDisplayableBonuses(name).forEach(b => {
+      const rawLabel = CLASS_LABELS[b.c] || `${ui('class_word')} ${b.c}`;
+      const label = tx('classLabels', rawLabel);
+      html += row(si('bonus'), `Bonus ${ui('vs_word')} ${label}`, `<span class="data-bonus">+${b.a}</span>`);
+    });
     html += `</div>`;
 
-    // Bonus-Schaden vs. Klassen
-    const bonusesTop = getDisplayableBonuses(name);
-    if (bonusesTop.length > 0) {
-      html += `<div class="bonus-chips">`;
-      html += `<span class="strong-vs-label">${ui('bonus_damage_label')}</span>`;
-      bonusesTop.forEach(b => {
-        const rawLabel = CLASS_LABELS[b.c] || `${ui('class_word')} ${b.c}`;
-        const label = tx('classLabels', rawLabel);
-        html += `<span class="bonus-chip"><span class="bonus-val">+${b.a}</span> ${ui('vs_word')} ${label}</span>`;
-      });
-      html += `</div>`;
-      html += `<div class="bonus-note">${ui('bonus_note')}</div>`;
-    }
-
-    // Kosten
+    // Kosten (ohne Ausbildungszeit, ohne Tempo — Tempo steht bei den Stats)
     if (s.cost) {
-      const costIcons = { f: ["🍖", ui('cost_f')], w: ["🪵", ui('cost_w')], g: ["🪙", ui('cost_g')], s: ["🪨", ui('cost_s')] };
-      const order = ["f", "w", "g", "s"];
-      html += `<div class="cost-row"><span class="cost-label">${ui('cost_label')}</span>`;
-      order.forEach(k => {
-        if (s.cost[k] !== undefined) {
-          html += `<span class="cost-pill" title="${costIcons[k][1]}"><span class="cost-icon">${costIcons[k][0]}</span>${s.cost[k]}</span>`;
-        }
+      const costIcons = { f: ["food", ui('cost_f')], w: ["wood", ui('cost_w')], g: ["gold", ui('cost_g')], s: ["stone", ui('cost_s')] };
+      html += `<div class="section-title mt"><span>${ui('costs_section')}</span></div>`;
+      html += `<div class="data-grid">`;
+      ["f", "w", "g", "s"].forEach(k => {
+        if (s.cost[k] !== undefined) html += row(si(costIcons[k][0]), costIcons[k][1], s.cost[k]);
       });
-      if (s.tt !== undefined) {
-        html += `<span class="cost-pill" title="${ui('train_time')}"><span class="cost-icon">⏱️</span>${s.tt}s</span>`;
-      }
       html += `</div>`;
     }
   }
 
-  // ── 6) Civ-Bonus (Boni, die diese Einheit unterstützen) ──
-  const cbInfo = getCivBonuses(unit);
+  // ── 6) Civ-Bonus (Boni, die diese Einheit unterstützen) — mit Original-Civ-Wappen ──
+  const cbInfo = getCivBonuses(unit, name);
   if (cbInfo && cbInfo.list.length > 0) {
     html += `<div class="section-title" style="margin-top:1.2rem">${ui('civ_bonus_section')} · ${tx('civs', cbInfo.civ)}</div>`;
+    html += `<div class="civ-bonus-box">`;
+    html += civEmblemHtml(unit, 44);
     html += `<ul class="civ-bonus-list">`;
     cbInfo.list.forEach(b => { html += `<li>${b}</li>`; });
     html += `</ul>`;
+    html += `</div>`;
+  }
+
+  // ── 7) Unique Technologies der Civ — mit Original-Tech-Icons ──
+  const utInfo = getUniqueTechs(unit, name);
+  if (utInfo && utInfo.list.length > 0) {
+    const utLabel = currentLang === "de" ? "Einzigartige Technologien" : "Unique Technologies";
+    html += `<div class="section-title" style="margin-top:1.2rem">🔬 ${utLabel} · ${tx('civs', utInfo.civ)}</div>`;
+    html += `<div class="ut-grid">`;
+    utInfo.list.forEach(t => {
+      const ic = t.pic != null
+        ? `<img class="ut-icon" src="icons/tech/${t.pic}.png" alt="${t.name}" width="40" height="40" loading="lazy">`
+        : `<span class="ut-icon ut-icon-ph">🔬</span>`;
+      html += `
+        <div class="ut-row">
+          ${ic}
+          <div>
+            <div class="ut-name">${t.name}</div>
+            <div class="ut-desc">${t.desc}</div>
+          </div>
+        </div>`;
+    });
+    html += `</div>`;
+  }
+
+  // ── 8) Generische Einheit: welche Civs verstärken sie? (zugeklappt) ──
+  const boosts = getCrossCivBoosts(unit, name);
+  if (boosts) {
+    const label = currentLang === "de"
+      ? `${boosts.length} Zivilisationen verstärken diese Einheit`
+      : `${boosts.length} civilizations boost this unit`;
+    const boostTitle = currentLang === "de"
+      ? "🏰 Civ-Boni & Unique Techs"
+      : "🏰 Civ Bonuses & Unique Techs";
+    html += `<div class="section-title mt"><span>${boostTitle}</span></div>`;
+    html += `<details class="civ-boosts"><summary>${label}</summary><div class="civ-boost-list">`;
+    boosts.forEach(b => {
+      html += `<div class="civ-boost">
+        <img class="civ-emblem" src="icons/civs/${b.emblem}" alt="" width="32" height="32" loading="lazy">
+        <div>
+          <div class="civ-boost-name">${tx('civs', b.civ)}</div>
+          <ul class="civ-boost-lines">`;
+      b.lines.forEach(l => {
+        html += l.ut
+          ? `<li><b>${l.name}</b> — ${l.text}</li>`
+          : `<li>${l.text}</li>`;
+      });
+      html += `</ul></div></div>`;
+    });
+    html += `</div></details>`;
   }
 
   if (unit.counters.length === 0 && !s) {
