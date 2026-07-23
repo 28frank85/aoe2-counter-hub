@@ -396,6 +396,52 @@
 
     .badge-type { background: var(--accent-sub); color: var(--accent); border: 1px solid transparent; }
     .badge-civ  { background: var(--good-bg); color: var(--good-tx); border: 1px solid transparent; }
+    .badge-uu   { background: var(--soft-bg); color: var(--soft-tx); border: 1px solid transparent; }
+
+    /* UU-Symbol an Kontereinheiten */
+    .uu-tag {
+      display: inline-block;
+      margin-left: 0.4rem;
+      padding: 0.05rem 0.32rem;
+      border-radius: 4px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      vertical-align: middle;
+      background: var(--soft-bg);
+      color: var(--soft-tx);
+    }
+
+    /* Kurzprofil (ein Satz) */
+    .unit-blurb {
+      font-size: 0.92rem;
+      line-height: 1.45;
+      color: var(--text);
+      margin-bottom: 1.2rem;
+    }
+
+    /* Civ-Bonus-Liste */
+    .civ-bonus-list {
+      list-style: none;
+      margin: 0;
+      padding: 0.7rem 0.85rem;
+      font-size: 0.88rem;
+      line-height: 1.4;
+      color: var(--text);
+      background: var(--accent-sub);
+      border-radius: 8px;
+    }
+    .civ-bonus-list li {
+      position: relative;
+      padding-left: 1.1rem;
+    }
+    .civ-bonus-list li + li { margin-top: 0.4rem; }
+    .civ-bonus-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
 
     .card-body { padding: 1.3rem; }
 
@@ -3625,6 +3671,11 @@ const UI = {
     train_time: "Train time",
     vs_word: "vs.",
     class_word: "Class",
+    profile_section: "📖 Profile",
+    unique_badge: "Unique Unit",
+    uu_tag: "UU",
+    uu_tag_title: "Unique Unit",
+    civ_bonus_section: "📜 Civ Bonus",
   },
   de: {
     title: "Age of Empires 2 Unit Counter Hub — Den besten Konter finden",
@@ -3662,6 +3713,11 @@ const UI = {
     train_time: "Trainingsdauer",
     vs_word: "gegen",
     class_word: "Klasse",
+    profile_section: "📖 Profil",
+    unique_badge: "Einzigartige Einheit",
+    uu_tag: "UU",
+    uu_tag_title: "Einzigartige Einheit",
+    civ_bonus_section: "📜 Civ-Bonus",
   }
 };
 function ui(k) { return (UI[currentLang] && UI[currentLang][k]) || UI.en[k] || k; }
@@ -4304,6 +4360,343 @@ function selectUnit(name) {
   showResult(name);
 }
 
+// ── Kurzbeschreibungen (Profilsatz) aus den AoE2-DE-Spieltexten (en/de) ──
+const UNIT_DESC = {
+  "Archer": { en: "All-purpose Foot Archer.", de: "Unberittener Allzweck-Bogenschütze." },
+  "Crossbowman": { en: "All-purpose Foot Archer.", de: "Vielseitiger unberittener Bogenschütze." },
+  "Arbalest": { en: "All-purpose Foot Archer.", de: "Unberittener Allzweck-Bogenschütze." },
+  "Hand Cannoneer": { en: "Foot Gunner with powerful attack, but inaccurate at long range.", de: "Unberittener Gewehrschütze mit gewaltigem Angriff, aber unpräzise bei größerer Entfernung." },
+  "Cavalry Archer": { en: "Fast moving Mounted Archer for hit and run attacks.", de: "Schneller Bogenschütze zu Pferd für Blitzangriffe." },
+  "Heavy Cavalry Archer": { en: "Fast moving Mounted Archer for hit and run attacks.", de: "Schneller berittener Bogenschütze für Überraschungsangriffe." },
+  "Skirmisher": { en: "Anti-archer Skirmisher that cannot attack at close range.", de: "Plänker zum Einsatz gegen Bogenschützen." },
+  "Elite Skirmisher": { en: "Anti-archer Skirmisher that cannot attack at close range.", de: "Plänker zum Einsatz gegen Bogenschützen." },
+  "Spearman": { en: "Anti-cavalry Infantry.", de: "Anti-Kavallerie-Infanterie." },
+  "Pikeman": { en: "Anti-cavalry Infantry.", de: "Infanterie zur Bekämpfung von Kavallerie." },
+  "Halberdier": { en: "Anti-cavalry Infantry.", de: "Infanterieeinheit zum Kampf gegen Kavallerie." },
+  "Militia": { en: "All-purpose Infantry.", de: "Vielseitige Infanterieeinheit." },
+  "Man-at-Arms": { en: "All-purpose Infantry.", de: "Vielseitige Infanterieeinheit." },
+  "Long Swordsman": { en: "All-purpose Infantry.", de: "Vielseitige Infanterieeinheit." },
+  "Two-Handed Swordsman": { en: "All-purpose Infantry.", de: "Allzweck-Infanterie." },
+  "Champion": { en: "All-purpose Infantry.", de: "Allzweck-Infanterie." },
+  "Eagle Scout": { en: "Fast moving Shock Infantry for scouting and raiding.", de: "Überraschungsinfanterie mit hoher Bewegungsgeschwindigkeit zum Erkunden und Plündern." },
+  "Eagle Warrior": { en: "Fast moving Shock Infantry for scouting and raiding.", de: "Überraschungsinfanterie zum Erkunden und Plündern." },
+  "Elite Eagle Warrior": { en: "Fast moving Shock Infantry for scouting and raiding.", de: "Überraschungsinfanterie mit hoher Bewegungsgeschwindigkeit zum Erkunden und Plündern." },
+  "Scout Cavalry": { en: "Fast moving Cavalry for scouting and raiding.", de: "Schnelle Kavallerie zum Erkunden und Plündern." },
+  "Light Cavalry": { en: "Fast moving Cavalry for scouting and raiding.", de: "Schnelle Kavallerie zum Erkunden und Plündern." },
+  "Hussar": { en: "Fast moving Cavalry for scouting and raiding.", de: "Kavallerie mit hoher Bewegungsgeschwindigkeit zum Erkunden und Plündern." },
+  "Knight": { en: "Powerful all-purpose Heavy Cavalry.", de: "Vielseitige und schlagkräftige Schwere Kavallerie für alle Zwecke." },
+  "Cavalier": { en: "Powerful all-purpose Heavy Cavalry.", de: "Vielseitige und schlagkräftige Schwere Kavallerie." },
+  "Paladin": { en: "Powerful all-purpose Heavy Cavalry.", de: "Starke schwere Kavallerie für alle Einsatzgebiete." },
+  "Camel Rider": { en: "Fast moving anti-cavalry Cavalry.", de: "Schnelle Kavallerie zum Kampf gegen Kavallerie." },
+  "Heavy Camel Rider": { en: "Fast moving anti-cavalry Cavalry.", de: "Schnelle Kavallerie zum Kampf gegen Kavallerie." },
+  "Imperial Camel Rider": { en: "Hindustani unique fast moving anti-cavalry Cavalry.", de: "Schnelle Spezialkavallerie der Hindustani zum Kampf gegen Kavallerie." },
+  "Monk": { en: "Converts enemy units to your civilization.", de: "Bekehrt feindliche Einheiten zu Ihrer Zivilisation." },
+  "Missionary": { en: "Spanish unique Mounted Monk.", de: "Berittener Mönch, Spezialeinheit der Spanier." },
+  "Mangonel": { en: "Siege Weapon with ranged blast attack, but cannot attack at close range.", de: "Belagerungswaffe mit Sprengfernangriff, kann nicht im Nahbereich angreifen." },
+  "Onager": { en: "Siege Weapon with ranged blast attack, but cannot attack at close range.", de: "Belagerungswaffe mit Sprengfernangriff, kann nicht im Nahbereich angreifen." },
+  "Siege Onager": { en: "Siege Weapon with ranged blast attack, but cannot attack at close range.", de: "Belagerungswaffe mit Fernkampf-Sprengangriff, die aber keine Gegner in der Nähe angreifen…" },
+  "Scorpion": { en: "Siege Weapon with ranged pass through attack, but cannot attack at close range.", de: "Belagerungswaffe mit durchschlagender Angriffsstärke im Fernkampf, kann aber nicht im Nah…" },
+  "Heavy Scorpion": { en: "Siege Weapon with ranged pass through attack, but cannot attack at close range.", de: "Belagerungswaffe mit durchschlagender Angriffsstärke im Fernkampf." },
+  "Battering Ram": { en: "Anti-building Siege Weapon.", de: "Belagerungswaffe zur Zerstörung von Gebäuden." },
+  "Capped Ram": { en: "Anti-building Siege Weapon.", de: "Belagerungswaffe zur Zerstörung von Gebäuden." },
+  "Siege Ram": { en: "Anti-building Siege Weapon.", de: "Belagerungswaffe zur Zerstörung von Gebäuden." },
+  "Trebuchet": { en: "Powerful anti-building Siege Weapon with exceptional range.", de: "Gewaltige Belagerungswaffe mit außerordentlicher Reichweite zum Einsatz gegen Gebäude." },
+  "Trebuchet (packed)": { en: "Powerful anti-building Siege Weapon with exceptional range.", de: "Gewaltige Belagerungswaffe mit außerordentlicher Reichweite zum Einsatz gegen Gebäude." },
+  "Bombard Cannon": { en: "Siege Gunpowder Unit with long range, but cannot attack at close range.", de: "Mit Schießpulver ausgestattete Belagerungswaffe mit großer Reichweite, kann nicht im Nahb…" },
+  "Siege Tower": { en: "Quick land transport used to unload units over enemy walls.", de: "Schnelles Land-Transportmittel zum Abladen von Einheiten über gegnerischen Mauern." },
+  "Petard": { en: "Demolition Siege Weapon armed with explosives.", de: "Belagerungswaffe zur Zerstörung, mit Sprengstoff ausgestattet." },
+  "Galley": { en: "Warship with ranged attack.", de: "Kriegsschiff mit Fernangriff." },
+  "War Galley": { en: "Warship with ranged attack.", de: "Vielseitiges Kriegsschiff mit Fernangriff." },
+  "Galleon": { en: "Warship with ranged attack.", de: "Kriegsschiff mit Fernangriff." },
+  "Fire Ship": { en: "Warship that spews fire at close range.", de: "Kriegsschiff, das im Nahbereich Flammen wirft." },
+  "Fast Fire Ship": { en: "Warship that spews fire at close range.", de: "Kriegsschiff, das im Nahbereich Flammen wirft." },
+  "Demolition Raft": { en: "Demolition Warship armed with explosives that self-destructs when used.", de: "Mit Sprengstoff beladenes Kriegsschiff, das sich bei Verwendung selbst zerstört." },
+  "Demolition Ship": { en: "Demolition Warship armed with explosives that self-destructs when used.", de: "Mit Sprengstoff beladenes Kriegsschiff, das sich bei Verwendung selbst zerstört." },
+  "Heavy Demolition Ship": { en: "Demolition Warship armed with explosives that self-destructs when used.", de: "Mit Sprengstoff beladenes Kriegsschiff, das sich bei Verwendung selbst zerstört." },
+  "Cannon Galleon": { en: "Anti-building Siege Gunpowder Warship with long range, but cannot attack enemies at close…", de: "Kriegsschiff mit Schießpulver und großer Reichweite zur Belagerung und Zerstörung von Geb…" },
+  "Elite Cannon Galleon": { en: "Anti-building Siege Gunpowder Warship with long range, but cannot attack enemies at close…", de: "Kriegsschiff mit Schießpulver zur Belagerung und Bekämpfung von Gebäuden mit hoher Reichw…" },
+  "Longboat": { en: "Viking unique Warship that fires multiple arrows.", de: "Spezial-Kriegsschiff der Wikinger, das mehrere Pfeile abfeuert." },
+  "Elite Longboat": { en: "Viking unique Warship that fires multiple arrows.", de: "Spezial-Kriegsschiff der Wikinger, das mehrere Pfeile abfeuert." },
+  "Turtle Ship": { en: "Korean unique Siege Warship with high armor and attack.", de: "Koreanisches Belagerungskriegsschiff mit hoher Rüstung und Angriffsstärke." },
+  "Elite Turtle Ship": { en: "Korean unique Siege Warship with high armor and attack.", de: "Koreanisches Belagerungskriegsschiff mit hoher Rüstung und Angriffsstärke." },
+  "Fishing Ship": { en: "Gathers food from fish and Fish Traps.", de: "Gewinnt Nahrung aus Fischen und Reusen." },
+  "Transport Ship": { en: "Used to move units across water.", de: "Nützlich, um Einheiten über Gewässer zu transportieren." },
+  "Trade Cog": { en: "Trade unit used for generating gold at another player's Dock.", de: "Handelseinheit zur Erwirtschaftung von Gold im Hafen eines anderen Spielers." },
+  "Berserk": { en: "Viking unique Infantry that regenerates HP.", de: "Spezialinfanterie der Wikinger, die LP regeneriert." },
+  "Elite Berserk": { en: "Viking unique Infantry that regenerates HP.", de: "Spezialinfanterie der Wikinger, die LP regeneriert." },
+  "Cataphract": { en: "Byzantine unique Heavy Cavalry.", de: "Schwere Spezialkavallerie der Byzantiner." },
+  "Elite Cataphract": { en: "Byzantine unique Heavy Cavalry.", de: "Schwere Spezialkavallerie der Byzantiner." },
+  "Chu Ko Nu": { en: "Chinese unique Foot Archer with rapid-fire attack.", de: "Spezialeinheit der Chinesen." },
+  "Elite Chu Ko Nu": { en: "Chinese unique Foot Archer with rapid-fire attack.", de: "Spezialeinheit der Chinesen." },
+  "Conquistador": { en: "Spanish unique Mounted Gunner with powerful attack and mobility.", de: "Berittener Spezial-Gewehrschütze der Spanier mit effektivem Angriff und großer Beweglichk…" },
+  "Elite Conquistador": { en: "Spanish unique Mounted Gunner with powerful attack and mobility.", de: "Berittener Spezial-Gewehrschütze der Spanier mit effektivem Angriff und großer Beweglichk…" },
+  "Huskarl": { en: "Gothic unique Infantry with exceptional pierce armor.", de: "Einzigartige Infanterieeinheit der Goten mit herausragendem Rüstungsdurchschlag." },
+  "Elite Huskarl": { en: "Gothic unique Infantry with exceptional pierce armor.", de: "Spezialinfanterie der Goten mit außergewöhnlicher Durchschlagspanzerung." },
+  "Jaguar Warrior": { en: "Aztec unique Infantry that gains additional damage when defeating military units.", de: "Spezialinfanterie der Azteken, die zusätzlichen Schaden bewirkt, wenn sie Militäreinheite…" },
+  "Elite Jaguar Warrior": { en: "Aztec unique Infantry that gains additional damage when defeating military units.", de: "Spezialinfanterie der Azteken, die zusätzlichen Schaden bewirkt, wenn sie Militäreinheite…" },
+  "Janissary": { en: "Turkish unique Foot Gunner with powerful attack.", de: "Unberittener Spezial-Gewehrschütze der Türken mit effektivem Angriff." },
+  "Elite Janissary": { en: "Turkish unique Foot Gunner with powerful attack.", de: "Unberittener Spezial-Gewehrschütze der Türken mit effektivem Angriff." },
+  "Longbowman": { en: "British unique Foot Archer with exceptional range.", de: "Einfacher Spezial-Bogenschütze der Briten mit außergewöhnlicher Reichweite." },
+  "Elite Longbowman": { en: "British unique Foot Archer with exceptional range.", de: "Einfacher Spezial-Bogenschützen der Briten mit außergewöhnlicher Reichweite." },
+  "Mameluke": { en: "Saracen unique Cavalry with ranged melee attack.", de: "Spezialkavallerie der Sarazenen mit weiter entfernten Nahkampfangriffen." },
+  "Elite Mameluke": { en: "Saracen unique Cavalry with ranged melee attack.", de: "Spezialkavallerie der Sarazenen mit weiter entfernten Nahkampfangriffen." },
+  "Mangudai": { en: "Mongol unique Mounted Archer with fast attack.", de: "Berittene Spezial-Bogenschützeneinheit der Mongolen mit schnellem Angriff." },
+  "Elite Mangudai": { en: "Mongol unique Mounted Archer with fast attack.", de: "Berittene Spezial-Bogenschützeneinheit der Mongolen mit schnellem Angriff." },
+  "Plumed Archer": { en: "Mayan unique Foot Archer with fast movement speed.", de: "Unberittener Spezial-Bogenstütze der Maya mit hoher Bewegungsgeschwindigkeit." },
+  "Elite Plumed Archer": { en: "Mayan unique Foot Archer with fast movement speed.", de: "Unberittener Spezial-Bogenstütze der Maya mit hoher Bewegungsgeschwindigkeit." },
+  "Samurai": { en: "Japanese unique Infantry that quickly charges into battle and has fast attack.", de: "Spezial-Infanterieeinheit der Japaner mit schnellem Angriff." },
+  "Elite Samurai": { en: "Japanese unique Infantry that quickly charges into battle and has fast attack.", de: "Spezial-Infanterieeinheit der Japaner mit schnellem Angriff." },
+  "Tarkan": { en: "Hunnic unique Heavy Cavalry.", de: "Schwere Spezial-Kavallerie der Hunnen." },
+  "Elite Tarkan": { en: "Hunnic unique Heavy Cavalry.", de: "Schwere Spezial-Kavallerie der Hunnen." },
+  "Teutonic Knight": { en: "Teutonic unique Infantry with exceptional melee armor.", de: "Spezialinfanterie der Teutonen mit außergewöhnlicher Nahkampfrüstung." },
+  "Elite Teutonic Knight": { en: "Teutonic unique Infantry with exceptional melee armor.", de: "Spezialinfanterie der Teutonen mit außergewöhnlicher Nahkampfrüstung." },
+  "Throwing Axeman": { en: "Frankish unique Infantry with ranged melee attack.", de: "Spezial-Infanterieeinheit der Franken mit Nahkampfangriff mit Reichweite." },
+  "Elite Throwing Axeman": { en: "Frankish unique Infantry with ranged melee attack.", de: "Spezialinfanterie der Franken mit entfernterem Nahkampf-Angriff." },
+  "War Elephant": { en: "Persian unique Cavalry that deals trample damage.", de: "Spezialkavallerie der Perser, die Trampelschaden verursacht." },
+  "Elite War Elephant": { en: "Persian unique Cavalry that deals trample damage.", de: "Spezialkavallerie der Perser, die Trampelschaden verursacht." },
+  "Savar": { en: "Persian unique all-purpose Heavy Cavalry.", de: "persische Spezialeinheit in Form schwerer Kavallerie." },
+  "War Wagon": { en: "Korean unique Mounted Archer.", de: "Berittene Bogenschützen-Spezialeinheit der Koreaner." },
+  "Elite War Wagon": { en: "Korean unique Mounted Archer.", de: "Berittene Bogenschützen-Spezialeinheit der Koreaner." },
+  "Woad Raider": { en: "Celtic unique Infantry with fast movement speed.", de: "Infanterieeinheit der Kelten mit hoher Bewegungsgeschwindigkeit." },
+  "Elite Woad Raider": { en: "Celtic unique Infantry with fast movement speed.", de: "Spezialinfanterie der Kelten mit hoher Bewegungsgeschwindigkeit." },
+  "Karambit Warrior": { en: "Malay unique Infantry that only takes half population space.", de: "Spezial-Infanterieeinheit der Malaien, die nur die Hälfte des Platzes in der Bevölkerung…" },
+  "Elite Karambit Warrior": { en: "Malay unique Infantry that only takes half population space.", de: "Spezial-Infanterieeinheit der Malaien, die nur die Hälfte des Platzes in der Bevölkerung…" },
+  "Battle Elephant": { en: "Slow but durable Cavalry.", de: "Langsame aber robuste Kavallerie." },
+  "Elite Battle Elephant": { en: "Slow but durable Cavalry.", de: "Langsame aber robuste Kavallerie." },
+  "Ballista Elephant": { en: "Khmer unique Siege Cavalry with ranged pass through attack.", de: "Belagerungskavallerie-Spezialeinheit der Khmer mit durchdringendem Fernangriff." },
+  "Elite Ballista Elephant": { en: "Khmer unique Siege Cavalry with ranged pass through attack.", de: "Belagerungskavallerie-Spezialeinheit der Khmer mit durchdringendem Fernangriff." },
+  "Genitour": { en: "Anti-archer Mounted Skirmisher that cannot attack at close range.", de: "Berittener Plänkler." },
+  "Elite Genitour": { en: "Anti-archer Mounted Skirmisher that cannot attack at close range.", de: "Berittener Plänkler." },
+  "Camel Archer": { en: "Berber unique Mounted Archer.", de: "Berittene Bogenschützen-Spezialeinheit der Berber." },
+  "Elite Camel Archer": { en: "Berber unique Mounted Archer.", de: "Berittene Bogenschützen-Spezialeinheit der Berber." },
+  "Gbeto": { en: "Malian unique Infantry with ranged melee attack.", de: "Infanterie-Spezialeinheit der Malier mit Nahkampfangriff mit Reichweite." },
+  "Elite Gbeto": { en: "Malian unique Infantry with ranged melee attack.", de: "Infanterie-Spezialeinheit der Malier mit Nahkampfangriff mit Reichweite." },
+  "Shotel Warrior": { en: "Ethiopian unique Infantry with high attack and fast training speed.", de: "Infanterie-Spezialeinheit der Äthiopier mit hoher Angriffsstärke, die schnell erschaffen…" },
+  "Elite Shotel Warrior": { en: "Ethiopian unique Infantry with high attack and fast training speed.", de: "Infanterie-Spezialeinheit der Äthiopier mit hoher Angriffsstärke, die schnell erschaffen…" },
+  "Urumi Swordsman": { en: "Dravidian unique Infantry with a charged blast attack.", de: "Dravidische Spezial-Infanerieeinheit mit einem aufgeladenen Explosionsangriff." },
+  "Elite Urumi Swordsman": { en: "Dravidian unique Infantry with a charged blast attack.", de: "Dravidische Spezial-Infanterieeinheit mit einem aufgeladenen Explosionsangriff." },
+  "Magyar Huszar": { en: "Magyar unique Cavalry.", de: "Kavallerie-Spezialeinheit der Ungarn." },
+  "Elite Magyar Huszar": { en: "Magyar unique Cavalry.", de: "Kavallerie-Spezialeinheit der Ungarn." },
+  "Coustillier": { en: "Burgundian unique Heavy Cavalry with a powerful charged attack.", de: "Burgundische schwere Spezialkavallerie mit einem mächtigen aufgeladenen Angriff." },
+  "Elite Coustillier": { en: "Burgundian unique Heavy Cavalry with a powerful charged attack.", de: "Burgundische schwere Spezialkavallerie mit einem mächtigen aufgeladenen Angriff." },
+  "Flemish Militia": { en: "Burgundian unique anti-cavalry Infantry.", de: "Spezial-Infanterieeinheit der Burgunder zum Einsatz gegen Kavallerie." },
+  "Serjeant": { en: "Sicilian unique Infantry that can construct Donjons.", de: "Sizilianische Spezial-Infanterieeinheit, die Verliese bauen kann." },
+  "Elite Serjeant": { en: "Sicilian unique Infantry that can construct Donjons.", de: "Sizilianische Spezial-Infanterieeinheit, die Verliese bauen kann." },
+  "Obuch": { en: "Polish unique Infantry that tears the armor of units it is fighting.", de: "Polnische Spezial-Infanterieeinheit, die die Rüstung der Einheiten bricht, die sie bekämp…" },
+  "Elite Obuch": { en: "Polish unique Infantry that tears the armor of units it is fighting.", de: "Polnische Spezial-Infanterieeinheit, die die Rüstung der Einheiten bricht, die sie bekämp…" },
+  "Winged Hussar": { en: "Polish and Lithuanian unique fast moving Cavalry for scouting and raiding.", de: "Polnische und litauische schnelle Spezialkavallerie zum Erkunden und Plündern." },
+  "Ratha": { en: "Bengali unique Mounted Archer that can switch between melee and ranged attacks.", de: "Bengalischer berittener Spezial-Bogenschütze, der zwischen Nahkampf- und Fernkampfangriff…" },
+  "Elite Ratha": { en: "Bengali unique Mounted Archer that can switch between melee and ranged attacks.", de: "Bengalischer berittener Spezial-Bogenschütze, der zwischen Nahkampf- und Fernkampfangriff…" },
+  "Elephant Archer": { en: "Slow and heavy Mounted Archer.", de: "Langsamer und schwerer berittener Bogenschütze." },
+  "Elite Elephant Archer": { en: "Slow and heavy Mounted Archer.", de: "Langsamer und schwerer berittener Bogenschütze." },
+  "Chakram Thrower": { en: "Gurjara unique Infantry with ranged melee attack that deals pass through damage.", de: "Spezial-Infanterieeinheit der Gurjara mit durchdringendem Fernangriff, der Nahkampfschade…" },
+  "Elite Chakram Thrower": { en: "Gurjara unique Infantry with ranged melee attack that deals pass through damage.", de: "Spezial-Infanterieeinheit der Gurjara mit durchdringendem Fernangriff, der Nahkampfschade…" },
+  "Shrivamsha Rider": { en: "Gurjara unique fast moving Cavalry that can dodge projectiles.", de: "Spezialeinheit in Form einer leichten und schnellen Kavallerie der Gurjara, die Projektil…" },
+  "Elite Shrivamsha Rider": { en: "Gurjara unique fast moving Cavalry that can dodge projectiles.", de: "Spezialeinheit in Form einer leichten und schnellen Kavallerie der Gurjara, die Projektil…" },
+  "Legionary": { en: "Roman unique all-purpose Infantry unit.", de: "römische Allzweck-Spezialinfanterieeinheit." },
+  "Centurion": { en: "Roman unique Heavy Cavalry that increases movement and attack speed of nearby Militia-lin…", de: "Die römische schwere Spezial-Kavallerie, die Bewegungsgeschwindigkeit von Milizeinheiten…" },
+  "Elite Centurion": { en: "Roman unique Heavy Cavalry that increases movement and attack speed of nearby Militia-lin…", de: "Die römische schwere Spezial-Kavallerie, die Bewegungsgeschwindigkeit von Milizeinheiten…" },
+  "Dromon": { en: "Anti-building Siege Warship with long range blast attack, but cannot attack enemies at cl…", de: "Belagerungkriegsschiff zum Einsatz gegen Gebäude mit großer Reichweite und Sprengangriff,…" },
+  "Elite Dromon": { en: "Anti-building Siege Warship with long range blast attack, but cannot attack enemies at cl…", de: "Belagerungkriegsschiff zum Einsatz gegen Gebäude mit großer Reichweite und Sprengangriff,…" },
+  "Ghulam": { en: "Hindustani unique Infantry that thrusts its spear through multiple targets.", de: "Hindustanische Spezial-Infanterieeinheit, die ihre Speere durch mehrere Ziele treibt." },
+  "Elite Ghulam": { en: "Hindustani unique Infantry that thrusts its spear through multiple targets.", de: "Hindustanische Spezial-Infanterieeinheit, die ihre Speere durch mehrere Ziele treibt." },
+  "Thirisadai": { en: "Dravidian unique Warship with high durability.", de: "Spezial-Kriegsschiff der Draviden mit hoher Haltbarkeit." },
+  "Konnik": { en: "Bulgarian unique Heavy Cavalry that fights on as Infantry when felled.", de: "Schwere Spezial-Kavallerie der Bulgaren, die als Infanterieeinheit weiterkämpft, wenn sie…" },
+  "Elite Konnik": { en: "Bulgarian unique Heavy Cavalry that fights on as Infantry when felled.", de: "Schwere Spezial-Kavallerie der Bulgaren, die als Infanterieeinheit weiterkämpft, wenn sie…" },
+  "Kipchak": { en: "Cuman unique Mounted Archer that fires multiple arrows.", de: "Einzigartiger berittener Bogenschütze der Kumanen, der mehrere Pfeile abfeuert." },
+  "Elite Kipchak": { en: "Cuman unique Mounted Archer that fires multiple arrows.", de: "Einzigartiger berittener Bogenschütze der Kumanen, der mehrere Pfeile abfeuert." },
+  "Steppe Lancer": { en: "Fast moving Cavalry with increased attack range.", de: "Schnelle Kavallerie mit erhöhter Angriffsreichweite." },
+  "Elite Steppe Lancer": { en: "Fast moving Cavalry with increased attack range.", de: "Schnelle Kavallerie mit erhöhter Angriffsreichweite." },
+  "Leitis": { en: "Lithuanian unique Heavy Cavalry that ignores armor.", de: "Litauische einzigartige schwere Kavallerie, für die Rüstung keine Rolle spielt." },
+  "Elite Leitis": { en: "Lithuanian unique Heavy Cavalry that ignores armor.", de: "Litauische einzigartige schwere Kavallerie, für die Rüstung keine Rolle spielt." },
+  "Keshik": { en: "Tatar unique Heavy Cavalry that generates gold when fighting other units.", de: "Schwere Spezial-Kavallerie der Tataren, die beim Kampf gegen andere Einheiten Gold erzeug…" },
+  "Elite Keshik": { en: "Tatar unique Heavy Cavalry that generates gold when fighting other units.", de: "Schwere Spezial-Kavallerie der Tataren, die beim Kampf gegen andere Einheiten Gold erzeug…" },
+  "Flaming Camel": { en: "Tatar unique demolition Siege Cavalry.", de: "Zerstörerische Spezial-Belagerungskavallerie der Tataren." },
+  "Genoese Crossbowman": { en: "Italian unique Foot Archer.", de: "Einfacher Spezial-Bogenschütze der Italiener." },
+  "Elite Genoese Crossbowman": { en: "Italian unique Foot Archer.", de: "Einfacher Spezial-Bogenschütze der Italiener." },
+  "Condottiero": { en: "Fast moving anti-gunpowder Infantry.", de: "Schnelle Infanterieeinheit für den Einsatz gegen Schießpulvereinheiten." },
+  "Boyar": { en: "Slavic unique Cavalry with exceptional melee armor.", de: "Spezialkavallerie der Slawen mit außergewöhnlicher Nahkampfrüstung." },
+  "Elite Boyar": { en: "Slavic unique Cavalry with exceptional melee armor.", de: "Spezialkavallerie der Slawen mit außergewöhnlicher Nahkampfrüstung." },
+  "Kamayuk": { en: "Inca unique Infantry with increased attack range.", de: "Spezialinfanterie der Inka mit erhöhter Reichweite beim Angriff." },
+  "Elite Kamayuk": { en: "Inca unique Infantry with increased attack range.", de: "Spezialinfanterie der Inka mit erhöhter Reichweite beim Angriff." },
+  "Slinger": { en: "Anti-infantry Skirmisher that cannot attack at close range.", de: "Plänkler zur Bekämpfung von Infanterieeinheiten, der nicht im Nahbereich angreifen kann." },
+  "Rattan Archer": { en: "Vietnamese unique Foot Archer with exceptional pierce armor.", de: "Vietnamesische unberittene Bogenschützen-Spezialeinheit mit außerordentlich starkem Rüstu…" },
+  "Elite Rattan Archer": { en: "Vietnamese unique Foot Archer with exceptional pierce armor.", de: "Vietnamesische unberittene Bogenschützen-Spezialeinheit mit außerordentlich starkem Rüstu…" },
+  "Imperial Skirmisher": { en: "Anti-archer Skirmisher that cannot attack at close range.", de: "Plänker zum Einsatz gegen Bogenschützen." },
+  "Arambai": { en: "Burmese unique ranged Mounted Unit with a powerful but inaccurate attack.", de: "Berittene Spezial-Fernkampfeinheit der Birmanen mit starkem, aber unpräzisem Pfeilangriff." },
+  "Elite Arambai": { en: "Burmese unique ranged Mounted Unit with a powerful but inaccurate attack.", de: "Burmesische berittene Fernkampf-Spezialeinheit mit einem durchschlagenden aber unpräzisen…" },
+  "Organ Gun": { en: "Portuguese unique Siege Gunpowder Unit.", de: "Portugiesische Spezialeinheit." },
+  "Elite Organ Gun": { en: "Portuguese unique Siege Gunpowder Unit.", de: "Portugiesische Spezialeinheit." },
+  "Caravel": { en: "Portuguese unique Warship with ranged pass through attack.", de: "Einzigartiges portugiesisches Kriegsschiff mit durchschlagender Angriffsstärke im Fernkam…" },
+  "Elite Caravel": { en: "Portuguese unique Warship with ranged pass through attack.", de: "Einzigartiges portugiesisches Kriegsschiff mit durchschlagender Angriffsstärke im Fernkam…" },
+  "Hussite Wagon": { en: "Bohemian unique Siege Gunpowder Unit.", de: "Spezial-Belagerungseinheit der Böhmen." },
+  "Elite Hussite Wagon": { en: "Bohemian unique Siege Gunpowder Unit.", de: "Spezial-Belagerungseinheit der Böhmen." },
+  "Houfnice": { en: "Bohemian unique Siege Gunpowder Unit with long range, but cannot attack at close range.", de: "Mit Schießpulver ausgestattete Spezial-Belagerungswaffe der Böhmen mit großer Reichweite,…" },
+  "Composite Bowman": { en: "Armenian unique Foot Archer that ignores armor.", de: "Spezialeinheit der Armenier." },
+  "Elite Composite Bowman": { en: "Armenian unique Foot Archer that ignores armor.", de: "Einzigartige armenische Bogenschützeneinheit, die Rüstung ignoriert." },
+  "Warrior Priest": { en: "Armenian unique Monastery Infantry that can heal friendly units.", de: "Spezial-Kloster-Infanterieeinheit der Armenier, die verbündete Einheiten heilen kann." },
+  "Elite Warrior Priest": { en: "Armenian unique Monastery Infantry that can heal friendly units.", de: "Spezial-Kloster-Infanterieeinheit der Armenier, die verbündete Einheiten heilen kann." },
+  "Monaspa": { en: "Georgian unique Heavy Cavalry that becomes stronger when other Monaspas or Knight-line un…", de: "Kavallerie-Spezialeinheit der Georgier, die stärker wird, wenn andere Monaspas oder Einhe…" },
+  "Elite Monaspa": { en: "Georgian unique Heavy Cavalry that becomes stronger when other Monaspas or Knight-line un…", de: "Kavallerie-Spezialeinheit der Georgier, die stärker wird, wenn andere Monaspas oder Einhe…" },
+  "Rocket Cart": { en: "Siege Gunpowder Unit with ranged blast attack, but cannot attack at close range.", de: "Belagerungswaffe mit Schießpulver und Spern-Fernkampfangriff, kann nicht im Nahkampf angr…" },
+  "Heavy Rocket Cart": { en: "Siege Gunpowder Unit with ranged blast attack, but cannot attack at close range.", de: "Belagerungswaffe mit Schießpulver und Spreng-Fernkampfangriff, kann nicht im Nahkampf ang…" },
+  "Lou Chuan": { en: "Powerful Siege Warship that fires arrows at units and uses a long range trebuchet weapon…", de: "Starkes Belagerungskriegsschiff, das Pfeile auf feindliche Einheiten feuert und mit Tribo…" },
+  "Fire Lancer": { en: "Gunpowder Shock Infantry that fires a short ranged firearm before engaging in melee comba…", de: "Schießpulver-Stoßtrupp der Infanterie, der eine Feuerwaffe mit kurzer Reichweite einsetzt…" },
+  "Elite Fire Lancer": { en: "Gunpowder Shock Infantry that fires a short ranged firearm before engaging in melee comba…", de: "Schießpulver-Stoßtrupp der Infanterie, der eine Feuerwaffe mit kurzer Reichweite einsetzt…" },
+  "Tiger Cavalry": { en: "Wei unique Cavalry that gains HP and attack when defeating enemy military.", de: "Die Kavallerie-Spezialkavallerie der Wei erhält LP und Angriffsstärke beim Besiegen des g…" },
+  "Elite Tiger Cavalry": { en: "Wei unique Cavalry that gains HP and attack when defeating enemy military.", de: "Die Kavallerie-Spezialkavallerie der Wei erhält LP und Angriffsstärke beim Besiegen des g…" },
+  "Liao Dao": { en: "Khitan unique Infantry with powerful attack that wounds enemies, dealing damage over time.", de: "Einzigartige Khitan-Infanterie mit effektivem Angriff, der Feinde verwundet und langfrist…" },
+  "Elite Liao Dao": { en: "Khitan unique Infantry with powerful attack that wounds enemies, dealing damage over time.", de: "Einzigartige Khitan-Infanterie mit effektivem Angriff, der Feinde verwundet und langfrist…" },
+  "Iron Pagoda": { en: "Jurchen unique Heavy Cavalry with durable armor that can completely block melee attacks.", de: "Schwere-Spezial-Kavallerie der Jurchen mit einer robusten Rüstung, die Nahkampfangriffe v…" },
+  "Elite Iron Pagoda": { en: "Jurchen unique Heavy Cavalry with durable armor that can completely block melee attacks.", de: "Schwere-Spezial-Kavallerie der Jurchen mit einer robusten Rüstung, die Nahkampfangriffe v…" },
+  "Champi Warrior": { en: "All-purpose Infantry for scouting and raiding.", de: "Vielseitige Infanterieeinheit zum Erkunden und Plündern." },
+  "Elite Champi Warrior": { en: "All-purpose Infantry for scouting and raiding.", de: "Vielseitige Infanterieeinheit zum Erkunden und Plündern." },
+  "Bolas Rider": { en: "Mapuche unique Mounted Archer with a charged attack that slows down enemy units.", de: "Spezialeinheit der Mapuche." },
+  "Elite Bolas Rider": { en: "Mapuche unique Mounted Archer with a charged attack that slows down enemy units.", de: "Spezialeinheit der Mapuche." },
+  "Champi Runner": { en: "All-purpose Infantry for scouting and raiding.", de: "Vielseitige Infanterieeinheit zum Erkunden und Plündern." },
+  "Champi Scout": { en: "All-purpose Infantry for scouting and raiding.", de: "Vielseitige Infanterieeinheit zum Erkunden und Plündern." },
+  "Blackwood Archer": { en: "Tupi unique Foot Archer that is trained in pairs and takes only half population space.", de: "Spezialeinheit der Tupi." },
+  "Elite Blackwood Archer": { en: "Upgrades your Blackwood Archers and lets you create Elite Blackwood Archers, which are st…", de: "Entwickelt Ihren Schwarzholz-Bogenschütze weiter und ermöglicht es Ihnen, Elite-Schwarzho…" },
+  "Guecha Warrior": { en: "Muisca unique Skirmisher that regenerates HP when a nearby Guecha Warrior is defeated.", de: "Spezialeinheit der Muisca." },
+  "Elite Guecha Warrior": { en: "Muisca unique Skirmisher that regenerates HP when a nearby Guecha Warrior is defeated.", de: "Spezialeinheit der Muisca." },
+  "Ibirapema Warrior": { en: "Tupi unique Infantry with a powerful frontal area attack.", de: "Spezialeinheit der Tupi." },
+  "Elite Ibirapema Warrior": { en: "Tupi unique Infantry with a powerful frontal area attack.", de: "Spezialeinheit der Tupi." },
+  "Kona": { en: "Mapuche unique Cavalry that deals increasing damage to injured units.", de: "Spezialeinheit der Mapuche." },
+  "Elite Kona": { en: "Mapuche unique Cavalry that deals increasing damage to injured units.", de: "Spezialeinheit der Mapuche." },
+  "Temple Guard": { en: "Muisca unique Shock Infantry that attacks faster the longer it remains in combat.", de: "Spezialeinheit der Muisca." },
+  "Elite Temple Guard": { en: "Muisca unique Shock Infantry that attacks faster the longer it remains in combat.", de: "Spezialeinheit der Muisca." },
+  "Ratha (Melee)": { en: "Bengali unique Mounted Archer that can switch between melee and ranged attacks.", de: "Bengalischer berittener Spezial-Bogenschütze, der zwischen Nahkampf- und Fernkampfangriff…" },
+  "Elite Ratha (Melee)": { en: "Bengali unique Mounted Archer that can switch between melee and ranged attacks.", de: "Bengalischer berittener Spezial-Bogenschütze, der zwischen Nahkampf- und Fernkampfangriff…" },
+  "Ratha (Ranged)": { en: "Bengali unique Mounted Archer that can switch between melee and ranged attacks.", de: "Bengalischer berittener Spezial-Bogenschütze, der zwischen Nahkampf- und Fernkampfangriff…" },
+  "Elite Ratha (Ranged)": { en: "Bengali unique Mounted Archer that can switch between melee and ranged attacks.", de: "Bengalischer berittener Spezial-Bogenschütze, der zwischen Nahkampf- und Fernkampfangriff…" },
+  "Armored Elephant": { en: "Anti-building Siege Cavalry.", de: "Kavallerieeinheit zur Belagerung von Gebäuden." },
+  "Siege Elephant": { en: "Anti-building Siege Cavalry.", de: "Kavallerieeinheit zur Belagerung von Gebäuden." },
+  "Konnik (Dismounted)": { en: "Bulgarian unique Heavy Cavalry that fights on as Infantry when felled.", de: "Schwere Spezial-Kavallerie der Bulgaren, die als Infanterieeinheit weiterkämpft, wenn sie…" },
+  "Elite Konnik (Dismounted)": { en: "Bulgarian unique Heavy Cavalry that fights on as Infantry when felled.", de: "Schwere Spezial-Kavallerie der Bulgaren, die als Infanterieeinheit weiterkämpft, wenn sie…" },
+  "Mounted Trebuchet": { en: "Khitan unique Siege Cavalry with long range, but cannot attack at close range.", de: "Einzigartige Belagerungseinheit der Kavallerie der Kitan mit großer Reichweite." },
+  "Traction Trebuchet": { en: "Powerful anti-building Siege Weapon with long range, but cannot attack enemies at close r…", de: "Gewaltige Belagerungswaffe mit hoher Reichweite zum Einsatz gegen Gebäude." },
+  "Jian Swordsman": { en: "Wu unique Shock Infantry that gains movement speed and attack but loses armor when a dama…", de: "Einzigartige Wu-Stoßinfanterie, die an Bewegungsgeschwindigkeit und Angriffen gewinnt, ab…" },
+  "White Feather Guard": { en: "Shu unique Infantry that temporarily slows down the unit it attacks.", de: "Spezialinfanterieeinhat der Shu, die die angegriffene Einheit vorübergehend verlangsamt." },
+  "Elite White Feather Guard": { en: "Shu unique Infantry that temporarily slows down the unit it attacks.", de: "Shus Spezialinfanterie, die mit ihrem Angriff herannahende Einheiten vorübergehend ausbre…" },
+  "Hei Guang Cavalry": { en: "Powerful all-purpose Heavy Cavalry.", de: "Starke, vielseitige schwere Kavallerie." },
+  "Heavy Hei Guang Cavalry": { en: "Powerful all-purpose Heavy Cavalry.", de: "Starke, vielseitige schwere Kavallerie." },
+  "Fire Archer": { en: "Wu unique Foot Archer that fires multiple arrows at units and uses a long range attack ag…", de: "Einfacher Spezial-Bogenschütze der Wu, der mehrere Pfeile gegen Einheiten abfeuert und ei…" },
+  "Elite Fire Archer": { en: "Wu unique Foot Archer that fires multiple arrows at units and uses a long range attack ag…", de: "Einfacher Spezial-Bogenschütze der Wu, der mehrere Pfeile gegen Einheiten abfeuert und ei…" },
+  "Grenadier": { en: "Jurchen unique Gunpowder Unit with ranged blast attack, but cannot attack at close range.", de: "Einzigartige Schießpulvereinheit der Jurchen mit Spreng-Fernkampfangriff." },
+  "War Chariot (Barrage)": { en: "Shu unique Siege Cavalry with rapid-fire attack, but cannot attack at close range.", de: "Einzigartige Belagerungskavallerie der Shu mit Schnellfeuerangriff, die aber keine Gegner…" },
+  "War Chariot (Focus Fire)": { en: "Shu unique Siege Cavalry with rapid-fire attack, but cannot attack at close range.", de: "Einzigartige Belagerungskavallerie der Shu mit Schnellfeuerangriff, die aber keine Gegner…" },
+  "Xianbei Raider": { en: "Wei unique Mounted Archer with a charged ranged attack.", de: "Der berittene Spezial-Bogenschütze der Wei mit einem aufgeladenen Fernangriff." },
+  "Camel Scout": { en: "Gurjara unique scout.", de: "Schnelle Spezial-Anti-Kavallerie-Spähereinheit der Gurjara." },
+  "Villager": { en: "Gathers resources.", de: "Sammelt Rohstoffe." },
+  "Trade Cart": { en: "Trade unit used for generating gold at another player's Market.", de: "Handelseinheit zur Erwirtschaftung von Gold auf dem Marktplatz eines anderen Spielers." },
+  "King": { en: "Royal unit; protect him in Regicide games.", de: "Königliche Einheit; in Regicide-Spielen schützen." },
+};
+
+// Einzigartige Einheit? (Typ-Feld ist deutschbasiert: "… / Einzigartig")
+function isUnique(name) {
+  const u = UNITS[name];
+  return !!(u && typeof u.type === "string" && u.type.includes("Einzigartig"));
+}
+function unitDesc(name) {
+  const d = UNIT_DESC[name];
+  if (!d) return "";
+  return d[currentLang] || d.en || "";
+}
+// UU-Symbol für Counter-Zeilen
+function uuTag(name) {
+  return isUnique(name)
+    ? `<span class="uu-tag" title="${ui('uu_tag_title')}">${ui('uu_tag')}</span>`
+    : "";
+}
+
+// ── Civ-Boni (Bonus-Stichpunkte je Civ aus den AoE2-DE-Spieltexten, en/de) ──
+const CIV_BONUSES = {
+  "Briten": { en: ["Shepherds work +25% faster", "Town Centers cost -50% wood starting in Castle Age", "Foot Archers +1/+2 range in Castle/Imperial Age"], de: ["Schäfer arbeiten um 25 % schneller", "Dorfzentren kosten ab der Ritterzeit 50 % Holz weniger", "+1/+2 Reichweite in der Ritter-/Imperialzeit für einfache Bogenschützen"] },
+  "Franken": { en: ["Foragers work +15% faster", "Mill technologies free", "Mounted Units +20% HP starting in Feudal Age", "Castles cost -15/25% in Castle/Imperial Age"], de: ["Sammler arbeiten um +15 % schneller", "Mühlentechnologien gratis", "Berittene Einheiten erhalten in der Feudalzeit +20 % LP", "Burgen kosten in der Ritter-/Imperialzeit 15/25 % weniger"] },
+  "Goten": { en: ["Loom is researched instantly", "Hunters carry +15; hunted animals last +20% longer", "Infantry costs -15/20/25/30% in Dark/Feudal/Castle/Imperial Age", "Infantry +1/+2/+3 attack vs. buildings in Feudal/Castle/Imperial Age", "+10 population space in Imperial Age"], de: ["Möglichkeit zur sofortigen Entwicklung des Webstuhls", "Tragfähigkeit von +15 für Jäger, erlegte Tiere um 20 % ergiebiger", "Infanterieeinheiten kosten 15/20/25/30 % weniger in der Dunklen/Feudal-/Ritter-/Imperialzeit", "+1/+2/+3 Angriffsstärke von Infanterieeinheiten beim Kampf gegen Gebäude in der Feudal-/Ritter-/Imperialzeit", "+10 Platz in der Bevölkerung in der Imperialzeit"] },
+  "Teutonen": { en: ["Farms cost -40%", "Town Centers +10 garrison capacity; Towers +5 garrison capacity", "Barracks and Stable Units +1/+2 melee armor in Castle/Imperial Age", "Monks +100% healing range", "Murder Holes, Herbal Medicine free"], de: ["Felder kosten 40 % weniger", "+10 Quartierkapazität für Dorfzentren; +5 Quartierkapazität für Türme", "+1/+2 Nahkampfrüstung für Kasernen und Ställe in der Ritter-/Imperialzeit", "Mönche +100 % Heilungsreichweite", "Maschikulis und Kräutermedizin gratis"] },
+  "Japaner": { en: ["Mills, Lumber- and Mining Camps cost -50%", "Infantry attacks +33% faster starting in Feudal Age", "Cavalry Archers +2 attack vs. Ranged Soldiers (except Skirmishers)", "Fishing Ships work +5/10/15/20% faster in Dark/Feudal/Castle/Imperial Age; +100% HP"], de: ["Mühlen, Holzfäller- und Bergarbeiterlager kosten -50 %", "Infanterieeinheiten greifen ab der Feudalzeit um +33 % schneller an", "+2 Angriffsstärke der berittenen Bogenschützen gegen Fernkampfsoldaten (außer Plänkler)", "Fischkutter arbeiten in der Dunklen/Feudal-/Ritter-/Imperialzeit um +5/10/15/20 % schneller; +100 % LP"] },
+  "Chinesen": { en: ["Start with +3 Villagers, but -50 wood and -200 food", "Technologies cost -5/10/15% in Feudal/Castle/Imperial Age", "Town Centers +7 line of sight and provide +15 population space", "Fire Lancers and Fire Ships move +5/10% faster in Castle/Imperial Age"], de: ["Sie starten mit +3 Dorfbewohnern, aber –50 Holz und –200 Nahrung", "Technologien kosten in der Feudal-/Ritter-/Imperialzeit 5/10/15 % weniger", "+7 Punkte Sichtweite für Dorfzentren, dazu +15 Punkte Platz für Bevölkerungseinheiten", "Feuer-Lanzenreiter und Feuerschiffe bewegen sich im Ritter/Imperialzeitalter um 5/10 % schneller"] },
+  "Byzantiner": { en: ["Buildings +10/20/30/40% HP in Dark/Feudal/Castle/Imperial Age", "Camel Riders, Skirmishers and Spearman-line cost -25%", "Town Watch, Town Patrol free", "Advancing to Imperial Age costs -33%", "Fire Ships and Dromons attack +25% faster"], de: ["+10/20/30/40 % LP für Gebäude in der Dunklen/Feudal-/Ritter-/Imperialzeit", "Kamelreiter, Plänkler und Speerkämpfer kosten -25 %", "Stadtwache und Nachtwache gratis", "Voranschreiten zur Imperialzeit kostet -33 %", "Feuerschiffe und Dromonen greifen um 25 % schneller an"] },
+  "Perser": { en: ["Start with +50 wood and +50 food", "Town Centers and Docks +100% HP and work +5/10/15/20% faster in Dark/Feudal/Castle/Imperial Age", "Parthian Tactics available in Castle Age", "Can build Caravanserai in Imperial Age"], de: ["Beginnen Sie mit +50 Einheiten Holz und +50 Einheiten Nahrung", "Dorfzentren und Häfen mit +100 % LP und um +5/10/15/20 % schneller in der Dunklen/Feudal-/Ritter-/Imperialzeit", "Parthische Taktik in der Ritterzeit verfügbar", "Kann Karawanserei in der Imperialzeit errichten"] },
+  "Sarazenen": { en: ["Market trading fee only 5%; Markets cost -100 wood", "Camel Units +25% HP", "Galley-line attacks +25% faster", "Transport Ships +100% HP, +20 carry capacity"], de: ["Handelskosten für Marktplatz nur 5 %, Marktplätze kosten -100 Holz", "Kameleinheiten +25 % LP", "Galeeren-Einheiten greifen +25 % schneller an", "Transportschiffe +100 % LP, +20 Tragfähigkeit"] },
+  "Türken": { en: ["Gold miners work +25% faster", "Scout Cavalry-line +1 pierce armor and upgrades free", "Chemistry free; Gunpowder technologies costs -50%", "Gunpowder Units +25% HP"], de: ["Goldgräber arbeiten um 25 % schneller.", "+1 Rüstungsdurchschlag für berittene Späher und Weiterentwicklungen gratis", "Chemie gratis, Schießpulver-Technologien kosten -50 %", "+25 % LP für Schießpulvereinheiten"] },
+  "Wikinger": { en: ["Wheelbarrow, Hand Cart free", "Infantry +20% HP starting in Feudal Age", "Warships cost -10/15/20% in Feudal/Castle/Imperial Age"], de: ["Schubkarre und Handkarren gratis", "+20 % LP für Infanterieeinheiten beginnend in der Feudalzeit", "Kriegsschiffe kosten in der Feudal-/Ritter-/Imperialzeit -10/15/20 %"] },
+  "Mongolen": { en: ["Hunters work +40% faster", "Cavalry Archers attack +25% faster", "Scout Cavalry-line and Steppe Lancers +20/30% HP in Castle/Imperial Age"], de: ["Jäger arbeiten um +40 % schneller", "Berittene Bogenschützen greifen um +25 % schneller an", "Berittener-Späher-Linie und Steppenlanzenreiter +20/30 % LP in der Ritter-/Imperialzeit"] },
+  "Kelten": { en: ["Lumberjacks work +15% faster", "Livestock animals within Celt unit line of sight cannot be stolen", "Infantry moves +5/10/15/20% faster in Dark/Feudal/Castle/Imperial Age", "Siege Weapons attack +25% faster"], de: ["Holzfäller arbeiten um +15 % schneller", "Nutztiere in der Sichtweite keltischer Einheiten können nicht gestohlen werden", "Infanterie bewegt sich um +5/10/15/20 % schneller in der Dunklen/Feudal-/Ritter-/Imperialzeit", "+25 % schnellere Angriffe mit Belagerungswaffen"] },
+  "Spanier": { en: ["Builders work +30% faster", "Receive +20 gold for each technology researched", "Blacksmith upgrades cost no gold", "Gunpowder Units attack +18% faster", "Cannon Galleons fire more accurately at moving targets"], de: ["Bauarbeiter arbeiten +30 % schneller.", "+20 Gold für jede erforschte Technologie", "Weiterentwicklungen von Schmieden kosten kein Gold.", "Schießpulvereinheiten greifen +18 % schneller an.", "Kanonenschiffe feuern präziser bei beweglichen Zielen."] },
+  "Azteken": { en: ["Start with +50 gold", "Villagers carry +3", "Military Units train +15% faster", "Monks gain +5 HP for each researched Monastery technology"], de: ["Start mit + 50 Gold", "Dorfbewohner tragen +3", "Militäreinheiten bilden 15 % schneller aus", "Mönche erhalten +5 LP für jede entwickelte Kloster-Technologie"] },
+  "Mayas": { en: ["Start with +1 Villager, but -50 food", "Resources last +15% longer", "Foot Archers cost -10/20/30% in Feudal/Castle/Imperial Age"], de: ["Beginn mit +1 Dorfbewohner, aber -50 Nahrung", "Rohstoffe halten +15 % länger", "Einfache Bogenschützen kosten -10/20/30 % in der Feudal-/Ritter-/Imperialzeit"] },
+  "Hunnen": { en: ["Do not need houses, but start with -100 wood", "Cavalry Archers cost -10/20% in Castle/Imperial Age", "Trebuchets fire more accurately at units and small targets", "On Nomadic maps, the first Town Center spawns a scouting Horse"], de: ["Brauchen keine Häuser, aber Start mit -100 Holz", "Berittene Bogenschützen kosten -10/20 % in der Burg-/Imperialzeit", "Triböcke feuern bei Einheiten und kleinen Zielen genauer ab", "Auf nomadischen Karten bringt das erste Dorfzentrum ein Spähpferd hervor"] },
+  "Koreaner": { en: ["Stone miners work +20% faster", "Ranged Soldiers and Infantry cost -50% wood", "Archer armor and tower upgrades free (Bombard Tower requires Chemistry)", "Warships cost -20% wood"], de: ["Steinhauer arbeiten um 20 % schneller", "Fernkampfsoldaten und Infanterie kosten 50 % weniger Holz", "Weiterentwicklungen für Bogenschützen-Rüstung und Türme gratis (Kanonenturm benötigt Chemie)", "Kriegsschiffe kosten 20 % weniger Holz"] },
+  "Italiener": { en: ["Advancing to the next Age costs -15%", "Foot Archers and Condottieri +1 melee/+1 pierce armor", "Dock and University technologies cost -25%", "Gunpowder Units cost -20%", "Fishing Ships cost -15%"], de: ["Voranschreiten in das nächste Zeitalter kostet -15 %", "Einfache Bogenschützen und Condottieri erhalten +1 Nahkampf-/+1 Durchschlagspanzerung", "Hafen- und Universitäts-Technologien kosten -25 %", "Schießpulvereinheiten kosten -20 %", "Fischkutter kosten -15 %"] },
+  "Hindustaner": { en: ["Villagers cost -8/13/18/23% in Dark/Feudal/Castle/Imperial Age", "Camel Riders attack +20% faster", "Gunpowder Units +1 melee/+1 pierce armor", "Can build Caravanserai in Imperial Age"], de: ["Dorfbewohner kosten -8/13/18/23 % in der Dunklen/Feudal-/Ritter-/Imperialzeit", "Kamelreiter greifen um +20 % schneller an", "+1 Nahkampf/+1 Durchschlagspanzerung für Schießpulvereinheiten", "Bau von Karawanserei in der Imperialzeit möglich"] },
+  "Inka": { en: ["Houses and Settlements provide +5 population space", "Buildings cost -15% stone", "Military Units cost -15/20/25/30% food in Dark/Feudal/Castle/Imperial Age", "Villagers affected by Infantry Blacksmith upgrades starting in Castle Age"], de: ["Häuser und Siedlungen liefern +5 Platz in der Bevölkerung", "Gebäude kosten 15 % weniger Steine", "Militäreinheiten kosten in der Dunklen/Feudal-/Ritter-/Imperialzeit 15/20/25/30 % weniger Nahrung", "Dorfbewohner sind ab der Ritterzeit von Infanterie-Schmiede-Weiterentwicklungen betroffen"] },
+  "Magyaren": { en: ["Villagers defeat wolves with one strike", "Scout Cavalry-line costs -15%", "Melee attack upgrades free"], de: ["Dorfbewohner besiegen Wölfe mit einem einzigen Schlag", "Berittene Späher kostet -15 % weniger", "Weiterentwicklungen für Nahkampfangriffe gratis"] },
+  "Slawen": { en: ["Farmers work +15% faster", "Arson, Gambesons free", "Siege Workshop Units cost -15%", "Monks move +20% faster"], de: ["Bauern arbeiten +15 % schneller", "Brandstiftung, Gambesons kostenlos", "Belagerungswerkstatt-Einheiten kosten 15 % weniger", "Mönche bewegen sich +20 % schneller"] },
+  "Portugiesen": { en: ["Foragers generate wood in addition to food", "All units cost -20% gold", "Can build Feitoria in Imperial Age", "Ships +10/15/20% HP in Feudal/Castle/Imperial Age"], de: ["Sammler generieren neben Nahrung auch Holz", "Alle Einheiten kosten -20 % Gold", "Kann Feitoria in der Imperialzeit bauen", "Schiffe +10/15/20 % LP in der Feudal-/Ritter-/Imperialzeit"] },
+  "Äthiopier": { en: ["Receive +100 gold and +100 food when advancing to the next Age", "Foot Archers attack +18% faster", "Pikeman upgrade free"], de: ["+100 Gold, +100 Nahrung bei Voranschreiten ins nächste Zeitalter", "Einfache Bogenschützen greifen 18 % schneller an", "Pikenier-Entwicklung gratis"] },
+  "Mali": { en: ["Buildings cost -15% wood", "Villagers drop off +10% more gold", "Barracks Units +1/+2/+3 pierce armor in Feudal/Castle/Imperial Age"], de: ["Gebäude kosten -15 % weniger Holz", "Dorfbewohner liefern +10 % mehr Gold", "Kasernen-Einheiten haben +1/+2/+3 Rüstungsdurchschlag in der Feudal-/Ritter-/Imperialzeit"] },
+  "Berber": { en: ["Villagers move +5% faster in Dark Age, +10% faster starting in Feudal Age", "Stable Units cost -15/20% in Castle/Imperial Age", "Ships move +10% faster"], de: ["Dorfbewohner bewegen sich in der Dunklen Zeit 5 % schneller, in der Feudalzeit 10 % schneller", "Stalleinheiten kosten 15/20 % weniger in der Burg-/Imperialzeit", "Schiffe bewegen sich 10 % schneller"] },
+  "Khmer": { en: ["No buildings required to advance to the next Age or to unlock other buildings", "Farmers don't require Mills or Town Centers to drop off food", "Villagers can garrison in Houses", "Battle Elephants move +10% faster"], de: ["Keine Gebäude benötigt, um in das nächste Zeitalter voranzuschreiten oder andere Gebäude freizuschalten", "Bauern benötigen keine Mühlen oder Dorfzentren, um Nahrung abzuliefern", "Dorfbewohner können in Häuser einquartiert werden", "Elefantenreiter +10 % schneller"] },
+  "Malaien": { en: ["Advancing to the next Age is +66% faster", "Infantry armor upgrades free", "Battle Elephants cost -25/35% in Castle/Imperial Age", "Fish Traps cost -33% and provide +200% food"], de: ["Voranschreiten in das nächste Zeitalter +66 % schneller", "Kostenlose Weiterentwicklung für Infanterierüstung", "Elefantenreiter kosten 25/35 % in Ritter-/Imperialzeit", "35 % Reusen kosten -33 % und bieten +200 % mehr Nahrung"] },
+  "Burmesen": { en: ["Lumber Camp technologies free", "Infantry +1/+2/+3 attack in Feudal/Castle/Imperial Age", "Battle Elephants +1 melee/+1 pierce armor", "Monastery technologies cost -50%"], de: ["Technologien im Holzfällerlager gratis", "Infanterie +1/+2/+3 Angriffsstärke in Feudal-/Ritter-/Imperialzeit", "Elefantenreiter +1 Nahkampf /+1 Rüstung durchschlagen", "Klostertechnologien 50 % günstiger"] },
+  "Vietnamesen": { en: ["Enemy Town Centers are revealed at the start of the game", "Economic upgrades cost no wood and research +100% faster", "Archery Range units and Fire Lancers +20% HP", "Conscription free"], de: ["Die Position der gegnerischen Dorfzentren wird zu Spielbeginn aufgedeckt", "Wirtschaftsentwicklungen kosten kein Holz und werden +100 % schneller erforscht", "+20 % LP für Schießstandeinheiten und Feuer-Lanzenreiter", "Wehrpflicht gratis"] },
+  "Bulgaren": { en: ["Militia-line upgrades free", "Blacksmith and Siege Workshop technologies cost -50% food", "Town Centers cost -50% stone", "Can build Krepost in Castle Age"], de: ["Weiterentwicklungen für Milizsoldatenzweig gratis", "Schmiede- und Belagerungswerkstattentechnologien kosten -50 % Nahrung", "Dorfzentren kosten -50 % Steine", "Kann Kreposte in Ritterzeit bauen"] },
+  "Tataren": { en: ["Livestock animals last +50% longer", "Units deal +25% damage when fighting from higher elevation", "New Town Centers spawn 2 Sheep starting in Castle Age", "Thumb Ring, Parthian Tactics free"], de: ["Nutztiere leben um +50 % länger", "Einheiten verursachen um +25 % Schaden, wenn sie von höherer Ebene aus kämpfen", "Neue Dorfzentren erzeugen 2 Schafe ab der Ritterzeit", "Daumenring, Parthisches Manöver kostenlos"] },
+  "Cumanen": { en: ["One additional Town Center can be built in Feudal Age", "Mounted Units move +5/10/15% faster in Feudal/Castle/Imperial Age", "Archery Ranges and Stables cost -75 wood", "Siege Workshop and Battering Ram available in Feudal Age; Capped Ram available in Castle Age"], de: ["Möglichkeit zum Bau eines zusätzlichen Dorfzentrums in der Feudalzeit", "Berittene Einheiten bewegen sich in der Feudal-/Ritter-/Imperialzeit um +5/10/15 % schneller", "Schießstände und Ställe kosten -75 Holz", "Belagerungswerkstatt und Rammbock in der Feudalzeit verfügbar; Sturmbock in der Ritterzeit verfügbar"] },
+  "Litauer": { en: ["Each Town Center provides +100 food", "Spearman-line and Skirmisher-line move +10% faster", "Each garrisoned Relic provides +1 attack to Knight-line and Leitis (maximum +4)"], de: ["Jedes Dorfzentrum stellt +100 Nahrung bereit", "Speerkämpfer und Plänkler bewegen sich +10 % schneller", "Jede einquartierte Reliquie gewährt Rittern und Leitis +1 Angriffsstärke (max. +4)"] },
+  "Burgunder": { en: ["Economic upgrades available one age earlier and cost -40% food", "Stable technologies cost -50%", "Cavalier upgrade available in Castle Age", "Gunpowder Units +25% attack"], de: ["Wirtschaftsentwicklungen kosten 40 % weniger Nahrung und sind ein Zeitalter früher verfügbar", "Stalltechnologien kosten 50 % weniger", "Kavalier-Weiterentwicklung in der Ritterzeit verfügbar", "+25 % Angriffsstärke für Schießpulvereinheiten"] },
+  "Sizilianer": { en: ["Start with +100 stone", "Farm upgrades provide +125% additional food", "Soldiers receive -40% bonus damage", "Can build Donjon in Dark Age, replaces Watch Tower-line", "Fortifications built +50% faster; Town Centers built +100% faster"], de: ["Start mit +100 Stein", "Felder-Weiterentwicklungen bieten +125 % zusätzliche Nahrung", "Soldaten erhalten -40 % Bonusschaden", "Kann Donjon in der Dunklen Zeit errichten, ersetzt Türme", "Befestigungsanlagen werden um 50 % schneller gebaut; Dorfzentren werden um 100 % schneller gebaut"] },
+  "Polen": { en: ["Folwark replaces Mill", "Villagers regenerate 10/15/20 HP in Feudal/Castle/Imperial Age", "Stone Miners generate gold in addition to stone", "Bloodlines and Scout Cavalry-line upgrades cost -50% food"], de: ["Gutshof ersetzt Mühlen", "Dorfbewohner regenerieren 10/15/20 LP in der Feudal-/Ritter-/Imperialzeit", "Steinhauer generieren neben Stein auch Gold", "Weiterentwicklungen für Zuchtauswahl und berittene Späher kosten -50 % Nahrung"] },
+  "Böhmen": { en: ["Mining Camp technologies free", "Blacksmiths and Universities cost -100 wood", "Spearman-line deals +25% bonus damage", "Fervor and Sanctity affect Villagers", "Chemistry and Hand Cannoneer available in Castle Age"], de: ["Bergarbeiterlager-Technologien gratis", "Schmieden und Universitäten kosten -100 Holz", "Speerkämpfer verursachen +25 % Bonusschaden", "Eifer und Heiligkeit beeinflussen Dorfbewohner", "Chemie und Handkanonier verfügbar in der Ritterzeit"] },
+  "Dravidianer": { en: ["Fishermen and Fishing Ships carry +15", "Receive +200 wood when advancing to the next Age", "Skirmishers and Elephant Archers attack +25% faster", "Barracks technologies cost -50%", "Siege Weapons cost -33% wood"], de: ["Fischer und Fischkutter tragen +15", "Erhalten Sie +200 Holz beim Voranschreiten zum nächsten Zeitalter", "Plänkler und Elefantenbogenschützen greifen +25 % schneller an", "Kasernen-Technologien kosten -50 % weniger", "Belagerungswaffen kosten -33 % weniger Holz"] },
+  "Gurjaras": { en: ["Start with 2 Forage Bushes", "Can garrison livestock in Mills to passively produce food", "Mounted Units deal +20/30/40% bonus damage in Feudal/Castle/Imperial Age", "Docks +5 garrison capacity"], de: ["Beginnt mit 2 Beerensträuchern", "Kann Vieh in Mühlen einquartieren, um passiv Nahrung zu produzieren", "Berittene Einheiten verursachen +20/30/40 % Bonusschaden in der Feudal-/Ritter-/Imperialzeit", "Häfen haben +5 Quartierkapazität"] },
+  "Römer": { en: ["Villagers gather, build, and repair +5% faster", "Infantry armor upgrade effects are doubled", "Scorpions cost -50% gold", "Galley-line and Dromons +1 melee/+1 pierce armor"], de: ["Dorfbewohner sammeln, bauen und reparieren Objekte um +5 % schneller", "Weiterentwicklungseffekte für die Rüstung von Infanterieeinheiten verdoppeln sich", "Skorpione kosten 50 % weniger Gold", "+1 Nahkampf/+1 Durchschlagspanzerung für Galeeren und Dromonen"] },
+  "Armenier": { en: ["Mule Carts cost -25%", "Mule Cart technology effects +40%", "Spearman- and Militia-line upgrades (except Man-at-Arms) available one age earlier", "First Fortified Church receives a free Relic", "Galley-line and Dromons fire an additional projectile"], de: ["Maultierkarren kosten -25 %", "Maultierkarren-Technologieeffekte steigen um +40 %", "Die erste Wehrkirche erhält eine kostenlose Reliquie", "Normale Kaserneneinheiten (außer Waffenknechte) sind ein Zeitalter früher verfügbar", "Einheiten der Galeerenlinie und Dromone feuern ein zusätzliches Geschoss ab"] },
+  "Georgier": { en: ["Start with a Mule Cart", "Units and buildings receive -15% damage when located on higher elevation", "Mounted Units regenerate 2/8/14 HP per minute in Feudal/Castle/Imperial Age", "Fortified Churches provide Villagers in a 9 tiles radius with +10% work rate"], de: ["Maultierkarren beim Start", "Einheiten und Gebäude erleiden -15 % Schaden, wenn sie sich an einem erhöhten Punkt befinden.", "Berittene Einheiten regenerieren in der Feudal-/Ritter-/Imperialzeit 2/8/14 LP pro Minute.", "Befestigte Kirchen verleihen Dorfbewohnern in einem Radius von 9 Feldern +10 % Arbeitsrate."] },
+  "Shu": { en: ["Lumberjacks generate food in addition to wood", "Archery Unit technologies at the Archery Range and Blacksmith cost -25%", "Siege Weapons and Siege Warships move +10/15% faster in Castle/Imperial Age"], de: ["Holzfäller erzeugen neben Holz auch Nahrung", "Technologien für Bogenschützeneinheiten kosten am Schießstand und in der Schmiede -25 % weniger", "Belagerungswaffen und Belagerungskriegsschiffe bewegen sich in der Ritter-/Imperialzeit um +10/15 % schneller"] },
+  "Wu": { en: ["Military production buildings and Docks provide +55 food", "Infantry regenerates 10/15/30 HP per minute in Feudal/Castle/Imperial Age", "Jian Swordsmen and Hei Guang Cavalry +2 attack in Imperial Age", "Careening, Dry Dock free"], de: ["Militärische Produktionsgebäude und Häfen liefern +55 Nahrung", "Infanterieeinheit regeneriert 10/15/30 LP pro Minute in der Feudal-/Ritter-/Imperialzeit", "Jian-Schwertkämpfer und Hei-Guang-Kavallerie verfügen in der Imperialzeit über +2 Angriffsstärke", "Kielholen und Trockendock kostenlos"] },
+  "Wei": { en: ["Receive one free Villager for each economic upgrade researched", "Hei Guang Cavalry and Xianbei Raider +20/30% HP in Castle/Imperial Age", "Traction Trebuchets and Lou Chuans cost -25%"], de: ["Sie erhalten für jede Wirtschaftsweiterentwicklung einen kostenlosen Dorfbewohner", "Hei-Guang-Kavallerie und Xianbei-Räuber +20/30 % LP in Ritter-/Imperialzeit", "Zug-Trebuchet und Lou Chuans kosten -25 %"] },
+  "Jurchen": { en: ["Meat of hunted and livestock animals doesn't decay", "Mounted Units and Fire Lancers attack +25% faster starting in Feudal Age", "Siege Engineers available in Castle Age", "Siege and Fortification upgrades cost -75% wood and research +100% faster", "Units receive -50% friendly fire damage"], de: ["Fleisch von erlegten Tieren und von Vieh verfällt nicht.", "Berittene Einheiten und Feuer-Lanzenreiter greifen ab der Feudalzeit um 25 % schneller an.", "In der Ritterzeit sind Belagerungsingenieure verfügbar.", "Weiterentwicklungen für Belagerungen und Befestigungen kosten -75 % Holz und lassen sich um 100 % schneller entwickeln.", "Einheiten erhalten -50 % Schaden durch eigene Einheiten."] },
+  "Khitan": { en: ["Pastures replace Farms", "Melee attack upgrade effects are doubled", "Skirmishers, Spearman-, and Scout Cavalry-line train and upgrade +15% faster", "Heavy Cavalry Archer upgrade available in Castle Age and costs -50%"], de: ["Weiden ersetzen Felder", "Effekte von Nahkampfangriff-Weiterentwicklungen verdoppeln sich", "Plänkler, Speerkämpfer und berittene Späher werden um +15 % schneller ausgebildet und weiterentwickelt", "Weiterentwicklung für schwere berittene Bogenschützen in der Ritterzeit verfügbar und kosten -50 %"] },
+  "Muisca": { en: ["Advancing to the next Age costs -50% gold", "Settlements cost -33% and heal nearby units", "Champi Warriors and Archery Range Units +1/2/3 melee armor in Feudal/Castle/Imperial Age", "Monks regain faith +50% faster", "Caravan, Guilds free"], de: ["Voranschreiten ins nächste Zeitalter kostet -50 % Gold", "Siedlungen kosten -33 % und heilen Einheiten in der Nähe", "Champi-Krieger und Schießstand-Einheiten +1/2/3 Punkte Nahkampfrüstung in Feudal-/Ritter-/Imperialzeit", "Mönche erhalten Glauben +50 % schneller zurück", "Karawane, Gilden kostenlos"] },
+  "Tupi": { en: ["Start with +25 of each resource", "Villagers can garrison in Settlements", "Fallen units return 15% of their cost", "Archery Range and Barracks upgrades cost -50% food"], de: ["Beginnt mit +25 von jedem Rohstoff", "Dorfbewohner können in Siedlungen in Garnison gelegt werden", "Gefallene Einheiten geben 15 % ihrer Kosten zurück", "Schießstand- und Kasernen-Weiterentwicklungen kosten -50 % Nahrung"] },
+};
+
+// Welche Bonus-Schlagworte betreffen den Einheitentyp?
+function civClassKeywords(type) {
+  const kw = new Set();
+  let cavArch = false;
+  if (/Kavallerie?bogen|Kavallerieogen/.test(type)) { cavArch = true; ["cavalry archer", "mounted"].forEach(k => kw.add(k)); }
+  if (/Bogenschütze/.test(type) && !cavArch) { ["foot archer", "archery range", "skirmisher", "arbalest", "crossbow", "archer"].forEach(k => kw.add(k)); }
+  if (/Infanterie/.test(type)) { ["infantry", "militia", "spearman", "pikeman", "halberdier", "barracks", "eagle"].forEach(k => kw.add(k)); }
+  if (/Kavallerie/.test(type) && !cavArch) { ["cavalry", "mounted", "knight", "cavalier", "paladin", "stable", "scout", "lancer", "battle elephant"].forEach(k => kw.add(k)); }
+  if (/Kamel/.test(type)) { ["camel", "cavalry", "mounted", "stable"].forEach(k => kw.add(k)); }
+  if (/Belagerung/.test(type)) { ["siege", "ram", "mangonel", "onager", "scorpion", "trebuchet", "bombard"].forEach(k => kw.add(k)); }
+  if (/Schiff/.test(type)) { ["ship", "warship", "galley", "navy", "dock", "fire ship", "galleon"].forEach(k => kw.add(k)); }
+  if (/Schusswaffe/.test(type)) { ["gunpowder", "cannon", "hand cannoneer", "bombard", "conquistador", "janissary"].forEach(k => kw.add(k)); }
+  return { kw: [...kw], cavArch };
+}
+
+// Boni, die diese konkrete Einheit unterstützen (in aktueller Sprache)
+function getCivBonuses(unit) {
+  if (!unit || unit.civ === "Generic") return null;
+  const civ = unit.civ.split(" / ")[0].replace(/\s*\(.*\)\s*$/, "").trim();
+  const cb = CIV_BONUSES[civ];
+  if (!cb) return null;
+  const { kw, cavArch } = civClassKeywords(unit.type);
+  const list = [];
+  cb.en.forEach((en, i) => {
+    let b = en.toLowerCase();
+    if (!cavArch) b = b.replace(/cavalry archers?/g, " ");
+    if (kw.some(k => b.includes(k))) {
+      list.push(currentLang === "de" ? (cb.de[i] || en) : en);
+    }
+  });
+  return { civ, list };
+}
+
 let currentResultName = null;
 function showResult(name) {
   const unit = UNITS[name];
@@ -4314,43 +4707,86 @@ function showResult(name) {
 
   const icon = getUnitIconHtml(name, unit.type, 56);
 
-  // Header
+  // Header — Unique Unit, Typ, Civ
+  const uu = isUnique(name);
   cardHeader.innerHTML = `
     <div class="unit-icon">${icon}</div>
     <div>
       <div class="unit-name">${displayName(name)}</div>
       <div class="unit-meta">
+        ${uu ? `<span class="badge badge-uu">${ui('unique_badge')}</span>` : ""}
         <span class="badge badge-type">${tx('types', unit.type).split("/")[0].trim()}</span>
         ${unit.civ !== "Generic" ? `<span class="badge badge-civ">${tx('civs', unit.civ)}</span>` : ""}
       </div>
     </div>
   `;
 
-  // Body
+  // Body — counter-first Aufbau
   const hard = unit.counters.filter(c => c.strength === "hard");
   const soft = unit.counters.filter(c => c.strength === "soft");
+  const s = STATS[name];
+
+  // Counter-Zeile (mit UU-Symbol bei einzigartigen Kontereinheiten)
+  const counterGrid = (list, strength) => {
+    let h = `<div class="counter-grid">`;
+    list.forEach(c => {
+      h += `
+        <div class="counter-row ${strength}" onclick="selectUnit('${c.unit.replace(/'/g, "\\'")}')">
+          <span class="counter-icon">${getUnitIconHtml(c.unit, UNITS[c.unit]?.type || "", 28)}</span>
+          <div>
+            <div class="counter-name">${displayName(c.unit)}${uuTag(c.unit)}</div>
+            <div class="counter-reason">${tx('reasons', c.reason)}</div>
+          </div>
+          <span class="strength-badge ${strength}">${ui(strength + '_badge')}</span>
+        </div>`;
+    });
+    h += `</div>`;
+    return h;
+  };
 
   let html = "";
 
-  // ── Civ-Kurzprofil (nur wenn die Einheit zu einer Civ mit Profil gehört) ──
-  const civInfo = getCivInfo(unit.civ);
-  if (civInfo) {
-    const d = civInfo.data[currentLang] || civInfo.data.en;
-    html += `<div class="civ-profile">
-      <div class="civ-profile-head">${ui('civ_section')} · ${tx('civs', civInfo.civ)}</div>
-      <div class="civ-profile-archetype">${d.archetype}</div>
-      <div class="civ-profile-row"><span class="civ-profile-label">${ui('civ_bonus_label')}</span><span>${d.bonus}</span></div>
-      <div class="civ-profile-row"><span class="civ-profile-label">${ui('civ_threat_label')}</span><span>${d.threat}</span></div>
-      <div class="civ-profile-row"><span class="civ-profile-label">${ui('civ_counter_label')}</span><span>${d.counter}</span></div>
-    </div>`;
+  // ── 1) Harte Konter ──
+  if (hard.length > 0) {
+    html += `<div class="section-title">${ui('hard_section')}</div>`;
+    html += counterGrid(hard, "hard");
   }
 
-  // ── Stats-Leiste (HP, Angriff, Rüstung, Reichweite, Geschw.) ──
-  const s = STATS[name];
+  // ── 2) Weiche Konter ──
+  if (soft.length > 0) {
+    html += `<div class="section-title"${hard.length ? ` style="margin-top:1.2rem"` : ""}>${ui('soft_section')}</div>`;
+    html += counterGrid(soft, "soft");
+  }
+
+  if (unit.counters.length === 0) {
+    html += `<div class="no-data" style="padding:1rem">${ui('no_counters')}</div>`;
+  }
+
+  // ── 3) Stark gegen (Klassen-Chips) ──
+  const strongClusters = STRONG_VS_CLUSTERS[name];
+  if (strongClusters && strongClusters.size > 0) {
+    const sortedClusters = CLUSTER_ORDER.filter(c => strongClusters.has(c));
+    html += `<div class="section-title" style="margin-top:1.2rem">${ui('strong_vs_section')}</div>`;
+    html += `<div class="strong-vs-row">`;
+    html += `<span class="strong-vs-label">${ui('strong_vs_label')}</span>`;
+    for (const cluster of sortedClusters) {
+      html += `<span class="cluster-chip">${cluster}</span>`;
+    }
+    html += `</div>`;
+  }
+
+  // ── 4) Kurzprofil (ein Satz aus den Spieltexten) ──
+  const desc = unitDesc(name);
+  if (desc) {
+    html += `<div class="section-title" style="margin-top:1.2rem">${ui('profile_section')}</div>`;
+    html += `<div class="unit-blurb">${desc}</div>`;
+  }
+
+  // ── 5) Werte (HP, Angriff, Rüstungen …) + Bonus-Schaden + Kosten ──
   if (s) {
     const fmt = (v) => (v === undefined || v === null) ? "—" : v;
     const isRanged = s.rng !== undefined;
-    html += `<div class="stats-grid">`;
+    html += `<div class="stats-grid" style="margin-top:.9rem">`;
     html += `<div class="stat"><div class="stat-label">${ui('stat_hp')}</div><div class="stat-val">${fmt(s.hp)}</div></div>`;
     html += `<div class="stat"><div class="stat-label">${ui('stat_atk')}</div><div class="stat-val">${fmt(s.atk)}${s.rl !== undefined ? `<span class="sub">/ ${s.rl}s</span>` : ""}</div></div>`;
     html += `<div class="stat"><div class="stat-label">${ui('stat_ma')}</div><div class="stat-val">${fmt(s.ma)}</div></div>`;
@@ -4363,6 +4799,20 @@ function showResult(name) {
       html += `<div class="stat"><div class="stat-label">${ui('stat_acc')}</div><div class="stat-val">${s.acc}%</div></div>`;
     }
     html += `</div>`;
+
+    // Bonus-Schaden vs. Klassen
+    const bonusesTop = getDisplayableBonuses(name);
+    if (bonusesTop.length > 0) {
+      html += `<div class="bonus-chips">`;
+      html += `<span class="strong-vs-label">${ui('bonus_damage_label')}</span>`;
+      bonusesTop.forEach(b => {
+        const rawLabel = CLASS_LABELS[b.c] || `${ui('class_word')} ${b.c}`;
+        const label = tx('classLabels', rawLabel);
+        html += `<span class="bonus-chip"><span class="bonus-val">+${b.a}</span> ${ui('vs_word')} ${label}</span>`;
+      });
+      html += `</div>`;
+      html += `<div class="bonus-note">${ui('bonus_note')}</div>`;
+    }
 
     // Kosten
     if (s.cost) {
@@ -4381,75 +4831,17 @@ function showResult(name) {
     }
   }
 
-  // ── Bonus-Schaden direkt unter Stats (Stark gegen) ──
-  const bonusesTop = getDisplayableBonuses(name);
-  const strongClusters = STRONG_VS_CLUSTERS[name];
-  const hasBonuses = bonusesTop.length > 0;
-  const hasClusters = strongClusters && strongClusters.size > 0;
-  if (hasBonuses || hasClusters) {
-    html += `<div class="section-title">${ui('strong_vs_section')}</div>`;
-    if (hasClusters) {
-      const sortedClusters = CLUSTER_ORDER.filter(c => strongClusters.has(c));
-      html += `<div class="strong-vs-row">`;
-      html += `<span class="strong-vs-label">${ui('strong_vs_label')}</span>`;
-      for (const cluster of sortedClusters) {
-        html += `<span class="cluster-chip">${cluster}</span>`;
-      }
-      html += `</div>`;
-    }
-    if (hasBonuses) {
-      html += `<div class="bonus-chips">`;
-      html += `<span class="strong-vs-label">${ui('bonus_damage_label')}</span>`;
-      bonusesTop.forEach(b => {
-        const rawLabel = CLASS_LABELS[b.c] || `${ui('class_word')} ${b.c}`;
-        const label = tx('classLabels', rawLabel);
-        html += `<span class="bonus-chip"><span class="bonus-val">+${b.a}</span> ${ui('vs_word')} ${label}</span>`;
-      });
-      html += `</div>`;
-      html += `<div class="bonus-note" style="margin-bottom:1.2rem">${ui('bonus_note')}</div>`;
-    } else {
-      html += `<div style="margin-bottom:1.2rem"></div>`;
-    }
-  }
-
-  if (hard.length > 0) {
-    html += `<div class="section-title">${ui('hard_section')}</div>`;
-    html += `<div class="counter-grid">`;
-    hard.forEach(c => {
-      html += `
-        <div class="counter-row hard" onclick="selectUnit('${c.unit.replace(/'/g, "\\'")}')">
-          <span class="counter-icon">${getUnitIconHtml(c.unit, UNITS[c.unit]?.type || "", 28)}</span>
-          <div>
-            <div class="counter-name">${displayName(c.unit)}</div>
-            <div class="counter-reason">${tx('reasons', c.reason)}</div>
-          </div>
-          <span class="strength-badge hard">${ui('hard_badge')}</span>
-        </div>`;
-    });
-    html += `</div>`;
-  }
-
-  if (soft.length > 0) {
-    html += `<div class="section-title" style="margin-top:1.2rem">${ui('soft_section')}</div>`;
-    html += `<div class="counter-grid">`;
-    soft.forEach(c => {
-      html += `
-        <div class="counter-row soft" onclick="selectUnit('${c.unit.replace(/'/g, "\\'")}')">
-          <span class="counter-icon">${getUnitIconHtml(c.unit, UNITS[c.unit]?.type || "", 28)}</span>
-          <div>
-            <div class="counter-name">${displayName(c.unit)}</div>
-            <div class="counter-reason">${tx('reasons', c.reason)}</div>
-          </div>
-          <span class="strength-badge soft">${ui('soft_badge')}</span>
-        </div>`;
-    });
-    html += `</div>`;
+  // ── 6) Civ-Bonus (Boni, die diese Einheit unterstützen) ──
+  const cbInfo = getCivBonuses(unit);
+  if (cbInfo && cbInfo.list.length > 0) {
+    html += `<div class="section-title" style="margin-top:1.2rem">${ui('civ_bonus_section')} · ${tx('civs', cbInfo.civ)}</div>`;
+    html += `<ul class="civ-bonus-list">`;
+    cbInfo.list.forEach(b => { html += `<li>${b}</li>`; });
+    html += `</ul>`;
   }
 
   if (unit.counters.length === 0 && !s) {
     html = `<div class="no-data">${ui('no_data')}</div>`;
-  } else if (unit.counters.length === 0) {
-    html += `<div class="no-data" style="padding:1rem">${ui('no_counters')}</div>`;
   }
 
   cardBody.innerHTML = html;
