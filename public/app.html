@@ -654,22 +654,6 @@
       color: var(--text2);
     }
 
-    .tip {
-      text-align: center;
-      color: var(--text2);
-      font-size: 0.95rem;
-      padding: 3rem 1rem;
-      line-height: 1.6;
-    }
-
-    .tip .sword {
-      display: flex;
-      justify-content: center;
-      color: var(--text2);
-      margin-bottom: 0.8rem;
-      opacity: 0.5;
-    }
-
     /* ---------- Mobil ---------- */
     @media (max-width: 480px) {
       html, body { font-size: 19px; }
@@ -774,11 +758,6 @@
   <div class="result-card" id="result">
     <div class="card-header" id="card-header"></div>
     <div class="card-body" id="card-body"></div>
-  </div>
-
-  <div class="tip" id="tip">
-    <span class="sword" aria-hidden="true"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 17.5 3 6V3h3l11.5 11.5"></path><path d="m13 19 6-6"></path><path d="m16 16 4 4"></path><path d="m19 21 2-2"></path><path d="M9.5 17.5 21 6V3h-3L6.5 14.5"></path><path d="m11 19-6-6"></path><path d="m8 16-4 4"></path><path d="m5 21-2-2"></path></svg></span>
-    <span id="tip-text"></span>
   </div>
 
 </div>
@@ -4260,7 +4239,6 @@ const suggestionsEl = document.getElementById("suggestions");
 const resultEl = document.getElementById("result");
 const cardHeader = document.getElementById("card-header");
 const cardBody = document.getElementById("card-body");
-const tipEl = document.getElementById("tip");
 
 let activeIndex = -1;
 let currentSuggestions = [];
@@ -4330,7 +4308,6 @@ function showResult(name) {
   if (!unit) return;
   currentResultName = name;
 
-  tipEl.style.display = "none";
   resultEl.classList.add("visible");
 
   const icon = getUnitIconHtml(name, unit.type, 56);
@@ -4517,7 +4494,8 @@ function applyUI() {
   document.getElementById('page-h1').textContent = ui('h1');
   document.getElementById('page-tagline').textContent = ui('tagline');
   searchInput.placeholder = ui('search_placeholder');
-  document.getElementById('tip-text').textContent = ui('tip');
+  const tipText = document.getElementById('tip-text');
+  if (tipText) tipText.textContent = ui('tip');
   document.querySelectorAll('.lang-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.lang === currentLang);
   });
