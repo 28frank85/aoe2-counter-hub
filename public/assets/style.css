@@ -472,8 +472,20 @@ footer a:hover { text-decoration: underline; }
 @media (max-width: 600px) {
   header { padding: 1.3rem 1rem 1rem; padding-right: 3.6rem; }
   .container { padding: 1.5rem 1rem 3rem; }
-  .counter-meta { min-width: 120px; }
-  .counter-item { flex-direction: column; gap: 0.3rem; }
+  /* Icon links neben der Überschrift, Begründung darunter über volle Breite */
+  .counter-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "icon meta"
+      "reason reason";
+    column-gap: 0.7rem;
+    row-gap: 0.4rem;
+    align-items: center;
+  }
+  .counter-icon { grid-area: icon; }
+  .counter-meta { grid-area: meta; min-width: 0; }
+  .counter-reason { grid-area: reason; padding-top: 0; }
   .site-nav { gap: 0.3rem; }
   .summary-table { display: block; overflow-x: auto; }
 }
