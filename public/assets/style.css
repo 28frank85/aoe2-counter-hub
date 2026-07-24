@@ -230,6 +230,9 @@ p {
   line-height: 1.75;
 }
 
+/* Fließtext-Absätze der Konter-Seiten auf Box-Textgröße (.counter-reason) */
+.container > p { font-size: 1.15rem; }
+
 ul, ol { padding-left: 1.4rem; margin-bottom: 1rem; }
 
 li {
