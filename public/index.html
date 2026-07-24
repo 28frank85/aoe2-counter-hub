@@ -804,25 +804,23 @@
 
     .category-nav { margin-top: 1.2rem; }
 
-    .category-nav h2,
-    .faq-section h2 {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--text2);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
+    .cat-intro {
+      color: var(--text);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin: 0 0 1.3rem;
     }
 
-    .category-nav h2::after,
-    .faq-section h2::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
+    .category-nav h2,
+    .faq-section h2,
+    .about-section h2 {
+      font-size: clamp(1.35rem, 3vw, 1.75rem);
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      color: var(--heading);
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+      margin: 2.4rem 0 1.2rem;
     }
 
     .cat-grid {
@@ -966,7 +964,8 @@
   </div>
 
   <nav class="category-nav" aria-label="Counter categories">
-    <h2>Browse by Unit Type</h2>
+    <h2>How to Counter Every Unit in Age of Empires 2</h2>
+    <p class="cat-intro">Each category opens a complete Age of Empires 2 counter guide for that unit class — the hard and soft counters, the exact bonus-damage values behind them, and the civilizations that do it best. Pick the unit type that's giving you trouble, or start with the Beginner's Guide.</p>
     <div class="cat-grid">
       <a class="cat-card" href="cavalry-counters.html"><img class="cat-icon-img" src="icons/002_50730.png" alt="Paladin" width="160" height="160" loading="lazy" decoding="async">Cavalry</a>
       <a class="cat-card" href="archer-counters.html"><img class="cat-icon-img" src="icons/090_50730.png" alt="Arbalest" width="160" height="160" loading="lazy" decoding="async">Archers</a>
