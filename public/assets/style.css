@@ -243,8 +243,8 @@ strong { color: var(--text); font-weight: 700; }
 a { color: var(--accent); }
 
 .intro {
-  color: var(--text2);
-  font-size: 1.02rem;
+  color: var(--text);
+  font-size: 1.2rem;
   line-height: 1.8;
   border-left: 3px solid var(--accent);
   padding-left: 1.1rem;
@@ -258,8 +258,8 @@ a { color: var(--accent); }
   border-radius: var(--radius-sm);
   padding: 0.95rem 1.15rem;
   margin: 1.2rem 0;
-  font-size: 0.93rem;
-  color: var(--text2);
+  font-size: 1.1rem;
+  color: var(--text);
 }
 
 .tip strong { color: var(--text); }
@@ -318,8 +318,8 @@ a { color: var(--accent); }
 }
 
 .counter-reason {
-  color: var(--text2);
-  font-size: 0.92rem;
+  color: var(--text);
+  font-size: 1.15rem;
   line-height: 1.6;
   flex: 1;
   padding-top: 0.1rem;
@@ -330,7 +330,7 @@ a { color: var(--accent); }
   width: 100%;
   border-collapse: collapse;
   margin: 1rem 0 2rem;
-  font-size: 0.92rem;
+  font-size: 1.05rem;
 }
 
 .summary-table th {
@@ -349,7 +349,7 @@ a { color: var(--accent); }
   padding: 0.65rem 0.9rem;
   border-bottom: 1px solid var(--border);
   vertical-align: top;
-  color: var(--text2);
+  color: var(--text);
 }
 
 .summary-table td:first-child { color: var(--text); font-weight: 600; }
@@ -405,8 +405,8 @@ a { color: var(--accent); }
 }
 
 .faq-item p {
-  color: var(--text2);
-  font-size: 0.93rem;
+  color: var(--text);
+  font-size: 1.1rem;
   margin: 0;
   line-height: 1.7;
 }
